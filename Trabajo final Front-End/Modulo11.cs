@@ -1,5 +1,6 @@
 ﻿using Modelos;
 using Org.BouncyCastle.Crypto.Tls;
+using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Trabajo_final_Front_End
 {
     public partial class Modulo11 : Form
     {
+        CnCliente cnCliente = new CnCliente();
         public Modulo11()
         {
             InitializeComponent();
@@ -86,6 +88,7 @@ namespace Trabajo_final_Front_End
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
+            bool Resultado;
             CeCliente cliente = new CeCliente();
             cliente.Id = (int)nudCliente.Value;
             cliente.Nombre = tbxNombre.Text;
@@ -95,6 +98,20 @@ namespace Trabajo_final_Front_End
             cliente.Telefono = tbxTelefono.Text;
             cliente.Email = tbxEmail.Text;
             cliente.Estatus = cbxEstatus.Text;
+
+            Resultado = cnCliente.validarDatos(cliente);
+
+            if (Resultado == false)
+            {
+                return;
+            }
+
+            MessageBox.Show("Todo bien");
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            cnCliente.prueaMysql();
         }
     }
 }
