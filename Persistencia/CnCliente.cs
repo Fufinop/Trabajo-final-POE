@@ -2,11 +2,11 @@
 
 namespace Persistencia
 {
-    public class Config
+    public class CnCliente
     {
         public MySqlConnection con;
 
-        Config()
+        CnCliente()
         {
             string datos = "server=localhost;user=root;database=escuela;port=3306;password=root";
             try

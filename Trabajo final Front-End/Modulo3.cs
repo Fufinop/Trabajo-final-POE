@@ -52,7 +52,7 @@ namespace Trabajo_final_Front_End
             try
             {
                 dgvInventario.Rows.Remove(dgvInventario.CurrentRow);
-            }z
+            }
             catch { }
         }
 

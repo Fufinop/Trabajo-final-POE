@@ -5,7 +5,7 @@ namespace Trabajo_final_Front_End
 {
     public partial class ventanaPrincipal : Form
     {
-        private Modulo1 modulo1;
+        private lbImagen modulo1;
         private Modulo2 modulo2;
         private Modulo3 modulo3;
         private Modulo4 modulo4;    
@@ -34,7 +34,7 @@ namespace Trabajo_final_Front_End
         {
             if (modulo1 == null)
             {
-                modulo1 = new Modulo1();
+                modulo1 = new lbImagen();
                 modulo1.MdiParent = this;
                 modulo1.FormClosed += new FormClosedEventHandler(cerrarModulo1);
                 modulo1.Show();

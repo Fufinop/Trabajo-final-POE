@@ -60,7 +60,7 @@
             this.cerrarTodosLosModulosToolStripMenuItem});
             this.msVentanaP.Location = new System.Drawing.Point(0, 0);
             this.msVentanaP.Name = "msVentanaP";
-            this.msVentanaP.Size = new System.Drawing.Size(1029, 28);
+            this.msVentanaP.Size = new System.Drawing.Size(1343, 28);
             this.msVentanaP.TabIndex = 1;
             this.msVentanaP.Text = "menuStrip1";
             // 
@@ -196,9 +196,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssNombre,
             this.tssNombreI});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 692);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 763);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1029, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1343, 26);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -218,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 718);
+            this.ClientSize = new System.Drawing.Size(1343, 789);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.msVentanaP);
             this.IsMdiContainer = true;

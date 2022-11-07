@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo1
+    partial class lbImagen
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
@@ -59,7 +60,7 @@
             this.Column2,
             this.cantidad,
             this.estatus});
-            this.dgvReceta.Location = new System.Drawing.Point(91, 324);
+            this.dgvReceta.Location = new System.Drawing.Point(107, 443);
             this.dgvReceta.Name = "dgvReceta";
             this.dgvReceta.ReadOnly = true;
             this.dgvReceta.RowHeadersWidth = 51;
@@ -224,12 +225,23 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // Modulo1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(239, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 28);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Imagen";
+            // 
+            // lbImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(744, 535);
+            this.ClientSize = new System.Drawing.Size(917, 698);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
@@ -243,7 +255,7 @@
             this.Controls.Add(this.lbIdInventario);
             this.Controls.Add(this.lbIdProducto);
             this.Controls.Add(this.dgvReceta);
-            this.Name = "Modulo1";
+            this.Name = "lbImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Modulo 1 | Receta";
             this.Load += new System.EventHandler(this.Modulo1_Load);
@@ -275,5 +287,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn cantidad;
         private DataGridViewTextBoxColumn estatus;
+        private Label label1;
     }
 }

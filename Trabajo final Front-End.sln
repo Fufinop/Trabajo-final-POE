@@ -5,11 +5,11 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trabajo final Front-End", "Trabajo final Front-End\Trabajo final Front-End.csproj", "{0493661E-F8B0-466D-B641-34234F693353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{F32AB590-3191-41DF-A10A-C82CECF2354F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Negocio", "Persistencia\Negocio.csproj", "{F32AB590-3191-41DF-A10A-C82CECF2354F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{7D380577-95CD-4B10-9092-1DDF359D4C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidad", "Modelos\Entidad.csproj", "{7D380577-95CD-4B10-9092-1DDF359D4C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controladores", "Controladores\Controladores.csproj", "{50F2B858-3512-4EF1-8C9D-D0A75D3A06B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datos", "Controladores\Datos.csproj", "{50F2B858-3512-4EF1-8C9D-D0A75D3A06B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

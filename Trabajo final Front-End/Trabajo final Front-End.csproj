@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Persistencia\Persistencia.csproj" />
+    <ProjectReference Include="..\Modelos\Entidad.csproj" />
+    <ProjectReference Include="..\Persistencia\Negocio.csproj" />
   </ItemGroup>
 
 </Project>

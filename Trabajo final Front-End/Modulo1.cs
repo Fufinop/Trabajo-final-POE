@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    public partial class Modulo1 : Form
+    public partial class lbImagen : Form
     {
-        public Modulo1()
+        public lbImagen()
         {
             InitializeComponent();
         }
