@@ -26,5 +26,37 @@ namespace Trabajo_final_Front_End
         {
 
         }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbxApellido2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar >= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo puedes ingresar numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void lnkFoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ofdFoto.FileName = string.Empty;
+
+            if (ofdFoto.ShowDialog() == DialogResult.OK)
+            {
+                picFoto.Load(ofdFoto.FileName);
+            }
+
+            ofdFoto.FileName = string.Empty;
+        }
     }
 }

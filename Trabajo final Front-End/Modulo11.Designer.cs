@@ -153,6 +153,7 @@
             this.tbxTelefono.Size = new System.Drawing.Size(150, 27);
             this.tbxTelefono.TabIndex = 18;
             this.tbxTelefono.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.tbxTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTelefono_KeyPress);
             // 
             // btnLimpiar
             // 

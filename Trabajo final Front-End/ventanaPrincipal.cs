@@ -13,7 +13,6 @@ namespace Trabajo_final_Front_End
         private Modulo6 modulo6;
         private Modulo7 modulo7;
         private Modulo8 modulo8;
-        private Modulo9 modulo9;
         private Modulo10 modulo10;
         private Modulo11 modulo11;
         private Modulo12 modulo12;
@@ -132,21 +131,6 @@ namespace Trabajo_final_Front_End
             }
         }
 
-        private void modulo9ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (modulo9 == null)
-            {
-                modulo9 = new Modulo9();
-                modulo9.MdiParent = this;
-                modulo9.FormClosed += new FormClosedEventHandler(cerrarModulo9);
-                modulo9.Show();
-            }
-            else
-            {
-                modulo9.Activate();
-            }
-        }
-
         private void modulo10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (modulo10 == null)
@@ -255,10 +239,7 @@ namespace Trabajo_final_Front_End
         {
             modulo8 = null;
         }
-        void cerrarModulo9(object sender, EventArgs e)
-        {
-            modulo9 = null;
-        }
+        
         void cerrarModulo10(object sender, EventArgs e)
         {
             modulo10 = null;
@@ -290,9 +271,8 @@ namespace Trabajo_final_Front_End
                 modulo4.Close();
                 modulo5.Close();
                 modulo6.Close();    
-                modulo7.Close();    
+                modulo7.Close();
                 modulo8.Close();
-                modulo9.Close();
                 modulo10.Close();
                 modulo11.Close();
                 modulo12.Close();
