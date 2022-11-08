@@ -113,7 +113,10 @@ namespace Trabajo_final_Front_End
             }
             
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
 
+        }
         private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
@@ -181,5 +184,7 @@ namespace Trabajo_final_Front_End
         {
 
         }
+
+        
     }
 }

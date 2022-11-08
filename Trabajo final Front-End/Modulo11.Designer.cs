@@ -162,6 +162,7 @@
             this.btnLimpiar.TabIndex = 24;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCancelar
             // 
@@ -207,12 +208,12 @@
             // 
             this.dgvReceta.AllowUserToDeleteRows = false;
             this.dgvReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReceta.Location = new System.Drawing.Point(169, 347);
+            this.dgvReceta.Location = new System.Drawing.Point(12, 357);
             this.dgvReceta.Name = "dgvReceta";
             this.dgvReceta.ReadOnly = true;
             this.dgvReceta.RowHeadersWidth = 51;
             this.dgvReceta.RowTemplate.Height = 29;
-            this.dgvReceta.Size = new System.Drawing.Size(553, 188);
+            this.dgvReceta.Size = new System.Drawing.Size(1181, 281);
             this.dgvReceta.TabIndex = 25;
             this.dgvReceta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceta_CellContentClick);
             this.dgvReceta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceta_CellDoubleClick);
@@ -316,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(973, 557);
+            this.ClientSize = new System.Drawing.Size(1205, 663);
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.lnkFoto);
             this.Controls.Add(this.tbxEmail);
