@@ -5,7 +5,7 @@ namespace Trabajo_final_Front_End
 {
     public partial class ventanaPrincipal : Form
     {
-        private lbImagen modulo1;
+        private Modulo11 modulo11;
         private Modulo2 modulo2;
         private Modulo3 modulo3;
         private Modulo4 modulo4;    
@@ -15,7 +15,7 @@ namespace Trabajo_final_Front_End
         private Modulo8 modulo8;
         private Modulo9 modulo9;
         private Modulo10 modulo10;
-        private Modulo11 modulo11;
+       // private Modulo1 modulo11;
         private Modulo12 modulo12;
         private Modulo13 modulo13;
         private Modulo14 modulo14;
@@ -32,16 +32,16 @@ namespace Trabajo_final_Front_End
 
         private void modulo1ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (modulo1 == null)
+            if (modulo11 == null)
             {
-                modulo1 = new lbImagen();
-                modulo1.MdiParent = this;
-                modulo1.FormClosed += new FormClosedEventHandler(cerrarModulo1);
-                modulo1.Show();
+                modulo11 = new Modulo11();
+                modulo11.MdiParent = this;
+                modulo11.FormClosed += new FormClosedEventHandler(cerrarModulo11);
+                modulo11.Show();
             }
             else
             {
-                modulo1.Activate();
+                modulo11.Activate();
             }
         }
 
@@ -239,7 +239,7 @@ namespace Trabajo_final_Front_End
 
         void cerrarModulo1(object sender, EventArgs e)
         {
-            modulo1 = null;
+            //modulo1 = null;
         }
         void cerrarModulo2(object sender, EventArgs e)
         {
@@ -298,7 +298,7 @@ namespace Trabajo_final_Front_End
         {
             try
             {
-                modulo1.Close();
+                //modulo1.Close();
                 modulo2.Close();
                 modulo3.Close();
                 modulo4.Close();
@@ -317,6 +317,11 @@ namespace Trabajo_final_Front_End
             {
 
             }
+        }
+
+        private void abrirModulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
