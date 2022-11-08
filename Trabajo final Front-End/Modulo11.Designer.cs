@@ -45,10 +45,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.dgvReceta = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
@@ -58,7 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lnkFoto = new System.Windows.Forms.LinkLabel();
             this.picFoto = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.nudCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
@@ -220,11 +216,6 @@
             // 
             this.dgvReceta.AllowUserToDeleteRows = false;
             this.dgvReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.cantidad,
-            this.estatus});
             this.dgvReceta.Location = new System.Drawing.Point(594, 100);
             this.dgvReceta.Name = "dgvReceta";
             this.dgvReceta.ReadOnly = true;
@@ -232,38 +223,7 @@
             this.dgvReceta.RowTemplate.Height = 29;
             this.dgvReceta.Size = new System.Drawing.Size(553, 188);
             this.dgvReceta.TabIndex = 25;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "IdProducto";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "IdInventario";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 125;
-            // 
-            // estatus
-            // 
-            this.estatus.HeaderText = "Estatus";
-            this.estatus.MinimumWidth = 6;
-            this.estatus.Name = "estatus";
-            this.estatus.ReadOnly = true;
-            this.estatus.Width = 125;
+            this.dgvReceta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceta_CellDoubleClick);
             // 
             // label1
             // 
@@ -345,16 +305,18 @@
             // 
             // picFoto
             // 
+            this.picFoto.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.picFoto.Location = new System.Drawing.Point(247, 432);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(182, 124);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 34;
             this.picFoto.TabStop = false;
+            this.picFoto.Click += new System.EventHandler(this.picFoto_Click);
             // 
-            // openFileDialog1
+            // ofdFoto
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.ofdFoto.FileName = "openFileDialog1";
             // 
             // Modulo11
             // 
@@ -419,10 +381,6 @@
         private Button btnBuscar;
         private Button BtnGuardar;
         private DataGridView dgvReceta;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn cantidad;
-        private DataGridViewTextBoxColumn estatus;
         private Label label1;
         private ComboBox cbxEstatus;
         private Label lbEstatus;
@@ -432,6 +390,6 @@
         private Label label3;
         private LinkLabel lnkFoto;
         private PictureBox picFoto;
-        private OpenFileDialog openFileDialog1;
+        private OpenFileDialog ofdFoto;
     }
 }
