@@ -69,6 +69,11 @@ namespace Trabajo_final_Front_End
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            limpiarForm();
+        }
+
+        private void limpiarForm()
+        {
             nudCliente.Value = 0;
             tbxNombre.Text = string.Empty;
             tbxApellidos.Text = string.Empty;
@@ -79,6 +84,7 @@ namespace Trabajo_final_Front_End
             cbxEstatus.Text = string.Empty;
             picFoto = null;
         }
+
 
         private void lnkFoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -125,11 +131,22 @@ namespace Trabajo_final_Front_End
             cnCliente.crearCliente(cecliente);
 
             cargarDatos();
+            limpiarForm();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            cnCliente.prueaMysql();
+            if (nudCliente.Value == 0) return;
+
+            if (MessageBox.Show("¿Deseas eliminar el registro?","Titulo",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CeCliente cE = new CeCliente();
+                cE.Id = (int)nudCliente.Value;
+                cnCliente.eliminarCliente(cE);
+                cargarDatos();
+                limpiarForm();
+            }
+            
         }
 
         private void picFoto_Click(object sender, EventArgs e)
@@ -139,7 +156,7 @@ namespace Trabajo_final_Front_End
 
         private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
+            //nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
             tbxNombre.Text = dgvReceta.CurrentRow.Cells["Nombre"].Value.ToString();
             tbxApellidos.Text = dgvReceta.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxDireccion.Text = dgvReceta.CurrentRow.Cells["Direccion"].Value.ToString();

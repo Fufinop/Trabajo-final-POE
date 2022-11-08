@@ -70,6 +70,11 @@ namespace Persistencia
             cdCliente.editar(cE);
         }
 
+        public void eliminarCliente(CeCliente cE)
+        {
+            cdCliente.eliminar(cE);
+        }
+
         public DataSet obtenerDatos()
         {
             return cdCliente.Listar();

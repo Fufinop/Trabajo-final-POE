@@ -69,6 +69,27 @@ namespace Controladores
 
         }
 
+        public void eliminar(CeCliente cE)
+        {
+            try
+            {
+                MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
+                mySqlConnection.Open();
+                string Query = "DELETE FROM `cliente` WHERE  `idCliente`=" + cE.Id + ";";
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+                mySqlConnection.Close();
+
+                MessageBox.Show("Registro Eliminado");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error o repetiste el id");
+
+            }
+
+        }
+
         public DataSet Listar()
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
