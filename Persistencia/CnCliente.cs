@@ -1,7 +1,6 @@
 ﻿using Controladores;
 using Modelos;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Persistencia
@@ -58,26 +57,6 @@ namespace Persistencia
         public void prueaMysql()
         {
             cdCliente.pruebaConexion();
-        }
-
-        public void crearCliente(CeCliente cE)
-        {
-            cdCliente.crear(cE);
-        }
-
-        public void editarCliente(CeCliente cE)
-        {
-            cdCliente.editar(cE);
-        }
-
-        public void eliminarCliente(CeCliente cE)
-        {
-            cdCliente.eliminar(cE);
-        }
-
-        public DataSet obtenerDatos()
-        {
-            return cdCliente.Listar();
         }
     }
 }
