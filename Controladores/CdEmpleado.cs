@@ -1,12 +1,16 @@
-﻿using System;
-using MySql.Data.MySqlClient;
-using System.Windows.Forms;
+﻿using Entidad;
 using Modelos;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Controladores
+namespace Datos
 {
-    public class CdCliente
+    public class CdEmpleado
     {
         string cadenaConexion = "Server=localhost;User=root;Password=root;database=pasteleria";
 
@@ -27,7 +31,7 @@ namespace Controladores
             MessageBox.Show("Conectado!");
         }
 
-        public void crear(CeCliente cE)
+        public void crear(CeEmpleado cE)
         {
             try
             {
@@ -45,10 +49,10 @@ namespace Controladores
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
-            
+
         }
 
-        public void editar(CeCliente cE)
+        public void editar(CeEmpleado cE)
         {
             try
             {
@@ -69,7 +73,7 @@ namespace Controladores
 
         }
 
-        public void eliminar(CeCliente cE)
+        public void eliminar(CeEmpleado cE)
         {
             try
             {
@@ -90,13 +94,13 @@ namespace Controladores
 
         }
 
-        public void eliminarDatos(CeCliente cE)
+        public void eliminarDatos(CeEmpleado cE)
         {
             try
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `cliente` ;";
+                string Query = "DELETE FROM `cliente`;";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -126,4 +130,5 @@ namespace Controladores
             return dataset;
         }
     }
+}
 }
