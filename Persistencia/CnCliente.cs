@@ -74,6 +74,10 @@ namespace Persistencia
         {
             cdCliente.eliminar(cE);
         }
+        public void eliminarDatos(CeCliente cE)
+        {
+            cdCliente.eliminarDatos(cE);
+        }
 
         public DataSet obtenerDatos()
         {

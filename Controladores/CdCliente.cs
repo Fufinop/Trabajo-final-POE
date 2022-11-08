@@ -90,6 +90,27 @@ namespace Controladores
 
         }
 
+        public void eliminarDatos(CeCliente cE)
+        {
+            try
+            {
+                MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
+                mySqlConnection.Open();
+                string Query = "DELETE FROM `cliente`;";
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+                mySqlConnection.Close();
+
+                MessageBox.Show("Todos los datos han sido eliminados");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error");
+
+            }
+
+        }
+
         public DataSet Listar()
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);

@@ -115,7 +115,13 @@ namespace Trabajo_final_Front_End
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?","Atencion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                CeCliente cE = new CeCliente();
+                cnCliente.eliminarDatos(cE);
+                cargarDatos();
+                limpiarForm();
+            }
         }
         private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
