@@ -22,21 +22,6 @@ namespace Trabajo_final_Front_End
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Modulo11_Load(object sender, EventArgs e)
         {
             cargarDatos();
@@ -45,26 +30,6 @@ namespace Trabajo_final_Front_End
         private void cargarDatos()
         {
             dgvReceta.DataSource = cnCliente.obtenerDatos().Tables["tb1"];
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbEstatus_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbApellido2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -149,11 +114,6 @@ namespace Trabajo_final_Front_End
             
         }
 
-        private void picFoto_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
@@ -166,5 +126,51 @@ namespace Trabajo_final_Front_End
             cbxEstatus.Text = dgvReceta.CurrentRow.Cells["Estatus"].Value.ToString();
             picFoto.Load(dgvReceta.CurrentRow.Cells["Foto"].Value.ToString());
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Eventos sin usar
+
+        private void picFoto_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbEstatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbApellido2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
