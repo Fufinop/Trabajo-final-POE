@@ -14,41 +14,41 @@ namespace Negocio
     public class CnEmpleado
     {
         CdEmpleado cdEmpleado = new CdEmpleado();
-        public bool validarDatos(CeEmpleado cliente)
+        public bool validarDatos(CeEmpleado empleado)
         {
             bool Resultado = true;
 
-            if (cliente.Nombre == String.Empty)
+            if (empleado.Nombre == String.Empty)
             {
                 Resultado = false;
                 MessageBox.Show("El nombre es obligatorio");
             }
-            if (cliente.Id == 0)
+            if (empleado.Id == 0)
             {
                 Resultado = false;
                 MessageBox.Show("El id debe de ser diferente de cero");
             }
-            if (cliente.Apellidos == String.Empty)
+            if (empleado.Apellidos == String.Empty)
             {
                 Resultado = false;
                 MessageBox.Show("El apellido es obligatorio");
             }
-            if (cliente.Salario == String.Empty)
+            if (empleado.Salario == String.Empty)
             {
                 Resultado = false;
                 MessageBox.Show("El salario no puede estar vacio");
             }
-            if (cliente.Tipo == String.Empty)
+            if (empleado.Tipo == String.Empty)
             {
                 Resultado = false;
                 MessageBox.Show("El tipo es obligatorio");
             }
-            if (cliente.Estatus == String.Empty)
+            if (empleado.Estatus == String.Empty)
             {
                 Resultado = false;
                 MessageBox.Show("El estatus es obligatorio");
             }
-            if (cliente.Foto == null)
+            if (empleado.Foto == null)
             {
                 Resultado = false;
                 MessageBox.Show("La foto es obligatoria");
@@ -62,17 +62,17 @@ namespace Negocio
             cdEmpleado.pruebaConexion();
         }
 
-        public void crearCliente(CeEmpleado cE)
+        public void crearEmpleado(CeEmpleado cE)
         {
             cdEmpleado.crear(cE);
         }
 
-        public void editarCliente(CeEmpleado cE)
+        public void editarEmpleado(CeEmpleado cE)
         {
             cdEmpleado.editar(cE);
         }
 
-        public void eliminarCliente(CeEmpleado cE)
+        public void eliminarEmpleado(CeEmpleado cE)
         {
             cdEmpleado.eliminar(cE);
         }
