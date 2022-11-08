@@ -42,7 +42,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.dgvReceta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -157,7 +156,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(451, 229);
+            this.btnLimpiar.Location = new System.Drawing.Point(864, 195);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(94, 29);
             this.btnLimpiar.TabIndex = 24;
@@ -166,16 +165,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(451, 280);
+            this.btnCancelar.Location = new System.Drawing.Point(864, 246);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 29);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(451, 175);
+            this.btnEliminar.Location = new System.Drawing.Point(864, 141);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 29);
             this.btnEliminar.TabIndex = 22;
@@ -185,7 +185,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(451, 26);
+            this.btnNuevo.Location = new System.Drawing.Point(864, 35);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 29);
             this.btnNuevo.TabIndex = 21;
@@ -193,18 +193,9 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(451, 75);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(94, 29);
-            this.btnBuscar.TabIndex = 20;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(451, 124);
+            this.BtnGuardar.Location = new System.Drawing.Point(864, 90);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(94, 29);
             this.BtnGuardar.TabIndex = 19;
@@ -216,24 +207,26 @@
             // 
             this.dgvReceta.AllowUserToDeleteRows = false;
             this.dgvReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReceta.Location = new System.Drawing.Point(594, 100);
+            this.dgvReceta.Location = new System.Drawing.Point(169, 347);
             this.dgvReceta.Name = "dgvReceta";
             this.dgvReceta.ReadOnly = true;
             this.dgvReceta.RowHeadersWidth = 51;
             this.dgvReceta.RowTemplate.Height = 29;
             this.dgvReceta.Size = new System.Drawing.Size(553, 188);
             this.dgvReceta.TabIndex = 25;
+            this.dgvReceta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceta_CellContentClick);
             this.dgvReceta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceta_CellDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(118, 450);
+            this.label1.Location = new System.Drawing.Point(490, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 28);
             this.label1.TabIndex = 28;
             this.label1.Text = "Imagen";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // cbxEstatus
             // 
@@ -241,7 +234,7 @@
             this.cbxEstatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstatus.Location = new System.Drawing.Point(245, 398);
+            this.cbxEstatus.Location = new System.Drawing.Point(619, 87);
             this.cbxEstatus.Name = "cbxEstatus";
             this.cbxEstatus.Size = new System.Drawing.Size(151, 28);
             this.cbxEstatus.TabIndex = 27;
@@ -250,7 +243,7 @@
             // 
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEstatus.Location = new System.Drawing.Point(116, 394);
+            this.lbEstatus.Location = new System.Drawing.Point(492, 80);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(77, 28);
             this.lbEstatus.TabIndex = 26;
@@ -276,7 +269,7 @@
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(247, 346);
+            this.tbxEmail.Location = new System.Drawing.Point(621, 35);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(150, 27);
             this.tbxEmail.TabIndex = 32;
@@ -285,7 +278,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(132, 342);
+            this.label3.Location = new System.Drawing.Point(506, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 28);
             this.label3.TabIndex = 31;
@@ -295,7 +288,7 @@
             // 
             this.lnkFoto.AutoSize = true;
             this.lnkFoto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnkFoto.Location = new System.Drawing.Point(105, 478);
+            this.lnkFoto.Location = new System.Drawing.Point(477, 182);
             this.lnkFoto.Name = "lnkFoto";
             this.lnkFoto.Size = new System.Drawing.Size(111, 28);
             this.lnkFoto.TabIndex = 33;
@@ -306,7 +299,7 @@
             // picFoto
             // 
             this.picFoto.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.picFoto.Location = new System.Drawing.Point(247, 432);
+            this.picFoto.Location = new System.Drawing.Point(619, 136);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(182, 124);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -323,7 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1206, 557);
+            this.ClientSize = new System.Drawing.Size(973, 557);
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.lnkFoto);
             this.Controls.Add(this.tbxEmail);
@@ -338,7 +331,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.tbxTelefono);
             this.Controls.Add(this.tbxNombre);
@@ -378,7 +370,6 @@
         private Button btnCancelar;
         private Button btnEliminar;
         private Button btnNuevo;
-        private Button btnBuscar;
         private Button BtnGuardar;
         private DataGridView dgvReceta;
         private Label label1;

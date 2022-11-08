@@ -32,33 +32,19 @@ namespace Trabajo_final_Front_End
 
         private void modulo1ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (modulo1 == null)
+            if (modulo11 == null)
             {
-                modulo1 = new lbImagen();
-                modulo1.MdiParent = this;
-                modulo1.FormClosed += new FormClosedEventHandler(cerrarModulo1);
-                modulo1.Show();
+                modulo11 = new Modulo11();
+                modulo11.MdiParent = this;
+                modulo11.FormClosed += new FormClosedEventHandler(cerrarModulo11);
+                modulo11.Show();
             }
             else
             {
-                modulo1.Activate();
+                modulo11.Activate();
             }
         }
 
-        private void modulo2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (modulo2 == null)
-            {
-                modulo2 = new Modulo2();
-                modulo2.MdiParent = this;
-                modulo2.FormClosed += new FormClosedEventHandler(cerrarModulo2);
-                modulo2.Show();
-            }
-            else
-            {
-                modulo2.Activate();
-            }
-        }
         private void modulo3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (modulo3 == null)
@@ -316,6 +302,26 @@ namespace Trabajo_final_Front_End
             catch
             {
 
+            }
+        }
+
+        private void abrirModulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modulo2ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (modulo10 == null)
+            {
+                modulo10 = new Modulo10();
+                modulo10.MdiParent = this;
+                modulo10.FormClosed += new FormClosedEventHandler(cerrarModulo10);
+                modulo10.Show();
+            }
+            else
+            {
+                modulo10.Activate();
             }
         }
     }
