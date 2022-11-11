@@ -28,124 +28,203 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnLateral = new System.Windows.Forms.Panel();
+            this.ibtnNegocio = new FontAwesome.Sharp.IconButton();
+            this.ibtnInventario = new FontAwesome.Sharp.IconButton();
+            this.ibtnVentas = new FontAwesome.Sharp.IconButton();
+            this.ibtnProveedor = new FontAwesome.Sharp.IconButton();
+            this.ibtnClientes = new FontAwesome.Sharp.IconButton();
+            this.ibtnEmpleados = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnLateral.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // pnLateral
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(55, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pasteleria";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.pnLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnLateral.Controls.Add(this.ibtnNegocio);
+            this.pnLateral.Controls.Add(this.ibtnInventario);
+            this.pnLateral.Controls.Add(this.ibtnVentas);
+            this.pnLateral.Controls.Add(this.ibtnProveedor);
+            this.pnLateral.Controls.Add(this.ibtnClientes);
+            this.pnLateral.Controls.Add(this.ibtnEmpleados);
+            this.pnLateral.Controls.Add(this.panel1);
+            this.pnLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnLateral.Location = new System.Drawing.Point(0, 0);
+            this.pnLateral.Name = "pnLateral";
+            this.pnLateral.Size = new System.Drawing.Size(250, 711);
+            this.pnLateral.TabIndex = 1;
+            this.pnLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // ibtnNegocio
+            // 
+            this.ibtnNegocio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnNegocio.FlatAppearance.BorderSize = 0;
+            this.ibtnNegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnNegocio.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnNegocio.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnNegocio.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.ibtnNegocio.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnNegocio.IconSize = 32;
+            this.ibtnNegocio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnNegocio.Location = new System.Drawing.Point(0, 440);
+            this.ibtnNegocio.Name = "ibtnNegocio";
+            this.ibtnNegocio.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnNegocio.Size = new System.Drawing.Size(250, 60);
+            this.ibtnNegocio.TabIndex = 9;
+            this.ibtnNegocio.Text = "Negocio";
+            this.ibtnNegocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnNegocio.UseVisualStyleBackColor = true;
+            this.ibtnNegocio.Click += new System.EventHandler(this.ibtnNegocio_Click);
+            // 
+            // ibtnInventario
+            // 
+            this.ibtnInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnInventario.FlatAppearance.BorderSize = 0;
+            this.ibtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnInventario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnInventario.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnInventario.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.ibtnInventario.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnInventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnInventario.IconSize = 32;
+            this.ibtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnInventario.Location = new System.Drawing.Point(0, 380);
+            this.ibtnInventario.Name = "ibtnInventario";
+            this.ibtnInventario.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnInventario.Size = new System.Drawing.Size(250, 60);
+            this.ibtnInventario.TabIndex = 8;
+            this.ibtnInventario.Text = "Inventario";
+            this.ibtnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnInventario.UseVisualStyleBackColor = true;
+            this.ibtnInventario.Click += new System.EventHandler(this.ibtnInventario_Click);
+            // 
+            // ibtnVentas
+            // 
+            this.ibtnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnVentas.FlatAppearance.BorderSize = 0;
+            this.ibtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnVentas.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnVentas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnVentas.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.ibtnVentas.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnVentas.IconSize = 32;
+            this.ibtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnVentas.Location = new System.Drawing.Point(0, 320);
+            this.ibtnVentas.Name = "ibtnVentas";
+            this.ibtnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnVentas.Size = new System.Drawing.Size(250, 60);
+            this.ibtnVentas.TabIndex = 7;
+            this.ibtnVentas.Text = "Ventas";
+            this.ibtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnVentas.UseVisualStyleBackColor = true;
+            this.ibtnVentas.Click += new System.EventHandler(this.ibtnVentas_Click);
+            // 
+            // ibtnProveedor
+            // 
+            this.ibtnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnProveedor.FlatAppearance.BorderSize = 0;
+            this.ibtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnProveedor.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnProveedor.IconChar = FontAwesome.Sharp.IconChar.TruckField;
+            this.ibtnProveedor.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnProveedor.IconSize = 32;
+            this.ibtnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnProveedor.Location = new System.Drawing.Point(0, 260);
+            this.ibtnProveedor.Name = "ibtnProveedor";
+            this.ibtnProveedor.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnProveedor.Size = new System.Drawing.Size(250, 60);
+            this.ibtnProveedor.TabIndex = 6;
+            this.ibtnProveedor.Text = "Proveedor";
+            this.ibtnProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnProveedor.UseVisualStyleBackColor = true;
+            this.ibtnProveedor.Click += new System.EventHandler(this.ibtnProveedor_Click);
+            // 
+            // ibtnClientes
+            // 
+            this.ibtnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnClientes.FlatAppearance.BorderSize = 0;
+            this.ibtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnClientes.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnClientes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnClientes.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.ibtnClientes.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnClientes.IconSize = 32;
+            this.ibtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnClientes.Location = new System.Drawing.Point(0, 200);
+            this.ibtnClientes.Name = "ibtnClientes";
+            this.ibtnClientes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnClientes.Size = new System.Drawing.Size(250, 60);
+            this.ibtnClientes.TabIndex = 5;
+            this.ibtnClientes.Text = "Clientes";
+            this.ibtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnClientes.UseVisualStyleBackColor = true;
+            this.ibtnClientes.Click += new System.EventHandler(this.ibtnClientes_Click);
+            // 
+            // ibtnEmpleados
+            // 
+            this.ibtnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnEmpleados.FlatAppearance.BorderSize = 0;
+            this.ibtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnEmpleados.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ibtnEmpleados.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnEmpleados.IconChar = FontAwesome.Sharp.IconChar.PersonMilitaryPointing;
+            this.ibtnEmpleados.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.ibtnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnEmpleados.IconSize = 32;
+            this.ibtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnEmpleados.Location = new System.Drawing.Point(0, 140);
+            this.ibtnEmpleados.Name = "ibtnEmpleados";
+            this.ibtnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnEmpleados.Size = new System.Drawing.Size(250, 60);
+            this.ibtnEmpleados.TabIndex = 4;
+            this.ibtnEmpleados.Text = "Empleados";
+            this.ibtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnEmpleados.UseVisualStyleBackColor = true;
+            this.ibtnEmpleados.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 711);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(71, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Empleados";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(71, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Clientes";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(71, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(78, 341);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(78, 413);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 29);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(71, 519);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 29);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.panel1.Size = new System.Drawing.Size(250, 140);
+            this.panel1.TabIndex = 3;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 711);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnLateral);
             this.IsMdiContainer = true;
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnLateral.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Label label1;
+        private Panel pnLateral;
         private Panel panel1;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private FontAwesome.Sharp.IconButton ibtnEmpleados;
+        private FontAwesome.Sharp.IconButton ibtnNegocio;
+        private FontAwesome.Sharp.IconButton ibtnInventario;
+        private FontAwesome.Sharp.IconButton ibtnVentas;
+        private FontAwesome.Sharp.IconButton ibtnProveedor;
+        private FontAwesome.Sharp.IconButton ibtnClientes;
     }
 }
