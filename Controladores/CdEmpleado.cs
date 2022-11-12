@@ -37,7 +37,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "INSERT INTO `pasteleria`.`empleado` (`idEmpleado`, `Nombre`, `Apellidos`, `Salario`, `Tipo`, `estatus`, `foto`) VALUES ('" + cE.Id + "', '" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + cE.Estatus + "', '" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "');";
+                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Imagen`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "', 'activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -58,7 +58,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `pasteleria`.`empleado` SET `idEmpleado`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Estatus`='" + cE.Estatus + "', `Foto`='" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UPDATE `pasteleria`.`empleado` SET `idEmpleado`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Foto`='" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "' WHERE  `idEmpleado`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -79,7 +79,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `cliente` WHERE  `idCliente`=" + cE.Id + ";";
+                string Query = "DELETE FROM `empleado` WHERE  `idCliente`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -100,7 +100,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `cliente`;";
+                string Query = "DELETE FROM `empleado`;";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -119,7 +119,7 @@ namespace Datos
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
             mySqlConnection.Open();
-            string Querry = "SELECT * FROM cliente LIMIT 1000;";
+            string Querry = "SELECT * FROM empleado WHERE Estatus = 'activo' LIMIT 1000;";
             MySqlDataAdapter adaptador;
             DataSet dataset = new DataSet();
 

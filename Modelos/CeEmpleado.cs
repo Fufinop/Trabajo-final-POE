@@ -13,7 +13,6 @@ namespace Entidad
         public string Apellidos { get; set; }
         public string Salario { get; set; }
         public string Tipo { get; set; }
-        public string Estatus { get; set; }
         public string Foto { get; set; }
     }
 }

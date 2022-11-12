@@ -1,16 +1,5 @@
 ﻿using Modelos;
-using Org.BouncyCastle.Asn1.IsisMtt.Ocsp;
-using Org.BouncyCastle.Crypto.Tls;
-using Persistencia;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Negocio;
 
 namespace Trabajo_final_Front_End
 {

@@ -1,21 +1,9 @@
-﻿using Controladores;
-using Entidad;
-using Modelos;
+﻿using Entidad;
 using Negocio;
-using Persistencia;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    
+
     public partial class EmpleadosVista : Form
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
@@ -30,6 +18,8 @@ namespace Trabajo_final_Front_End
         private void Modulo10_Load(object sender, EventArgs e)
         {
             cargarDatos();
+            tabControl1.TabPages.Remove(tabPage1);
+            
         }
         private void limpiarForm()
         {
@@ -178,7 +168,37 @@ namespace Trabajo_final_Front_End
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+            bool Resultado;
+            CeEmpleado ceEmpleado = new CeEmpleado();
+            ceEmpleado.Id = (int)nudEmpleado.Value;
+            ceEmpleado.Nombre = tbxNombre.Text;
+            ceEmpleado.Apellidos = tbxApellidos.Text;
+            ceEmpleado.Salario = tbxSalario.Text;
+            ceEmpleado.Tipo = cbxTipo.Text;
+            ceEmpleado.Foto = picFoto.ImageLocation;
 
+            Resultado = cnEmpleado.validarDatos(ceEmpleado);
+
+            if (Resultado == false)
+            {
+                return;
+            }
+
+            if (ceEmpleado.Id == 0)
+            {
+                cnEmpleado.crearEmpleado(ceEmpleado);
+            }
+            else
+            {
+                cnEmpleado.editarEmpleado(ceEmpleado);
+            }
+
+            cnEmpleado.crearEmpleado(ceEmpleado);
+
+            cargarDatos();
+            limpiarForm();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -193,7 +213,8 @@ namespace Trabajo_final_Front_End
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
         }
 
         private void btnEliminar_Click_2(object sender, EventArgs e)
@@ -203,7 +224,41 @@ namespace Trabajo_final_Front_End
 
         private void btnLimpiar_Click_2(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                CeEmpleado cE = new CeEmpleado();
+                cnEmpleado.eliminarDatos(cE);
+                cargarDatos();
+                limpiarForm();
+            }
+        }
 
+        private void lnkFoto_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ofdFoto.FileName = string.Empty;
+
+            if (ofdFoto.ShowDialog() == DialogResult.OK)
+            {
+                picFoto.Load(ofdFoto.FileName);
+            }
+
+            ofdFoto.FileName = string.Empty;
+        }
+
+        private void lbImagen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click_2(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage1);
         }
     }
 }

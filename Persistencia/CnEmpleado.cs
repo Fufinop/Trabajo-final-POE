@@ -23,11 +23,6 @@ namespace Negocio
                 Resultado = false;
                 MessageBox.Show("El nombre es obligatorio");
             }
-            if (empleado.Id == 0)
-            {
-                Resultado = false;
-                MessageBox.Show("El id debe de ser diferente de cero");
-            }
             if (empleado.Apellidos == String.Empty)
             {
                 Resultado = false;
@@ -42,11 +37,6 @@ namespace Negocio
             {
                 Resultado = false;
                 MessageBox.Show("El tipo es obligatorio");
-            }
-            if (empleado.Estatus == String.Empty)
-            {
-                Resultado = false;
-                MessageBox.Show("El estatus es obligatorio");
             }
             if (empleado.Foto == null)
             {
