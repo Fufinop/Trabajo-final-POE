@@ -36,7 +36,16 @@
             this.ibtnClientes = new FontAwesome.Sharp.IconButton();
             this.ibtnEmpleados = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInicio = new System.Windows.Forms.PictureBox();
+            this.BarraDeTitulo = new System.Windows.Forms.Panel();
+            this.lbTituloFormHijo = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.pnEscritorio = new System.Windows.Forms.Panel();
             this.pnLateral.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
+            this.BarraDeTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.SuspendLayout();
             // 
             // pnLateral
@@ -196,23 +205,88 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnInicio);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 140);
             this.panel1.TabIndex = 3;
             // 
+            // btnInicio
+            // 
+            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInicio.Image = global::Trabajo_final_Front_End.Properties.Resources.Logotipo_Cuadrados_Industrial_Negro_y_Blanco_1_;
+            this.btnInicio.Location = new System.Drawing.Point(0, 0);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(250, 140);
+            this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnInicio.TabIndex = 0;
+            this.btnInicio.TabStop = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // BarraDeTitulo
+            // 
+            this.BarraDeTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.BarraDeTitulo.Controls.Add(this.lbTituloFormHijo);
+            this.BarraDeTitulo.Controls.Add(this.iconCurrentChildForm);
+            this.BarraDeTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraDeTitulo.Location = new System.Drawing.Point(250, 0);
+            this.BarraDeTitulo.Name = "BarraDeTitulo";
+            this.BarraDeTitulo.Size = new System.Drawing.Size(1061, 80);
+            this.BarraDeTitulo.TabIndex = 3;
+            this.BarraDeTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraDeTitulo_MouseDown);
+            // 
+            // lbTituloFormHijo
+            // 
+            this.lbTituloFormHijo.AutoSize = true;
+            this.lbTituloFormHijo.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTituloFormHijo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbTituloFormHijo.Location = new System.Drawing.Point(62, 32);
+            this.lbTituloFormHijo.Name = "lbTituloFormHijo";
+            this.lbTituloFormHijo.Size = new System.Drawing.Size(60, 20);
+            this.lbTituloFormHijo.TabIndex = 5;
+            this.lbTituloFormHijo.Text = "Home";
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.IconSize = 40;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(26, 22);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(40, 40);
+            this.iconCurrentChildForm.TabIndex = 5;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
+            // pnEscritorio
+            // 
+            this.pnEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.pnEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnEscritorio.Location = new System.Drawing.Point(250, 80);
+            this.pnEscritorio.Name = "pnEscritorio";
+            this.pnEscritorio.Size = new System.Drawing.Size(1061, 631);
+            this.pnEscritorio.TabIndex = 5;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 711);
+            this.Controls.Add(this.pnEscritorio);
+            this.Controls.Add(this.BarraDeTitulo);
             this.Controls.Add(this.pnLateral);
-            this.IsMdiContainer = true;
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.pnLateral.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
+            this.BarraDeTitulo.ResumeLayout(false);
+            this.BarraDeTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +300,10 @@
         private FontAwesome.Sharp.IconButton ibtnVentas;
         private FontAwesome.Sharp.IconButton ibtnProveedor;
         private FontAwesome.Sharp.IconButton ibtnClientes;
+        private PictureBox btnInicio;
+        private Panel BarraDeTitulo;
+        private Label lbTituloFormHijo;
+        private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+        private Panel pnEscritorio;
     }
 }

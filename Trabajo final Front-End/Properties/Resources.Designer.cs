@@ -63,9 +63,19 @@ namespace Trabajo_final_Front_End.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Di_pane_ {
+        internal static System.Drawing.Bitmap Logotipo_Cuadrados_Industrial_Negro_y_Blanco {
             get {
-                object obj = ResourceManager.GetObject("Di_pane-", resourceCulture);
+                object obj = ResourceManager.GetObject("Logotipo Cuadrados Industrial Negro y Blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logotipo_Cuadrados_Industrial_Negro_y_Blanco_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Logotipo Cuadrados Industrial Negro y Blanco(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
