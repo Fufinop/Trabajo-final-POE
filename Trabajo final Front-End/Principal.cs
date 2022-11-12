@@ -84,10 +84,10 @@ namespace Trabajo_final_Front_End
 
         private void abriFormHijo(Form childForm)
         {
-            if (iconCurrentChildForm != null)
+            if (currentChildForm != null)
             {
                 //Abrir un solo form
-                //currentChildForm.Close();
+                currentChildForm.Close();
             }
 
             currentChildForm = childForm;
@@ -158,6 +158,7 @@ namespace Trabajo_final_Front_End
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             Reset();
         }
 
