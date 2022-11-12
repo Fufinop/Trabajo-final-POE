@@ -38,6 +38,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.BarraDeTitulo = new System.Windows.Forms.Panel();
+            this.btnCerrar = new FontAwesome.Sharp.IconPictureBox();
+            this.btnMinimizar = new FontAwesome.Sharp.IconPictureBox();
             this.lbTituloFormHijo = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnEscritorio = new System.Windows.Forms.Panel();
@@ -45,6 +47,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.BarraDeTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,6 +231,8 @@
             // BarraDeTitulo
             // 
             this.BarraDeTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.BarraDeTitulo.Controls.Add(this.btnCerrar);
+            this.BarraDeTitulo.Controls.Add(this.btnMinimizar);
             this.BarraDeTitulo.Controls.Add(this.lbTituloFormHijo);
             this.BarraDeTitulo.Controls.Add(this.iconCurrentChildForm);
             this.BarraDeTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -235,6 +241,36 @@
             this.BarraDeTitulo.Size = new System.Drawing.Size(1335, 80);
             this.BarraDeTitulo.TabIndex = 3;
             this.BarraDeTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraDeTitulo_MouseDown);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            this.btnCerrar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 40;
+            this.btnCerrar.Location = new System.Drawing.Point(1283, 22);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(40, 40);
+            this.btnCerrar.TabIndex = 7;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizar.IconSize = 40;
+            this.btnMinimizar.Location = new System.Drawing.Point(1237, 22);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimizar.TabIndex = 6;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // lbTituloFormHijo
             // 
@@ -263,12 +299,13 @@
             // 
             // pnEscritorio
             // 
+            this.pnEscritorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.pnEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnEscritorio.Location = new System.Drawing.Point(250, 80);
             this.pnEscritorio.Name = "pnEscritorio";
             this.pnEscritorio.Size = new System.Drawing.Size(1335, 861);
             this.pnEscritorio.TabIndex = 5;
+            this.pnEscritorio.Paint += new System.Windows.Forms.PaintEventHandler(this.pnEscritorio_Paint);
             // 
             // Principal
             // 
@@ -287,6 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.BarraDeTitulo.ResumeLayout(false);
             this.BarraDeTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.ResumeLayout(false);
 
@@ -306,5 +345,7 @@
         private Label lbTituloFormHijo;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private Panel pnEscritorio;
+        private FontAwesome.Sharp.IconPictureBox btnCerrar;
+        private FontAwesome.Sharp.IconPictureBox btnMinimizar;
     }
 }
