@@ -315,6 +315,10 @@
             this.Controls.Add(this.pnEscritorio);
             this.Controls.Add(this.BarraDeTitulo);
             this.Controls.Add(this.pnLateral);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1603, 988);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1603, 988);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
