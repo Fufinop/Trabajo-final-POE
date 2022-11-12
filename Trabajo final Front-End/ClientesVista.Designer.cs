@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo11
+    partial class ClientesVista
     {
         /// <summary>
         /// Required designer variable.
@@ -313,12 +313,12 @@
             // 
             this.ofdFoto.FileName = "openFileDialog1";
             // 
-            // Modulo11
+            // ClientesVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1205, 663);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.lnkFoto);
             this.Controls.Add(this.tbxEmail);
@@ -344,7 +344,7 @@
             this.Controls.Add(this.lbTelefono);
             this.Controls.Add(this.nudCliente);
             this.Controls.Add(this.lbIdCliente);
-            this.Name = "Modulo11";
+            this.Name = "ClientesVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modulo 11 | Clientes";
             this.Load += new System.EventHandler(this.Modulo11_Load);

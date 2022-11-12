@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo3
+    partial class InventarioVista
     {
         /// <summary>
         /// Required designer variable.
@@ -276,12 +276,12 @@
             this.cbxEstatus.Size = new System.Drawing.Size(151, 28);
             this.cbxEstatus.TabIndex = 33;
             // 
-            // Modulo3
+            // InventarioVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(826, 574);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Controls.Add(this.cbxEstatus);
             this.Controls.Add(this.lbEstatus);
             this.Controls.Add(this.tbxCantidad);
@@ -299,7 +299,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
-            this.Name = "Modulo3";
+            this.Name = "InventarioVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modulo3 | Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();

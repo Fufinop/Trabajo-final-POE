@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    public partial class Modulo5 : Form
+    public partial class ProveedorVista : Form
     {
-        public Modulo5()
+        public ProveedorVista()
         {
             InitializeComponent();
         }

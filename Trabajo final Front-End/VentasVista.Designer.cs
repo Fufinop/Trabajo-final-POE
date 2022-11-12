@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo8
+    partial class VentasVista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nudProducto = new System.Windows.Forms.NumericUpDown();
-            this.lbIdInventario = new System.Windows.Forms.Label();
-            this.lbIdProducto = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nudVenta = new System.Windows.Forms.NumericUpDown();
+            this.nudCliente = new System.Windows.Forms.NumericUpDown();
+            this.lbIdCliente = new System.Windows.Forms.Label();
+            this.lbIdVenta = new System.Windows.Forms.Label();
+            this.nudEmpleado = new System.Windows.Forms.NumericUpDown();
+            this.lbEmpleado = new System.Windows.Forms.Label();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,53 +47,100 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.nudProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceta)).BeginInit();
             this.SuspendLayout();
             // 
-            // nudProducto
+            // nudVenta
             // 
-            this.nudProducto.Location = new System.Drawing.Point(262, 27);
-            this.nudProducto.Maximum = new decimal(new int[] {
+            this.nudVenta.Location = new System.Drawing.Point(239, 27);
+            this.nudVenta.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.nudProducto.Name = "nudProducto";
-            this.nudProducto.Size = new System.Drawing.Size(150, 27);
-            this.nudProducto.TabIndex = 10;
+            this.nudVenta.Name = "nudVenta";
+            this.nudVenta.Size = new System.Drawing.Size(150, 27);
+            this.nudVenta.TabIndex = 10;
             // 
-            // lbIdInventario
+            // nudCliente
             // 
-            this.lbIdInventario.AutoSize = true;
-            this.lbIdInventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbIdInventario.Location = new System.Drawing.Point(136, 92);
-            this.lbIdInventario.Name = "lbIdInventario";
-            this.lbIdInventario.Size = new System.Drawing.Size(69, 28);
-            this.lbIdInventario.TabIndex = 8;
-            this.lbIdInventario.Text = "Cargo:";
+            this.nudCliente.Location = new System.Drawing.Point(239, 85);
+            this.nudCliente.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudCliente.Name = "nudCliente";
+            this.nudCliente.Size = new System.Drawing.Size(150, 27);
+            this.nudCliente.TabIndex = 9;
             // 
-            // lbIdProducto
+            // lbIdCliente
             // 
-            this.lbIdProducto.AutoSize = true;
-            this.lbIdProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbIdProducto.Location = new System.Drawing.Point(85, 27);
-            this.lbIdProducto.Name = "lbIdProducto";
-            this.lbIdProducto.Size = new System.Drawing.Size(120, 28);
-            this.lbIdProducto.TabIndex = 7;
-            this.lbIdProducto.Text = "Id del cargo:";
+            this.lbIdCliente.AutoSize = true;
+            this.lbIdCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbIdCliente.Location = new System.Drawing.Point(68, 84);
+            this.lbIdCliente.Name = "lbIdCliente";
+            this.lbIdCliente.Size = new System.Drawing.Size(127, 28);
+            this.lbIdCliente.TabIndex = 8;
+            this.lbIdCliente.Text = "Id del cliente:";
             // 
-            // textBox1
+            // lbIdVenta
             // 
-            this.textBox1.Location = new System.Drawing.Point(262, 92);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 92);
-            this.textBox1.TabIndex = 11;
+            this.lbIdVenta.AutoSize = true;
+            this.lbIdVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbIdVenta.Location = new System.Drawing.Point(62, 27);
+            this.lbIdVenta.Name = "lbIdVenta";
+            this.lbIdVenta.Size = new System.Drawing.Size(133, 28);
+            this.lbIdVenta.TabIndex = 7;
+            this.lbIdVenta.Text = "Id de la venta:";
+            // 
+            // nudEmpleado
+            // 
+            this.nudEmpleado.Location = new System.Drawing.Point(239, 145);
+            this.nudEmpleado.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudEmpleado.Name = "nudEmpleado";
+            this.nudEmpleado.Size = new System.Drawing.Size(150, 27);
+            this.nudEmpleado.TabIndex = 12;
+            // 
+            // lbEmpleado
+            // 
+            this.lbEmpleado.AutoSize = true;
+            this.lbEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbEmpleado.Location = new System.Drawing.Point(37, 144);
+            this.lbEmpleado.Name = "lbEmpleado";
+            this.lbEmpleado.Size = new System.Drawing.Size(158, 28);
+            this.lbEmpleado.TabIndex = 11;
+            this.lbEmpleado.Text = "Id del empleado:";
+            this.lbEmpleado.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbFecha.Location = new System.Drawing.Point(129, 202);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(66, 28);
+            this.lbFecha.TabIndex = 13;
+            this.lbFecha.Text = "Fecha:";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(239, 202);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(289, 27);
+            this.dtpFecha.TabIndex = 14;
+            this.dtpFecha.Value = new System.DateTime(2022, 11, 1, 0, 0, 0, 0);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(606, 228);
+            this.btnLimpiar.Location = new System.Drawing.Point(615, 228);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(94, 29);
             this.btnLimpiar.TabIndex = 20;
@@ -98,7 +149,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(606, 279);
+            this.btnCancelar.Location = new System.Drawing.Point(615, 279);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 29);
             this.btnCancelar.TabIndex = 19;
@@ -107,7 +158,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(606, 174);
+            this.btnEliminar.Location = new System.Drawing.Point(615, 174);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 29);
             this.btnEliminar.TabIndex = 18;
@@ -116,7 +167,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(606, 25);
+            this.btnNuevo.Location = new System.Drawing.Point(615, 25);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 29);
             this.btnNuevo.TabIndex = 17;
@@ -125,7 +176,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(606, 74);
+            this.btnBuscar.Location = new System.Drawing.Point(615, 74);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 29);
             this.btnBuscar.TabIndex = 16;
@@ -134,7 +185,7 @@
             // 
             // BtnActualizar
             // 
-            this.BtnActualizar.Location = new System.Drawing.Point(606, 123);
+            this.BtnActualizar.Location = new System.Drawing.Point(615, 123);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(94, 29);
             this.BtnActualizar.TabIndex = 15;
@@ -150,7 +201,7 @@
             this.Column2,
             this.cantidad,
             this.estatus});
-            this.dgvReceta.Location = new System.Drawing.Point(26, 228);
+            this.dgvReceta.Location = new System.Drawing.Point(56, 292);
             this.dgvReceta.Name = "dgvReceta";
             this.dgvReceta.ReadOnly = true;
             this.dgvReceta.RowHeadersWidth = 51;
@@ -190,12 +241,12 @@
             this.estatus.ReadOnly = true;
             this.estatus.Width = 125;
             // 
-            // Modulo8
+            // VentasVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(736, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Controls.Add(this.dgvReceta);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
@@ -203,14 +254,20 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.BtnActualizar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.nudProducto);
-            this.Controls.Add(this.lbIdInventario);
-            this.Controls.Add(this.lbIdProducto);
-            this.Name = "Modulo8";
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.lbFecha);
+            this.Controls.Add(this.nudEmpleado);
+            this.Controls.Add(this.lbEmpleado);
+            this.Controls.Add(this.nudVenta);
+            this.Controls.Add(this.nudCliente);
+            this.Controls.Add(this.lbIdCliente);
+            this.Controls.Add(this.lbIdVenta);
+            this.Name = "VentasVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo 8 | Cargos";
-            ((System.ComponentModel.ISupportInitialize)(this.nudProducto)).EndInit();
+            this.Text = "Modulo12 | Ventas";
+            ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,10 +276,14 @@
 
         #endregion
 
-        private NumericUpDown nudProducto;
-        private Label lbIdInventario;
-        private Label lbIdProducto;
-        private TextBox textBox1;
+        private NumericUpDown nudVenta;
+        private NumericUpDown nudCliente;
+        private Label lbIdCliente;
+        private Label lbIdVenta;
+        private NumericUpDown nudEmpleado;
+        private Label lbEmpleado;
+        private Label lbFecha;
+        private DateTimePicker dtpFecha;
         private Button btnLimpiar;
         private Button btnCancelar;
         private Button btnEliminar;

@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    public partial class Modulo11 : Form
+    public partial class ClientesVista : Form
     {
         CnCliente cnCliente = new CnCliente();
-        public Modulo11()
+        public ClientesVista()
         {
             InitializeComponent();
         }

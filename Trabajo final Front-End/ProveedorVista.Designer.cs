@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo4
+    partial class ProveedorVista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbTelefono = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.lbProveedor = new System.Windows.Forms.Label();
             this.nudProveedor = new System.Windows.Forms.NumericUpDown();
-            this.nudInventario = new System.Windows.Forms.NumericUpDown();
-            this.lbIdInventario = new System.Windows.Forms.Label();
-            this.lbIdProducto = new System.Windows.Forms.Label();
+            this.tbxTelefono = new System.Windows.Forms.TextBox();
+            this.tbxNombre = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.BtnActualizar = new System.Windows.Forms.Button();
-            this.dgvInventarioProveedor = new System.Windows.Forms.DataGridView();
+            this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudProveedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lbTelefono
+            // 
+            this.lbTelefono.AutoSize = true;
+            this.lbTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTelefono.Location = new System.Drawing.Point(69, 123);
+            this.lbTelefono.Name = "lbTelefono";
+            this.lbTelefono.Size = new System.Drawing.Size(219, 28);
+            this.lbTelefono.TabIndex = 0;
+            this.lbTelefono.Text = "Teléfono del proveedor:";
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbNombre.Location = new System.Drawing.Point(70, 65);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(218, 28);
+            this.lbNombre.TabIndex = 1;
+            this.lbNombre.Text = "Nombre del proveedor:";
+            this.lbNombre.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lbProveedor
+            // 
+            this.lbProveedor.AutoSize = true;
+            this.lbProveedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbProveedor.Location = new System.Drawing.Point(126, 18);
+            this.lbProveedor.Name = "lbProveedor";
+            this.lbProveedor.Size = new System.Drawing.Size(162, 28);
+            this.lbProveedor.TabIndex = 2;
+            this.lbProveedor.Text = "Id del proveedor:";
+            this.lbProveedor.Click += new System.EventHandler(this.label3_Click);
             // 
             // nudProveedor
             // 
-            this.nudProveedor.Location = new System.Drawing.Point(268, 42);
+            this.nudProveedor.Location = new System.Drawing.Point(331, 23);
             this.nudProveedor.Maximum = new decimal(new int[] {
             999,
             0,
@@ -58,44 +91,27 @@
             0});
             this.nudProveedor.Name = "nudProveedor";
             this.nudProveedor.Size = new System.Drawing.Size(150, 27);
-            this.nudProveedor.TabIndex = 10;
+            this.nudProveedor.TabIndex = 7;
+            this.nudProveedor.ValueChanged += new System.EventHandler(this.nudProducto_ValueChanged);
             // 
-            // nudInventario
+            // tbxTelefono
             // 
-            this.nudInventario.Location = new System.Drawing.Point(268, 100);
-            this.nudInventario.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.nudInventario.Name = "nudInventario";
-            this.nudInventario.Size = new System.Drawing.Size(150, 27);
-            this.nudInventario.TabIndex = 9;
+            this.tbxTelefono.Location = new System.Drawing.Point(331, 127);
+            this.tbxTelefono.Name = "tbxTelefono";
+            this.tbxTelefono.Size = new System.Drawing.Size(150, 27);
+            this.tbxTelefono.TabIndex = 8;
             // 
-            // lbIdInventario
+            // tbxNombre
             // 
-            this.lbIdInventario.AutoSize = true;
-            this.lbIdInventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbIdInventario.Location = new System.Drawing.Point(80, 99);
-            this.lbIdInventario.Name = "lbIdInventario";
-            this.lbIdInventario.Size = new System.Drawing.Size(158, 28);
-            this.lbIdInventario.TabIndex = 8;
-            this.lbIdInventario.Text = "Id del inventario:";
-            // 
-            // lbIdProducto
-            // 
-            this.lbIdProducto.AutoSize = true;
-            this.lbIdProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbIdProducto.Location = new System.Drawing.Point(76, 42);
-            this.lbIdProducto.Name = "lbIdProducto";
-            this.lbIdProducto.Size = new System.Drawing.Size(162, 28);
-            this.lbIdProducto.TabIndex = 7;
-            this.lbIdProducto.Text = "Id del proveedor:";
+            this.tbxNombre.Location = new System.Drawing.Point(331, 75);
+            this.tbxNombre.Name = "tbxNombre";
+            this.tbxNombre.Size = new System.Drawing.Size(150, 27);
+            this.tbxNombre.TabIndex = 9;
+            this.tbxNombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Enabled = false;
-            this.btnLimpiar.Location = new System.Drawing.Point(513, 172);
+            this.btnLimpiar.Location = new System.Drawing.Point(640, 129);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(94, 29);
             this.btnLimpiar.TabIndex = 20;
@@ -105,7 +121,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(513, 223);
+            this.btnCancelar.Location = new System.Drawing.Point(640, 180);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 29);
             this.btnCancelar.TabIndex = 19;
@@ -115,8 +131,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(513, 118);
+            this.btnEliminar.Location = new System.Drawing.Point(640, 75);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 29);
             this.btnEliminar.TabIndex = 18;
@@ -126,7 +141,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(513, 20);
+            this.btnNuevo.Location = new System.Drawing.Point(640, 24);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 29);
             this.btnNuevo.TabIndex = 17;
@@ -134,36 +149,26 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // BtnActualizar
+            // dgvProveedor
             // 
-            this.BtnActualizar.Enabled = false;
-            this.BtnActualizar.Location = new System.Drawing.Point(513, 67);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(94, 29);
-            this.BtnActualizar.TabIndex = 15;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.UseVisualStyleBackColor = true;
-            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
-            // 
-            // dgvInventarioProveedor
-            // 
-            this.dgvInventarioProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventarioProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProveedor.AllowUserToDeleteRows = false;
+            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.cantidad,
             this.estatus});
-            this.dgvInventarioProveedor.Location = new System.Drawing.Point(31, 250);
-            this.dgvInventarioProveedor.Name = "dgvInventarioProveedor";
-            this.dgvInventarioProveedor.ReadOnly = true;
-            this.dgvInventarioProveedor.RowHeadersWidth = 51;
-            this.dgvInventarioProveedor.RowTemplate.Height = 29;
-            this.dgvInventarioProveedor.Size = new System.Drawing.Size(431, 188);
-            this.dgvInventarioProveedor.TabIndex = 21;
-            this.dgvInventarioProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventarioProveedor_CellContentClick);
+            this.dgvProveedor.Location = new System.Drawing.Point(46, 227);
+            this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.ReadOnly = true;
+            this.dgvProveedor.RowHeadersWidth = 51;
+            this.dgvProveedor.RowTemplate.Height = 29;
+            this.dgvProveedor.Size = new System.Drawing.Size(553, 188);
+            this.dgvProveedor.TabIndex = 21;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "IdProducto";
+            this.Column1.HeaderText = "IdProveedor";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -171,11 +176,19 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "IdInventario";
+            this.Column2.HeaderText = "Nombre";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Telefono";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 125;
             // 
             // estatus
             // 
@@ -191,46 +204,47 @@
             this.cbxEstatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstatus.Location = new System.Drawing.Point(268, 148);
+            this.cbxEstatus.Location = new System.Drawing.Point(330, 173);
             this.cbxEstatus.Name = "cbxEstatus";
             this.cbxEstatus.Size = new System.Drawing.Size(151, 28);
-            this.cbxEstatus.TabIndex = 23;
+            this.cbxEstatus.TabIndex = 25;
             // 
             // lbEstatus
             // 
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEstatus.Location = new System.Drawing.Point(161, 148);
+            this.lbEstatus.Location = new System.Drawing.Point(211, 174);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(77, 28);
-            this.lbEstatus.TabIndex = 22;
+            this.lbEstatus.TabIndex = 24;
             this.lbEstatus.Text = "Estatus:";
             // 
-            // Modulo4
+            // ProveedorVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(666, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Controls.Add(this.cbxEstatus);
             this.Controls.Add(this.lbEstatus);
-            this.Controls.Add(this.dgvInventarioProveedor);
+            this.Controls.Add(this.dgvProveedor);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.BtnActualizar);
+            this.Controls.Add(this.tbxNombre);
+            this.Controls.Add(this.tbxTelefono);
             this.Controls.Add(this.nudProveedor);
-            this.Controls.Add(this.nudInventario);
-            this.Controls.Add(this.lbIdInventario);
-            this.Controls.Add(this.lbIdProducto);
-            this.Name = "Modulo4";
+            this.Controls.Add(this.lbProveedor);
+            this.Controls.Add(this.lbNombre);
+            this.Controls.Add(this.lbTelefono);
+            this.ForeColor = System.Drawing.Color.Coral;
+            this.Name = "ProveedorVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo4 | Inventario de proveedor";
-            this.Load += new System.EventHandler(this.Modulo4_Load);
+            this.Text = "Modulo5 | Proveedor";
+            this.Load += new System.EventHandler(this.Modulo5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudProveedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventarioProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,18 +252,20 @@
 
         #endregion
 
+        private Label lbTelefono;
+        private Label lbNombre;
+        private Label lbProveedor;
         private NumericUpDown nudProveedor;
-        private NumericUpDown nudInventario;
-        private Label lbIdInventario;
-        private Label lbIdProducto;
+        private TextBox tbxTelefono;
+        private TextBox tbxNombre;
         private Button btnLimpiar;
         private Button btnCancelar;
         private Button btnEliminar;
         private Button btnNuevo;
-        private Button BtnActualizar;
-        private DataGridView dgvInventarioProveedor;
+        private DataGridView dgvProveedor;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn cantidad;
         private DataGridViewTextBoxColumn estatus;
         private ComboBox cbxEstatus;
         private Label lbEstatus;

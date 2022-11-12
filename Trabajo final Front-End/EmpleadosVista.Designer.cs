@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_final_Front_End
 {
-    partial class Modulo10
+    partial class EmpleadosVista
     {
         /// <summary>
         /// Required designer variable.
@@ -273,12 +273,12 @@
             // 
             this.ofdFoto.FileName = "openFileDialog1";
             // 
-            // Modulo10
+            // EmpleadosVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(900, 590);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Controls.Add(this.picFoto);
             this.Controls.Add(this.lnkFoto);
             this.Controls.Add(this.lbImagen);
@@ -300,7 +300,7 @@
             this.Controls.Add(this.lbEmpleado);
             this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.lbApellidos);
-            this.Name = "Modulo10";
+            this.Name = "EmpleadosVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modulo 10 | Empleados";
             this.Load += new System.EventHandler(this.Modulo10_Load);

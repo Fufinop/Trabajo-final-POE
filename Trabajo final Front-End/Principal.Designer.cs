@@ -61,7 +61,7 @@
             this.pnLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnLateral.Location = new System.Drawing.Point(0, 0);
             this.pnLateral.Name = "pnLateral";
-            this.pnLateral.Size = new System.Drawing.Size(250, 711);
+            this.pnLateral.Size = new System.Drawing.Size(250, 941);
             this.pnLateral.TabIndex = 1;
             this.pnLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -232,7 +232,7 @@
             this.BarraDeTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraDeTitulo.Location = new System.Drawing.Point(250, 0);
             this.BarraDeTitulo.Name = "BarraDeTitulo";
-            this.BarraDeTitulo.Size = new System.Drawing.Size(1061, 80);
+            this.BarraDeTitulo.Size = new System.Drawing.Size(1335, 80);
             this.BarraDeTitulo.TabIndex = 3;
             this.BarraDeTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraDeTitulo_MouseDown);
             // 
@@ -267,18 +267,19 @@
             this.pnEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnEscritorio.Location = new System.Drawing.Point(250, 80);
             this.pnEscritorio.Name = "pnEscritorio";
-            this.pnEscritorio.Size = new System.Drawing.Size(1061, 631);
+            this.pnEscritorio.Size = new System.Drawing.Size(1335, 861);
             this.pnEscritorio.TabIndex = 5;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 711);
+            this.ClientSize = new System.Drawing.Size(1585, 941);
             this.Controls.Add(this.pnEscritorio);
             this.Controls.Add(this.BarraDeTitulo);
             this.Controls.Add(this.pnLateral);
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.pnLateral.ResumeLayout(false);

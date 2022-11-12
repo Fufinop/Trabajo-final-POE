@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    public partial class Modulo3 : Form
+    public partial class InventarioVista : Form
     {
-        public Modulo3()
+        public InventarioVista()
         {
             InitializeComponent();
         }

@@ -119,36 +119,36 @@ namespace Trabajo_final_Front_End
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            abriFormHijo(new Modulo10());
+            abriFormHijo(new EmpleadosVista());
         }
 
         private void ibtnClientes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            abriFormHijo(new Modulo11());
+            abriFormHijo(new ClientesVista());
         }
 
         private void ibtnProveedor_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            abriFormHijo(new Modulo5());
+            abriFormHijo(new ProveedorVista());
         }
         private void ibtnVentas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            abriFormHijo(new Modulo12());
+            abriFormHijo(new VentasVista());
         }
 
         private void ibtnInventario_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            abriFormHijo(new Modulo3());
+            abriFormHijo(new InventarioVista());
         }
 
         private void ibtnNegocio_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            abriFormHijo(new Modulo15());
+            abriFormHijo(new NegocioVista());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Trabajo_final_Front_End
 {
-    public partial class Modulo12 : Form
+    public partial class NegocioVista : Form
     {
-        public Modulo12()
+        public NegocioVista()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,10 +16,10 @@ using System.Windows.Forms;
 namespace Trabajo_final_Front_End
 {
     
-    public partial class Modulo10 : Form
+    public partial class EmpleadosVista : Form
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
-        public Modulo10()
+        public EmpleadosVista()
         {
             InitializeComponent();
         }
