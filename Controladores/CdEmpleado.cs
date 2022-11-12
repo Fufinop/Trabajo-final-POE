@@ -12,7 +12,7 @@ namespace Datos
 {
     public class CdEmpleado
     {
-        string cadenaConexion = "Server=localhost;User=root;Password=root;database=pasteleria";
+        string cadenaConexion = "Server=localhost;User=root;Password=root;database=Empresa";
 
         public void pruebaConexion()
         {

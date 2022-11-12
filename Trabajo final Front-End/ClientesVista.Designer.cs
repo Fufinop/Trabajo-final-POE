@@ -346,7 +346,7 @@
             this.Controls.Add(this.lbIdCliente);
             this.Name = "ClientesVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo 11 | Clientes";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Modulo11_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceta)).EndInit();

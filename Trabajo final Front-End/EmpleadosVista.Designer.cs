@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.lbApellidos = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbEmpleado = new System.Windows.Forms.Label();
@@ -36,69 +44,181 @@
             this.tbxSalario = new System.Windows.Forms.TextBox();
             this.tbxApellidos = new System.Windows.Forms.TextBox();
             this.tbxNombre = new System.Windows.Forms.TextBox();
+            this.lbTipo = new System.Windows.Forms.Label();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.lbImagen = new System.Windows.Forms.Label();
+            this.lnkFoto = new System.Windows.Forms.LinkLabel();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.cbxEstatus = new System.Windows.Forms.ComboBox();
-            this.lbEstatus = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.picFoto = new System.Windows.Forms.PictureBox();
-            this.lnkFoto = new System.Windows.Forms.LinkLabel();
-            this.lbImagen = new System.Windows.Forms.Label();
-            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ofdFoto
+            // 
+            this.ofdFoto.FileName = "openFileDialog1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1317, 24);
+            this.panel1.TabIndex = 38;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1317, 790);
+            this.tabControl1.TabIndex = 39;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.picFoto);
+            this.tabPage1.Controls.Add(this.lnkFoto);
+            this.tabPage1.Controls.Add(this.lbImagen);
+            this.tabPage1.Controls.Add(this.cbxTipo);
+            this.tabPage1.Controls.Add(this.lbTipo);
+            this.tabPage1.Controls.Add(this.btnCancelar);
+            this.tabPage1.Controls.Add(this.btnGuardar);
+            this.tabPage1.Controls.Add(this.tbxNombre);
+            this.tabPage1.Controls.Add(this.tbxApellidos);
+            this.tabPage1.Controls.Add(this.tbxSalario);
+            this.tabPage1.Controls.Add(this.nudEmpleado);
+            this.tabPage1.Controls.Add(this.lbSalario);
+            this.tabPage1.Controls.Add(this.lbEmpleado);
+            this.tabPage1.Controls.Add(this.lbNombre);
+            this.tabPage1.Controls.Add(this.lbApellidos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1309, 757);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Agregar";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Gray;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(577, 441);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(165, 40);
+            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(326, 441);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(165, 40);
+            this.btnGuardar.TabIndex = 46;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnEditar);
+            this.tabPage2.Controls.Add(this.btnLimpiar);
+            this.tabPage2.Controls.Add(this.btnEliminar);
+            this.tabPage2.Controls.Add(this.btnNuevo);
+            this.tabPage2.Controls.Add(this.btnBuscar);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.dgvEmpleado);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1309, 757);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Lista";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click_1);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1309, 757);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Modificar";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // lbApellidos
             // 
             this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbApellidos.Location = new System.Drawing.Point(89, 133);
+            this.lbApellidos.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbApellidos.ForeColor = System.Drawing.Color.Black;
+            this.lbApellidos.Location = new System.Drawing.Point(371, 209);
             this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(98, 28);
-            this.lbApellidos.TabIndex = 0;
+            this.lbApellidos.Size = new System.Drawing.Size(120, 25);
+            this.lbApellidos.TabIndex = 38;
             this.lbApellidos.Text = "Apellidos:";
             // 
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbNombre.Location = new System.Drawing.Point(90, 82);
+            this.lbNombre.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbNombre.ForeColor = System.Drawing.Color.Black;
+            this.lbNombre.Location = new System.Drawing.Point(372, 158);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(97, 28);
-            this.lbNombre.TabIndex = 1;
+            this.lbNombre.Size = new System.Drawing.Size(114, 25);
+            this.lbNombre.TabIndex = 39;
             this.lbNombre.Text = "Nombres:";
-            this.lbNombre.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbEmpleado
             // 
             this.lbEmpleado.AutoSize = true;
-            this.lbEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmpleado.Location = new System.Drawing.Point(29, 32);
+            this.lbEmpleado.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbEmpleado.ForeColor = System.Drawing.Color.Black;
+            this.lbEmpleado.Location = new System.Drawing.Point(294, 108);
             this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(158, 28);
-            this.lbEmpleado.TabIndex = 2;
+            this.lbEmpleado.Size = new System.Drawing.Size(189, 25);
+            this.lbEmpleado.TabIndex = 40;
             this.lbEmpleado.Text = "Id del empleado:";
             // 
             // lbSalario
             // 
             this.lbSalario.AutoSize = true;
-            this.lbSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbSalario.Location = new System.Drawing.Point(111, 179);
+            this.lbSalario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSalario.ForeColor = System.Drawing.Color.Black;
+            this.lbSalario.Location = new System.Drawing.Point(393, 255);
             this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(76, 28);
-            this.lbSalario.TabIndex = 3;
+            this.lbSalario.Size = new System.Drawing.Size(94, 25);
+            this.lbSalario.TabIndex = 41;
             this.lbSalario.Text = "Salario:";
             // 
             // nudEmpleado
             // 
-            this.nudEmpleado.Location = new System.Drawing.Point(213, 35);
+            this.nudEmpleado.Location = new System.Drawing.Point(495, 111);
             this.nudEmpleado.Maximum = new decimal(new int[] {
             999,
             0,
@@ -106,113 +226,39 @@
             0});
             this.nudEmpleado.Name = "nudEmpleado";
             this.nudEmpleado.Size = new System.Drawing.Size(150, 27);
-            this.nudEmpleado.TabIndex = 7;
+            this.nudEmpleado.TabIndex = 42;
             // 
             // tbxSalario
             // 
-            this.tbxSalario.Location = new System.Drawing.Point(213, 183);
+            this.tbxSalario.Location = new System.Drawing.Point(495, 259);
             this.tbxSalario.Name = "tbxSalario";
             this.tbxSalario.Size = new System.Drawing.Size(196, 27);
-            this.tbxSalario.TabIndex = 8;
-            this.tbxSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxApellido2_KeyPress);
+            this.tbxSalario.TabIndex = 43;
             // 
             // tbxApellidos
             // 
-            this.tbxApellidos.Location = new System.Drawing.Point(213, 137);
+            this.tbxApellidos.Location = new System.Drawing.Point(495, 213);
             this.tbxApellidos.Name = "tbxApellidos";
             this.tbxApellidos.Size = new System.Drawing.Size(196, 27);
-            this.tbxApellidos.TabIndex = 9;
+            this.tbxApellidos.TabIndex = 44;
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(213, 83);
+            this.tbxNombre.Location = new System.Drawing.Point(495, 159);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(196, 27);
-            this.tbxNombre.TabIndex = 10;
+            this.tbxNombre.TabIndex = 45;
             // 
-            // btnLimpiar
+            // lbTipo
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(784, 187);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(94, 29);
-            this.btnLimpiar.TabIndex = 20;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(784, 238);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(784, 133);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
-            this.btnEliminar.TabIndex = 18;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(784, 31);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(94, 29);
-            this.btnNuevo.TabIndex = 17;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(784, 81);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(94, 29);
-            this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dgvEmpleado
-            // 
-            this.dgvEmpleado.AllowUserToDeleteRows = false;
-            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.Location = new System.Drawing.Point(72, 390);
-            this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.ReadOnly = true;
-            this.dgvEmpleado.RowHeadersWidth = 51;
-            this.dgvEmpleado.RowTemplate.Height = 29;
-            this.dgvEmpleado.Size = new System.Drawing.Size(553, 188);
-            this.dgvEmpleado.TabIndex = 21;
-            this.dgvEmpleado.DoubleClick += new System.EventHandler(this.dgvEmpleado_DoubleClick);
-            // 
-            // cbxEstatus
-            // 
-            this.cbxEstatus.FormattingEnabled = true;
-            this.cbxEstatus.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cbxEstatus.Location = new System.Drawing.Point(213, 284);
-            this.cbxEstatus.Name = "cbxEstatus";
-            this.cbxEstatus.Size = new System.Drawing.Size(196, 28);
-            this.cbxEstatus.TabIndex = 29;
-            // 
-            // lbEstatus
-            // 
-            this.lbEstatus.AutoSize = true;
-            this.lbEstatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEstatus.Location = new System.Drawing.Point(110, 284);
-            this.lbEstatus.Name = "lbEstatus";
-            this.lbEstatus.Size = new System.Drawing.Size(77, 28);
-            this.lbEstatus.TabIndex = 28;
-            this.lbEstatus.Text = "Estatus:";
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTipo.ForeColor = System.Drawing.Color.Black;
+            this.lbTipo.Location = new System.Drawing.Point(414, 311);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(69, 25);
+            this.lbTipo.TabIndex = 52;
+            this.lbTipo.Text = "Tipo:";
             // 
             // cbxTipo
             // 
@@ -222,119 +268,196 @@
             "Cajero ",
             "Repartidor",
             "Panadero"});
-            this.cbxTipo.Location = new System.Drawing.Point(213, 235);
+            this.cbxTipo.Location = new System.Drawing.Point(495, 311);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(196, 28);
-            this.cbxTipo.TabIndex = 31;
+            this.cbxTipo.TabIndex = 53;
             // 
-            // lbTipo
+            // lbImagen
             // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbTipo.Location = new System.Drawing.Point(132, 235);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(55, 28);
-            this.lbTipo.TabIndex = 30;
-            this.lbTipo.Text = "Tipo:";
-            // 
-            // picFoto
-            // 
-            this.picFoto.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.picFoto.Location = new System.Drawing.Point(573, 107);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(182, 124);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 37;
-            this.picFoto.TabStop = false;
+            this.lbImagen.AutoSize = true;
+            this.lbImagen.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbImagen.ForeColor = System.Drawing.Color.Black;
+            this.lbImagen.Location = new System.Drawing.Point(96, 249);
+            this.lbImagen.Name = "lbImagen";
+            this.lbImagen.Size = new System.Drawing.Size(90, 25);
+            this.lbImagen.TabIndex = 54;
+            this.lbImagen.Text = "Imagen";
             // 
             // lnkFoto
             // 
             this.lnkFoto.AutoSize = true;
             this.lnkFoto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnkFoto.Location = new System.Drawing.Point(431, 153);
+            this.lnkFoto.Location = new System.Drawing.Point(86, 274);
             this.lnkFoto.Name = "lnkFoto";
             this.lnkFoto.Size = new System.Drawing.Size(111, 28);
-            this.lnkFoto.TabIndex = 36;
+            this.lnkFoto.TabIndex = 55;
             this.lnkFoto.TabStop = true;
             this.lnkFoto.Text = "Seleccionar";
-            this.lnkFoto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkFoto_LinkClicked);
             // 
-            // lbImagen
+            // picFoto
             // 
-            this.lbImagen.AutoSize = true;
-            this.lbImagen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbImagen.Location = new System.Drawing.Point(444, 125);
-            this.lbImagen.Name = "lbImagen";
-            this.lbImagen.Size = new System.Drawing.Size(77, 28);
-            this.lbImagen.TabIndex = 35;
-            this.lbImagen.Text = "Imagen";
+            this.picFoto.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.picFoto.Location = new System.Drawing.Point(52, 59);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(182, 170);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 56;
+            this.picFoto.TabStop = false;
             // 
-            // ofdFoto
+            // dgvEmpleado
             // 
-            this.ofdFoto.FileName = "openFileDialog1";
+            this.dgvEmpleado.AllowUserToDeleteRows = false;
+            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleado.Location = new System.Drawing.Point(199, 330);
+            this.dgvEmpleado.Name = "dgvEmpleado";
+            this.dgvEmpleado.ReadOnly = true;
+            this.dgvEmpleado.RowHeadersWidth = 51;
+            this.dgvEmpleado.RowTemplate.Height = 29;
+            this.dgvEmpleado.Size = new System.Drawing.Size(553, 188);
+            this.dgvEmpleado.TabIndex = 52;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(20, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1024, 34);
+            this.textBox1.TabIndex = 53;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Buscar Enpleado:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Location = new System.Drawing.Point(1063, 51);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 29);
+            this.btnBuscar.TabIndex = 55;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Location = new System.Drawing.Point(1063, 304);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(154, 47);
+            this.btnLimpiar.TabIndex = 58;
+            this.btnLimpiar.Text = "Borrar Todo";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_2);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(1063, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(154, 62);
+            this.btnEliminar.TabIndex = 57;
+            this.btnEliminar.Text = "Eliminar\r\n Fila";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_2);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(1063, 138);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(154, 44);
+            this.btnNuevo.TabIndex = 56;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(1063, 188);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(154, 42);
+            this.btnEditar.TabIndex = 59;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // EmpleadosVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1317, 814);
-            this.Controls.Add(this.picFoto);
-            this.Controls.Add(this.lnkFoto);
-            this.Controls.Add(this.lbImagen);
-            this.Controls.Add(this.cbxTipo);
-            this.Controls.Add(this.lbTipo);
-            this.Controls.Add(this.cbxEstatus);
-            this.Controls.Add(this.lbEstatus);
-            this.Controls.Add(this.dgvEmpleado);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.tbxNombre);
-            this.Controls.Add(this.tbxApellidos);
-            this.Controls.Add(this.tbxSalario);
-            this.Controls.Add(this.nudEmpleado);
-            this.Controls.Add(this.lbSalario);
-            this.Controls.Add(this.lbEmpleado);
-            this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.lbApellidos);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.Name = "EmpleadosVista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo 10 | Empleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Modulo10_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label lbApellidos;
-        private Label lbNombre;
-        private Label lbEmpleado;
-        private Label lbSalario;
-        private NumericUpDown nudEmpleado;
-        private TextBox tbxSalario;
-        private TextBox tbxApellidos;
-        private TextBox tbxNombre;
-        private Button btnLimpiar;
+        private OpenFileDialog ofdFoto;
+        private Panel panel1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
         private Button btnCancelar;
-        private Button btnEliminar;
-        private Button btnNuevo;
         private Button btnGuardar;
-        private DataGridView dgvEmpleado;
-        private ComboBox cbxEstatus;
-        private Label lbEstatus;
-        private ComboBox cbxTipo;
-        private Label lbTipo;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
         private PictureBox picFoto;
         private LinkLabel lnkFoto;
         private Label lbImagen;
-        private OpenFileDialog ofdFoto;
+        private ComboBox cbxTipo;
+        private Label lbTipo;
+        private TextBox tbxNombre;
+        private TextBox tbxApellidos;
+        private TextBox tbxSalario;
+        private NumericUpDown nudEmpleado;
+        private Label lbSalario;
+        private Label lbEmpleado;
+        private Label lbNombre;
+        private Label lbApellidos;
+        private DataGridView dgvEmpleado;
+        private Button btnBuscar;
+        private Label label1;
+        private TextBox textBox1;
+        private Button btnLimpiar;
+        private Button btnEliminar;
+        private Button btnNuevo;
+        private Button btnEditar;
     }
 }

@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(1317, 814);
             this.Name = "NegocioVista";
-            this.Text = "Modulo15";
+            this.Text = "Negocio";
             this.ResumeLayout(false);
 
         }

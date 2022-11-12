@@ -38,7 +38,6 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = string.Empty;
             tbxSalario.Text = string.Empty;
             cbxTipo.Text = string.Empty;
-            cbxEstatus.Text = string.Empty;
             picFoto = null;
         }
 
@@ -154,8 +153,57 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
             picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
+        }
+
+        private void lbEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

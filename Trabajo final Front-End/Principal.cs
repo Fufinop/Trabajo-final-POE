@@ -216,5 +216,15 @@ namespace Trabajo_final_Front_End
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void lbTituloFormHijo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

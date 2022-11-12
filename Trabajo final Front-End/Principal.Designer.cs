@@ -43,6 +43,7 @@
             this.lbTituloFormHijo = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnEscritorio = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
@@ -230,7 +231,7 @@
             // 
             // BarraDeTitulo
             // 
-            this.BarraDeTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.BarraDeTitulo.BackColor = System.Drawing.Color.LightGray;
             this.BarraDeTitulo.Controls.Add(this.btnCerrar);
             this.BarraDeTitulo.Controls.Add(this.btnMinimizar);
             this.BarraDeTitulo.Controls.Add(this.lbTituloFormHijo);
@@ -245,9 +246,9 @@
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Red;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
-            this.btnCerrar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrar.IconColor = System.Drawing.Color.Red;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 40;
             this.btnCerrar.Location = new System.Drawing.Point(1283, 22);
@@ -260,9 +261,9 @@
             // btnMinimizar
             // 
             this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.ForeColor = System.Drawing.Color.Black;
             this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 40;
             this.btnMinimizar.Location = new System.Drawing.Point(1237, 22);
@@ -276,16 +277,17 @@
             // 
             this.lbTituloFormHijo.AutoSize = true;
             this.lbTituloFormHijo.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTituloFormHijo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbTituloFormHijo.Location = new System.Drawing.Point(62, 32);
+            this.lbTituloFormHijo.ForeColor = System.Drawing.Color.Black;
+            this.lbTituloFormHijo.Location = new System.Drawing.Point(63, 31);
             this.lbTituloFormHijo.Name = "lbTituloFormHijo";
             this.lbTituloFormHijo.Size = new System.Drawing.Size(60, 20);
             this.lbTituloFormHijo.TabIndex = 5;
             this.lbTituloFormHijo.Text = "Home";
+            this.lbTituloFormHijo.Click += new System.EventHandler(this.lbTituloFormHijo_Click);
             // 
             // iconCurrentChildForm
             // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.LightGray;
             this.iconCurrentChildForm.ForeColor = System.Drawing.Color.DarkCyan;
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.DarkCyan;
@@ -299,19 +301,30 @@
             // 
             // pnEscritorio
             // 
-            this.pnEscritorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.pnEscritorio.BackColor = System.Drawing.Color.White;
+            this.pnEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnEscritorio.Location = new System.Drawing.Point(250, 80);
             this.pnEscritorio.Name = "pnEscritorio";
             this.pnEscritorio.Size = new System.Drawing.Size(1335, 861);
             this.pnEscritorio.TabIndex = 5;
             this.pnEscritorio.Paint += new System.Windows.Forms.PaintEventHandler(this.pnEscritorio_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(250, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1335, 24);
+            this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1585, 941);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnEscritorio);
             this.Controls.Add(this.BarraDeTitulo);
             this.Controls.Add(this.pnLateral);
@@ -351,5 +364,6 @@
         private Panel pnEscritorio;
         private FontAwesome.Sharp.IconPictureBox btnCerrar;
         private FontAwesome.Sharp.IconPictureBox btnMinimizar;
+        private Panel panel2;
     }
 }

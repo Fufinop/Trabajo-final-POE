@@ -263,8 +263,8 @@
             this.Controls.Add(this.lbIdCliente);
             this.Controls.Add(this.lbIdVenta);
             this.Name = "VentasVista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo12 | Ventas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Ventas";
             ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();

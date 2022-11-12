@@ -301,7 +301,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Name = "InventarioVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modulo3 | Inventario";
+            this.Text = "Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInventario)).EndInit();
             this.ResumeLayout(false);
