@@ -9,10 +9,13 @@ namespace Trabajo_final_Front_End
     public partial class EmpleadosVista : Form
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
-        public int id;
+        public static int id;
         public EmpleadosVista()
         {
             InitializeComponent();
+
+            cbxEstatus.Text = "Activo";
+            
         }
         private void cargarDatos()
         {
@@ -22,7 +25,6 @@ namespace Trabajo_final_Front_End
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            
         }
         private void limpiarForm()
         {
@@ -31,6 +33,7 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = string.Empty;
             tbxSalario.Text = string.Empty;
             cbxTipo.Text = string.Empty;
+            cbxEstatus.Text = "Activo";
             picFoto = null;
         }
 
@@ -226,6 +229,8 @@ namespace Trabajo_final_Front_End
             {
 
                 dgvEmpleado.Rows.RemoveAt(dgvEmpleado.CurrentRow.Index);
+                 //id = dgvEmpleado.Rows.
+                //MessageBox.Show(" " + id);
 
                 CeEmpleado cE = new CeEmpleado();
                 
@@ -271,25 +276,50 @@ namespace Trabajo_final_Front_End
 
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
+            limpiarForm();
+            nudEmpleado.Visible = false;
+            lbEmpleado.Visible = false;
+            cbxEstatus.Visible = false;
+            lbEstatus.Visible = false;
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Add(tabPage1);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            cbxEstatus.Visible = true;
+            lbEmpleado.Visible = true;
+            cbxEstatus.Visible = true;
+            lbEstatus.Visible = true;
+            cbxEstatus.Enabled = true;
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage1);
         }
 
         private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
-            nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["idEmpleado"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
+            try
+            {
+                id = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            
+            MessageBox.Show(" " + id);
+            */
+
+
+            MessageBox.Show("Ya puedes Editar este campo");
+            //nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["idEmpleado"].Value;
+            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
-            */
+            picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
+            cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
         }
     }
 }

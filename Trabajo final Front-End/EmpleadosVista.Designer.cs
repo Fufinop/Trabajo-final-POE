@@ -36,6 +36,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbxEstatus = new System.Windows.Forms.ComboBox();
+            this.lbEstatus = new System.Windows.Forms.Label();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.lnkFoto = new System.Windows.Forms.LinkLabel();
             this.lbImagen = new System.Windows.Forms.Label();
@@ -58,7 +60,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxPrueba = new System.Windows.Forms.TextBox();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -96,6 +98,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbxEstatus);
+            this.tabPage1.Controls.Add(this.lbEstatus);
             this.tabPage1.Controls.Add(this.picFoto);
             this.tabPage1.Controls.Add(this.lnkFoto);
             this.tabPage1.Controls.Add(this.lbImagen);
@@ -118,6 +122,29 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbxEstatus
+            // 
+            this.cbxEstatus.BackColor = System.Drawing.Color.White;
+            this.cbxEstatus.Enabled = false;
+            this.cbxEstatus.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbxEstatus.Location = new System.Drawing.Point(611, 431);
+            this.cbxEstatus.Name = "cbxEstatus";
+            this.cbxEstatus.Size = new System.Drawing.Size(196, 32);
+            this.cbxEstatus.TabIndex = 58;
+            // 
+            // lbEstatus
+            // 
+            this.lbEstatus.AutoSize = true;
+            this.lbEstatus.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbEstatus.ForeColor = System.Drawing.Color.Black;
+            this.lbEstatus.Location = new System.Drawing.Point(502, 431);
+            this.lbEstatus.Name = "lbEstatus";
+            this.lbEstatus.Size = new System.Drawing.Size(97, 25);
+            this.lbEstatus.TabIndex = 57;
+            this.lbEstatus.Text = "Estatus:";
             // 
             // picFoto
             // 
@@ -291,7 +318,7 @@
             this.tabPage2.Controls.Add(this.btnNuevo);
             this.tabPage2.Controls.Add(this.btnBuscar);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.tbxPrueba);
             this.tabPage2.Controls.Add(this.dgvEmpleado);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
@@ -383,13 +410,13 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Buscar Enpleado:";
             // 
-            // textBox1
+            // tbxPrueba
             // 
-            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(20, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1024, 34);
-            this.textBox1.TabIndex = 53;
+            this.tbxPrueba.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tbxPrueba.Location = new System.Drawing.Point(20, 49);
+            this.tbxPrueba.Name = "tbxPrueba";
+            this.tbxPrueba.Size = new System.Drawing.Size(1024, 34);
+            this.tbxPrueba.TabIndex = 53;
             // 
             // dgvEmpleado
             // 
@@ -494,10 +521,12 @@
         private DataGridView dgvEmpleado;
         private Button btnBuscar;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox tbxPrueba;
         private Button btnLimpiar;
         private Button btnEliminar;
         private Button btnNuevo;
         private Button btnEditar;
+        private ComboBox cbxEstatus;
+        private Label lbEstatus;
     }
 }

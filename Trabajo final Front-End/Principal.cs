@@ -24,7 +24,7 @@ namespace Trabajo_final_Front_End
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 60);
             pnLateral.Controls.Add(leftBorderBtn);
-
+            
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
