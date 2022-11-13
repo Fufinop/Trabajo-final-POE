@@ -25,6 +25,7 @@ namespace Trabajo_final_Front_End
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
+            picFoto = null;
         }
         private void limpiarForm()
         {
@@ -70,11 +71,7 @@ namespace Trabajo_final_Front_End
             limpiarForm();
         }
 
-        private void cbxEstatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool resultado;
@@ -143,25 +140,7 @@ namespace Trabajo_final_Front_End
             picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
         }
 
-        private void lbEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevo_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
@@ -238,14 +217,24 @@ namespace Trabajo_final_Front_End
 
         private void lnkFoto_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ofdFoto.FileName = string.Empty;
-
-            if (ofdFoto.ShowDialog() == DialogResult.OK)
+            try
             {
-                picFoto.Load(ofdFoto.FileName);
-            }
+                ofdFoto.FileName = string.Empty;
 
-            ofdFoto.FileName = string.Empty;
+                if (ofdFoto.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("El pepe");
+                    picFoto.Load(ofdFoto.FileName);
+                }
+
+                ofdFoto.FileName = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+            
         }
 
         private void btnNuevo_Click_2(object sender, EventArgs e)
@@ -307,6 +296,9 @@ namespace Trabajo_final_Front_End
                 cargarDatos();
                 limpiarForm();
             }
+
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
         }
 
         //Metodos sin usar
@@ -334,6 +326,25 @@ namespace Trabajo_final_Front_End
         {
 
         }
+        private void lbEmpleado_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void cbxEstatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
