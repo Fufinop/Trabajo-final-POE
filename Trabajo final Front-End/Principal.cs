@@ -158,8 +158,17 @@ namespace Trabajo_final_Front_End
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            try
+            {
+                currentChildForm.Close();
             Reset();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         private void Reset()

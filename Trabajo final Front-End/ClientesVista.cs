@@ -114,7 +114,7 @@ namespace Trabajo_final_Front_End
         }
         private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
+            nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
             tbxNombre.Text = dgvReceta.CurrentRow.Cells["Nombre"].Value.ToString();
             tbxApellidos.Text = dgvReceta.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxDireccion.Text = dgvReceta.CurrentRow.Cells["Direccion"].Value.ToString();
@@ -122,7 +122,7 @@ namespace Trabajo_final_Front_End
             tbxTelefono.Text = dgvReceta.CurrentRow.Cells["Telefono"].Value.ToString();
             tbxEmail.Text = dgvReceta.CurrentRow.Cells["Email"].Value.ToString();
             cbxEstatus.Text = dgvReceta.CurrentRow.Cells["Estatus"].Value.ToString();
-            //picFoto.Load(dgvReceta.CurrentRow.Cells["Foto"].Value.ToString());
+            picFoto.Load(dgvReceta.CurrentRow.Cells["Foto"].Value.ToString());
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

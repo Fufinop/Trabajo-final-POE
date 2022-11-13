@@ -1,4 +1,6 @@
-﻿using Entidad;
+﻿using Controladores;
+using Entidad;
+using Modelos;
 using Negocio;
 
 namespace Trabajo_final_Front_End
@@ -7,6 +9,7 @@ namespace Trabajo_final_Front_End
     public partial class EmpleadosVista : Form
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
+        public int id;
         public EmpleadosVista()
         {
             InitializeComponent();
@@ -193,7 +196,7 @@ namespace Trabajo_final_Front_End
                 cnEmpleado.editarEmpleado(ceEmpleado);
             }
 
-            cnEmpleado.crearEmpleado(ceEmpleado);
+            
 
             cargarDatos();
             limpiarForm();
@@ -219,7 +222,18 @@ namespace Trabajo_final_Front_End
 
         private void btnEliminar_Click_2(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Seguro que deseas eliminar el registro selecionado?", "Peligo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
 
+                dgvEmpleado.Rows.RemoveAt(dgvEmpleado.CurrentRow.Index);
+
+                CeEmpleado cE = new CeEmpleado();
+                
+                cE.Id = id;
+                cnEmpleado.eliminarEmpleado(cE);
+                cargarDatos();
+                limpiarForm();
+            }
         }
 
         private void btnLimpiar_Click_2(object sender, EventArgs e)
@@ -259,6 +273,23 @@ namespace Trabajo_final_Front_End
         {
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Add(tabPage1);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+            nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["idEmpleado"].Value;
+            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
+            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
+            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
+            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
+            picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
+            */
         }
     }
 }
