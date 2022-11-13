@@ -161,7 +161,7 @@ namespace Trabajo_final_Front_End
             try
             {
                 currentChildForm.Close();
-            Reset();
+                Reset();
             }
             catch (Exception)
             {

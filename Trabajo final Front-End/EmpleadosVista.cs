@@ -37,16 +37,7 @@ namespace Trabajo_final_Front_End
             picFoto = null;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnActualizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -182,6 +173,7 @@ namespace Trabajo_final_Front_End
             ceEmpleado.Salario = tbxSalario.Text;
             ceEmpleado.Tipo = cbxTipo.Text;
             ceEmpleado.Foto = picFoto.ImageLocation;
+            ceEmpleado.Estatus = cbxEstatus.Text;
 
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
 
@@ -207,15 +199,7 @@ namespace Trabajo_final_Front_End
             tabControl1.TabPages.Add(tabPage2);
         }
 
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -264,16 +248,6 @@ namespace Trabajo_final_Front_End
             ofdFoto.FileName = string.Empty;
         }
 
-        private void lbImagen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
             limpiarForm();
@@ -313,7 +287,7 @@ namespace Trabajo_final_Front_End
 
 
             MessageBox.Show("Ya puedes Editar este campo");
-            //nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["idEmpleado"].Value;
+            nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
             tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
@@ -321,5 +295,45 @@ namespace Trabajo_final_Front_End
             picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
         }
+
+        private void btnEliminar_Click_3(object sender, EventArgs e)
+        {
+            if (nudEmpleado.Value == 0) return;
+
+            if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                CeEmpleado cE = new CeEmpleado();
+                cnEmpleado.eliminarEmpleado(cE);
+                cargarDatos();
+                limpiarForm();
+            }
+        }
+
+        //Metodos sin usar
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void lbImagen_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

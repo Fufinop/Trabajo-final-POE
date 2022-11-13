@@ -58,15 +58,16 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `pasteleria`.`empleado` SET `idEmpleado`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Foto`='" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`empleado` SET `Nombres`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Imagen`='" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "', `Estatus`='" + cE.Estatus + "' WHERE  `idEmpleado`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
                 MessageBox.Show("Registro actualizado");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
@@ -79,15 +80,16 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `empleado` WHERE  `idCliente`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
                 MessageBox.Show("Registro Eliminado");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
