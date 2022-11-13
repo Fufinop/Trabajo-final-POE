@@ -25,7 +25,7 @@ namespace Trabajo_final_Front_End
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            picFoto = null;
+            picImagen = null;
         }
         private void limpiarForm()
         {
@@ -35,7 +35,7 @@ namespace Trabajo_final_Front_End
             tbxSalario.Text = string.Empty;
             cbxTipo.Text = string.Empty;
             cbxEstatus.Text = "Activo";
-            picFoto = null;
+            picImagen = null;
         }
 
         
@@ -54,17 +54,7 @@ namespace Trabajo_final_Front_End
             }
         }
 
-        private void lnkFoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ofdFoto.FileName = string.Empty;
-
-            if (ofdFoto.ShowDialog() == DialogResult.OK)
-            {
-                picFoto.Load(ofdFoto.FileName);
-            }
-
-            ofdFoto.FileName = string.Empty;
-        }
+        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -81,7 +71,7 @@ namespace Trabajo_final_Front_End
             ceempleado.Apellidos = tbxApellidos.Text;
             ceempleado.Salario = tbxSalario.Text;
             ceempleado.Tipo = cbxTipo.Text;
-            ceempleado.Foto = picFoto.ImageLocation;
+            //ceempleado.Foto = picImagen.ImageLocation;
 
             resultado = cnEmpleado.validarDatos(ceempleado);
 
@@ -137,7 +127,7 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
+            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
         }
 
         
@@ -151,7 +141,7 @@ namespace Trabajo_final_Front_End
             ceEmpleado.Apellidos = tbxApellidos.Text;
             ceEmpleado.Salario = tbxSalario.Text;
             ceEmpleado.Tipo = cbxTipo.Text;
-            ceEmpleado.Foto = picFoto.ImageLocation;
+            ceEmpleado.Foto = picImagen.ImageLocation;
             ceEmpleado.Estatus = cbxEstatus.Text;
 
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
@@ -215,27 +205,7 @@ namespace Trabajo_final_Front_End
             }
         }
 
-        private void lnkFoto_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                ofdFoto.FileName = string.Empty;
-
-                if (ofdFoto.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("El pepe");
-                    picFoto.Load(ofdFoto.FileName);
-                }
-
-                ofdFoto.FileName = string.Empty;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
-            
-        }
+        
 
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
@@ -281,7 +251,7 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
+            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
         }
 
@@ -344,6 +314,31 @@ namespace Trabajo_final_Front_End
         }
         private void cbxEstatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
+
+            //ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            ofdSeleccionar.Title = "Seleccionar Imagen";
+
+            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    picPrueba.Image = Image.FromFile(ofdSeleccionar.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.ToString);
+                    throw;
+                }
+                
+            }
+
 
         }
     }

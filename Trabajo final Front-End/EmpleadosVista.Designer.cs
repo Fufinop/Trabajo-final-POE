@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.picPrueba = new System.Windows.Forms.PictureBox();
+            this.picImagen = new System.Windows.Forms.PictureBox();
+            this.btnExaminar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
-            this.picFoto = new System.Windows.Forms.PictureBox();
-            this.lnkFoto = new System.Windows.Forms.LinkLabel();
             this.lbImagen = new System.Windows.Forms.Label();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lbTipo = new System.Windows.Forms.Label();
@@ -62,17 +62,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbxPrueba = new System.Windows.Forms.TextBox();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ofdFoto
-            // 
-            this.ofdFoto.FileName = "openFileDialog1";
             // 
             // panel1
             // 
@@ -98,11 +96,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.picPrueba);
+            this.tabPage1.Controls.Add(this.picImagen);
+            this.tabPage1.Controls.Add(this.btnExaminar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.cbxEstatus);
             this.tabPage1.Controls.Add(this.lbEstatus);
-            this.tabPage1.Controls.Add(this.picFoto);
-            this.tabPage1.Controls.Add(this.lnkFoto);
             this.tabPage1.Controls.Add(this.lbImagen);
             this.tabPage1.Controls.Add(this.cbxTipo);
             this.tabPage1.Controls.Add(this.lbTipo);
@@ -123,6 +122,39 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // picPrueba
+            // 
+            this.picPrueba.BackColor = System.Drawing.Color.Silver;
+            this.picPrueba.Location = new System.Drawing.Point(103, 70);
+            this.picPrueba.Name = "picPrueba";
+            this.picPrueba.Size = new System.Drawing.Size(247, 233);
+            this.picPrueba.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPrueba.TabIndex = 62;
+            this.picPrueba.TabStop = false;
+            // 
+            // picImagen
+            // 
+            this.picImagen.BackColor = System.Drawing.Color.DarkGray;
+            this.picImagen.Location = new System.Drawing.Point(103, 70);
+            this.picImagen.Name = "picImagen";
+            this.picImagen.Size = new System.Drawing.Size(247, 233);
+            this.picImagen.TabIndex = 61;
+            this.picImagen.TabStop = false;
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExaminar.ForeColor = System.Drawing.Color.White;
+            this.btnExaminar.Location = new System.Drawing.Point(140, 339);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(165, 40);
+            this.btnExaminar.TabIndex = 60;
+            this.btnExaminar.Text = "Examinar";
+            this.btnExaminar.UseVisualStyleBackColor = false;
+            this.btnExaminar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
@@ -160,28 +192,6 @@
             this.lbEstatus.Size = new System.Drawing.Size(97, 25);
             this.lbEstatus.TabIndex = 57;
             this.lbEstatus.Text = "Estatus:";
-            // 
-            // picFoto
-            // 
-            this.picFoto.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.picFoto.Location = new System.Drawing.Point(103, 65);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(247, 233);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 56;
-            this.picFoto.TabStop = false;
-            // 
-            // lnkFoto
-            // 
-            this.lnkFoto.AutoSize = true;
-            this.lnkFoto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnkFoto.Location = new System.Drawing.Point(164, 336);
-            this.lnkFoto.Name = "lnkFoto";
-            this.lnkFoto.Size = new System.Drawing.Size(111, 28);
-            this.lnkFoto.TabIndex = 55;
-            this.lnkFoto.TabStop = true;
-            this.lnkFoto.Text = "Seleccionar";
-            this.lnkFoto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkFoto_LinkClicked_1);
             // 
             // lbImagen
             // 
@@ -472,6 +482,10 @@
             this.dgvEmpleado.TabIndex = 52;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             // 
+            // ofdSeleccionar
+            // 
+            this.ofdSeleccionar.FileName = "openFileDialog1";
+            // 
             // EmpleadosVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -488,7 +502,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -498,15 +513,12 @@
         }
 
         #endregion
-        private OpenFileDialog ofdFoto;
         private Panel panel1;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Button btnCancelar;
         private Button btnGuardar;
         private TabPage tabPage2;
-        private PictureBox picFoto;
-        private LinkLabel lnkFoto;
         private Label lbImagen;
         private ComboBox cbxTipo;
         private Label lbTipo;
@@ -528,5 +540,9 @@
         private ComboBox cbxEstatus;
         private Label lbEstatus;
         private Button btnEliminar;
+        private Button btnExaminar;
+        private OpenFileDialog ofdSeleccionar;
+        private PictureBox picImagen;
+        private PictureBox picPrueba;
     }
 }
