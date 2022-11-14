@@ -1,7 +1,9 @@
 ﻿using Controladores;
 using Entidad;
 using Modelos;
+using MySql.Data.MySqlClient;
 using Negocio;
+using System.Drawing.Imaging;
 
 namespace Trabajo_final_Front_End
 {
@@ -9,7 +11,6 @@ namespace Trabajo_final_Front_End
     public partial class EmpleadosVista : Form
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
-        public static int id;
         public EmpleadosVista()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Trabajo_final_Front_End
             tbxSalario.Text = string.Empty;
             cbxTipo.Text = string.Empty;
             cbxEstatus.Text = "Activo";
-            picImagen = null;
+            picPrueba = null;
         }
 
         
@@ -134,6 +135,12 @@ namespace Trabajo_final_Front_End
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+            /*Convercion de la imagen
+            MemoryStream ms = new MemoryStream();
+            picPrueba.Image.Save(ms, ImageFormat.Jpeg);
+            byte[] img = ms.ToArray();
+            */
+
             bool Resultado;
             CeEmpleado ceEmpleado = new CeEmpleado();
             ceEmpleado.Id = (int)nudEmpleado.Value;
@@ -141,9 +148,8 @@ namespace Trabajo_final_Front_End
             ceEmpleado.Apellidos = tbxApellidos.Text;
             ceEmpleado.Salario = tbxSalario.Text;
             ceEmpleado.Tipo = cbxTipo.Text;
-            ceEmpleado.Foto = picImagen.ImageLocation;
             ceEmpleado.Estatus = cbxEstatus.Text;
-
+            //ceEmpleado.Foto = img;
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
 
             if (Resultado == false)
@@ -187,7 +193,7 @@ namespace Trabajo_final_Front_End
 
                 CeEmpleado cE = new CeEmpleado();
                 
-                cE.Id = id;
+                //cE.Id = id;
                 cnEmpleado.eliminarEmpleado(cE);
                 cargarDatos();
                 limpiarForm();
@@ -253,6 +259,19 @@ namespace Trabajo_final_Front_End
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
             //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
+
+            //Reader
+            //MySqlDataReader reader = 
+
+            try
+            {
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnEliminar_Click_3(object sender, EventArgs e)
@@ -321,7 +340,7 @@ namespace Trabajo_final_Front_End
         {
             OpenFileDialog ofdSeleccionar = new OpenFileDialog();
 
-            //ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
+            ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
             ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             ofdSeleccionar.Title = "Seleccionar Imagen";
 

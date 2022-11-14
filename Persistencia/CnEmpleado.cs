@@ -38,11 +38,7 @@ namespace Negocio
                 Resultado = false;
                 MessageBox.Show("El tipo es obligatorio");
             }
-            if (empleado.Foto == String.Empty)
-            {
-                Resultado = false;
-                MessageBox.Show("La foto es obligatoria");
-            }
+            
             
 
             return Resultado;
