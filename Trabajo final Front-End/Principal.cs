@@ -101,21 +101,6 @@ namespace Trabajo_final_Front_End
             lbTituloFormHijo.Text = childForm.Text;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
@@ -149,11 +134,6 @@ namespace Trabajo_final_Front_End
         {
             ActivateButton(sender, RGBColors.color6);
             abriFormHijo(new NegocioVista());
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -199,11 +179,6 @@ namespace Trabajo_final_Front_End
             
         }
 
-        private void pnEscritorio_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -226,12 +201,36 @@ namespace Trabajo_final_Front_End
             WindowState = FormWindowState.Minimized;
         }
 
+        //Eventos sin usar
+
         private void lbTituloFormHijo_Click(object sender, EventArgs e)
         {
 
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void pnEscritorio_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
         {
 
         }
