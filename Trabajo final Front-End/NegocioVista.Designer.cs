@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -42,18 +42,16 @@
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
             this.lbImagen = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.lbTipo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.tbxNombre = new System.Windows.Forms.TextBox();
+            this.tbxCiudad = new System.Windows.Forms.TextBox();
             this.tbxApellidos = new System.Windows.Forms.TextBox();
-            this.tbxSalario = new System.Windows.Forms.TextBox();
-            this.nudEmpleado = new System.Windows.Forms.NumericUpDown();
-            this.lbSalario = new System.Windows.Forms.Label();
-            this.lbEmpleado = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.lbApellidos = new System.Windows.Forms.Label();
+            this.tbxSucursal = new System.Windows.Forms.TextBox();
+            this.nudNegocio = new System.Windows.Forms.NumericUpDown();
+            this.lbSucursal = new System.Windows.Forms.Label();
+            this.lbIdSucursal = new System.Windows.Forms.Label();
+            this.lbCiudad = new System.Windows.Forms.Label();
+            this.lbDireccion = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -67,7 +65,7 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNegocio)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -103,18 +101,16 @@
             this.tabPage1.Controls.Add(this.cbxEstatus);
             this.tabPage1.Controls.Add(this.lbEstatus);
             this.tabPage1.Controls.Add(this.lbImagen);
-            this.tabPage1.Controls.Add(this.cbxTipo);
-            this.tabPage1.Controls.Add(this.lbTipo);
             this.tabPage1.Controls.Add(this.btnCancelar);
             this.tabPage1.Controls.Add(this.btnGuardar);
-            this.tabPage1.Controls.Add(this.tbxNombre);
+            this.tabPage1.Controls.Add(this.tbxCiudad);
             this.tabPage1.Controls.Add(this.tbxApellidos);
-            this.tabPage1.Controls.Add(this.tbxSalario);
-            this.tabPage1.Controls.Add(this.nudEmpleado);
-            this.tabPage1.Controls.Add(this.lbSalario);
-            this.tabPage1.Controls.Add(this.lbEmpleado);
-            this.tabPage1.Controls.Add(this.lbNombre);
-            this.tabPage1.Controls.Add(this.lbApellidos);
+            this.tabPage1.Controls.Add(this.tbxSucursal);
+            this.tabPage1.Controls.Add(this.nudNegocio);
+            this.tabPage1.Controls.Add(this.lbSucursal);
+            this.tabPage1.Controls.Add(this.lbIdSucursal);
+            this.tabPage1.Controls.Add(this.lbCiudad);
+            this.tabPage1.Controls.Add(this.lbDireccion);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -177,7 +173,7 @@
             this.cbxEstatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstatus.Location = new System.Drawing.Point(611, 431);
+            this.cbxEstatus.Location = new System.Drawing.Point(611, 384);
             this.cbxEstatus.Name = "cbxEstatus";
             this.cbxEstatus.Size = new System.Drawing.Size(196, 32);
             this.cbxEstatus.TabIndex = 58;
@@ -187,7 +183,7 @@
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbEstatus.ForeColor = System.Drawing.Color.Black;
-            this.lbEstatus.Location = new System.Drawing.Point(502, 431);
+            this.lbEstatus.Location = new System.Drawing.Point(499, 384);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(97, 25);
             this.lbEstatus.TabIndex = 57;
@@ -204,30 +200,6 @@
             this.lbImagen.TabIndex = 54;
             this.lbImagen.Text = "Imagen";
             this.lbImagen.Click += new System.EventHandler(this.lbImagen_Click);
-            // 
-            // cbxTipo
-            // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Repostero ",
-            "Cajero ",
-            "Repartidor",
-            "Panadero"});
-            this.cbxTipo.Location = new System.Drawing.Point(611, 380);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(196, 32);
-            this.cbxTipo.TabIndex = 53;
-            // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTipo.ForeColor = System.Drawing.Color.Black;
-            this.lbTipo.Location = new System.Drawing.Point(530, 380);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(69, 25);
-            this.lbTipo.TabIndex = 52;
-            this.lbTipo.Text = "Tipo:";
             // 
             // btnCancelar
             // 
@@ -257,12 +229,12 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
-            // tbxNombre
+            // tbxCiudad
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(611, 228);
-            this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(196, 34);
-            this.tbxNombre.TabIndex = 45;
+            this.tbxCiudad.Location = new System.Drawing.Point(611, 228);
+            this.tbxCiudad.Name = "tbxCiudad";
+            this.tbxCiudad.Size = new System.Drawing.Size(196, 34);
+            this.tbxCiudad.TabIndex = 45;
             // 
             // tbxApellidos
             // 
@@ -271,69 +243,72 @@
             this.tbxApellidos.Size = new System.Drawing.Size(196, 34);
             this.tbxApellidos.TabIndex = 44;
             // 
-            // tbxSalario
+            // tbxSucursal
             // 
-            this.tbxSalario.Location = new System.Drawing.Point(611, 328);
-            this.tbxSalario.Name = "tbxSalario";
-            this.tbxSalario.Size = new System.Drawing.Size(196, 34);
-            this.tbxSalario.TabIndex = 43;
+            this.tbxSucursal.Location = new System.Drawing.Point(611, 328);
+            this.tbxSucursal.Name = "tbxSucursal";
+            this.tbxSucursal.Size = new System.Drawing.Size(196, 34);
+            this.tbxSucursal.TabIndex = 43;
             // 
-            // nudEmpleado
+            // nudNegocio
             // 
-            this.nudEmpleado.Enabled = false;
-            this.nudEmpleado.Location = new System.Drawing.Point(611, 180);
-            this.nudEmpleado.Maximum = new decimal(new int[] {
+            this.nudNegocio.Enabled = false;
+            this.nudNegocio.Location = new System.Drawing.Point(611, 180);
+            this.nudNegocio.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.nudEmpleado.Name = "nudEmpleado";
-            this.nudEmpleado.Size = new System.Drawing.Size(150, 34);
-            this.nudEmpleado.TabIndex = 42;
+            this.nudNegocio.Name = "nudNegocio";
+            this.nudNegocio.Size = new System.Drawing.Size(150, 34);
+            this.nudNegocio.TabIndex = 42;
             // 
-            // lbSalario
+            // lbSucursal
             // 
-            this.lbSalario.AutoSize = true;
-            this.lbSalario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSalario.ForeColor = System.Drawing.Color.Black;
-            this.lbSalario.Location = new System.Drawing.Point(509, 324);
-            this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(94, 25);
-            this.lbSalario.TabIndex = 41;
-            this.lbSalario.Text = "Salario:";
+            this.lbSucursal.AutoSize = true;
+            this.lbSucursal.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSucursal.ForeColor = System.Drawing.Color.Black;
+            this.lbSucursal.Location = new System.Drawing.Point(486, 337);
+            this.lbSucursal.Name = "lbSucursal";
+            this.lbSucursal.Size = new System.Drawing.Size(110, 25);
+            this.lbSucursal.TabIndex = 41;
+            this.lbSucursal.Text = "Sucursal:";
+            this.lbSucursal.Click += new System.EventHandler(this.lbSalario_Click);
             // 
-            // lbEmpleado
+            // lbIdSucursal
             // 
-            this.lbEmpleado.AutoSize = true;
-            this.lbEmpleado.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbEmpleado.ForeColor = System.Drawing.Color.Black;
-            this.lbEmpleado.Location = new System.Drawing.Point(410, 177);
-            this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(189, 25);
-            this.lbEmpleado.TabIndex = 40;
-            this.lbEmpleado.Text = "Id del empleado:";
+            this.lbIdSucursal.AutoSize = true;
+            this.lbIdSucursal.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbIdSucursal.ForeColor = System.Drawing.Color.Black;
+            this.lbIdSucursal.Location = new System.Drawing.Point(403, 180);
+            this.lbIdSucursal.Name = "lbIdSucursal";
+            this.lbIdSucursal.Size = new System.Drawing.Size(193, 25);
+            this.lbIdSucursal.TabIndex = 40;
+            this.lbIdSucursal.Text = "Id de la sucursal:";
+            this.lbIdSucursal.Click += new System.EventHandler(this.lbEmpleado_Click_1);
             // 
-            // lbNombre
+            // lbCiudad
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbNombre.ForeColor = System.Drawing.Color.Black;
-            this.lbNombre.Location = new System.Drawing.Point(488, 227);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(114, 25);
-            this.lbNombre.TabIndex = 39;
-            this.lbNombre.Text = "Nombres:";
+            this.lbCiudad.AutoSize = true;
+            this.lbCiudad.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbCiudad.ForeColor = System.Drawing.Color.Black;
+            this.lbCiudad.Location = new System.Drawing.Point(501, 228);
+            this.lbCiudad.Name = "lbCiudad";
+            this.lbCiudad.Size = new System.Drawing.Size(95, 25);
+            this.lbCiudad.TabIndex = 39;
+            this.lbCiudad.Text = "Cuidad:";
+            this.lbCiudad.Click += new System.EventHandler(this.lbNombre_Click);
             // 
-            // lbApellidos
+            // lbDireccion
             // 
-            this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbApellidos.ForeColor = System.Drawing.Color.Black;
-            this.lbApellidos.Location = new System.Drawing.Point(487, 278);
-            this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(120, 25);
-            this.lbApellidos.TabIndex = 38;
-            this.lbApellidos.Text = "Apellidos:";
+            this.lbDireccion.AutoSize = true;
+            this.lbDireccion.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbDireccion.ForeColor = System.Drawing.Color.Black;
+            this.lbDireccion.Location = new System.Drawing.Point(473, 285);
+            this.lbDireccion.Name = "lbDireccion";
+            this.lbDireccion.Size = new System.Drawing.Size(123, 25);
+            this.lbDireccion.TabIndex = 38;
+            this.lbDireccion.Text = "Direccion:";
             // 
             // tabPage2
             // 
@@ -416,9 +391,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.Size = new System.Drawing.Size(187, 25);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Buscar Enpleado:";
+            this.label1.Text = "Buscar Negocio:";
             // 
             // tbxPrueba
             // 
@@ -436,46 +411,46 @@
             this.dgvEmpleado.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEmpleado.ColumnHeadersHeight = 30;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvEmpleado.EnableHeadersVisualStyles = false;
             this.dgvEmpleado.GridColor = System.Drawing.Color.Black;
             this.dgvEmpleado.Location = new System.Drawing.Point(57, 211);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEmpleado.RowHeadersVisible = false;
             this.dgvEmpleado.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEmpleado.RowTemplate.Height = 29;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleado.Size = new System.Drawing.Size(931, 443);
@@ -486,7 +461,7 @@
             // 
             this.ofdSeleccionar.FileName = "openFileDialog1";
             // 
-            // EmpleadosVista
+            // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -495,16 +470,16 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "EmpleadosVista";
+            this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Empleados";
+            this.Text = "Negocio";
             this.Load += new System.EventHandler(this.Modulo10_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNegocio)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
@@ -520,16 +495,14 @@
         private Button btnGuardar;
         private TabPage tabPage2;
         private Label lbImagen;
-        private ComboBox cbxTipo;
-        private Label lbTipo;
-        private TextBox tbxNombre;
+        private TextBox tbxCiudad;
         private TextBox tbxApellidos;
-        private TextBox tbxSalario;
-        private NumericUpDown nudEmpleado;
-        private Label lbSalario;
-        private Label lbEmpleado;
-        private Label lbNombre;
-        private Label lbApellidos;
+        private TextBox tbxSucursal;
+        private NumericUpDown nudNegocio;
+        private Label lbSucursal;
+        private Label lbIdSucursal;
+        private Label lbCiudad;
+        private Label lbDireccion;
         private DataGridView dgvEmpleado;
         private Button btnBuscar;
         private Label label1;

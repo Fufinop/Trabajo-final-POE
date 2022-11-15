@@ -12,7 +12,7 @@ namespace Trabajo_final_Front_End
     {
         CnEmpleado cnEmpleado = new CnEmpleado();
         public NegocioVista()
-        {
+        {   
             InitializeComponent();
 
             cbxEstatus.Text = "Activo";
@@ -30,11 +30,10 @@ namespace Trabajo_final_Front_End
         }
         private void limpiarForm()
         {
-            nudEmpleado.Value = 0;
-            tbxNombre.Text = string.Empty;
+            nudNegocio.Value = 0;
+            tbxCiudad.Text = string.Empty;
             tbxApellidos.Text = string.Empty;
-            tbxSalario.Text = string.Empty;
-            cbxTipo.Text = string.Empty;
+            tbxSucursal.Text = string.Empty;
             cbxEstatus.Text = "Activo";
             picPrueba = null;
         }
@@ -67,11 +66,10 @@ namespace Trabajo_final_Front_End
         {
             bool resultado;
             CeEmpleado ceempleado = new CeEmpleado();
-            ceempleado.Id = (int)nudEmpleado.Value;
-            ceempleado.Nombre = tbxNombre.Text;
+            ceempleado.Id = (int)nudNegocio.Value;
+            ceempleado.Nombre = tbxCiudad.Text;
             ceempleado.Apellidos = tbxApellidos.Text;
-            ceempleado.Salario = tbxSalario.Text;
-            ceempleado.Tipo = cbxTipo.Text;
+            ceempleado.Salario = tbxSucursal.Text;
             //ceempleado.Foto = picImagen.ImageLocation;
 
             resultado = cnEmpleado.validarDatos(ceempleado);
@@ -98,12 +96,12 @@ namespace Trabajo_final_Front_End
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (nudEmpleado.Value == 0) return;
+            if (nudNegocio.Value == 0) return;
 
             if (MessageBox.Show("¿Deseas eliminar el registro?", "Titulo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CeEmpleado cE = new CeEmpleado();
-                cE.Id = (int)nudEmpleado.Value;
+                cE.Id = (int)nudNegocio.Value;
                 cnEmpleado.eliminarEmpleado(cE);
                 cargarDatos();
                 limpiarForm();
@@ -123,11 +121,10 @@ namespace Trabajo_final_Front_End
 
         private void dgvEmpleado_DoubleClick(object sender, EventArgs e)
         {
-            nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
+            nudNegocio.Value = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
+            tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
+            tbxSucursal.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
         }
 
@@ -143,11 +140,10 @@ namespace Trabajo_final_Front_End
 
             bool Resultado;
             CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Id = (int)nudEmpleado.Value;
-            ceEmpleado.Nombre = tbxNombre.Text;
+            ceEmpleado.Id = (int)nudNegocio.Value;
+            ceEmpleado.Nombre = tbxCiudad.Text;
             ceEmpleado.Apellidos = tbxApellidos.Text;
-            ceEmpleado.Salario = tbxSalario.Text;
-            ceEmpleado.Tipo = cbxTipo.Text;
+            ceEmpleado.Salario = tbxSucursal.Text;
             ceEmpleado.Estatus = cbxEstatus.Text;
             //ceEmpleado.Foto = img;
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
@@ -216,8 +212,8 @@ namespace Trabajo_final_Front_End
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
             limpiarForm();
-            nudEmpleado.Visible = false;
-            lbEmpleado.Visible = false;
+            nudNegocio.Visible = false;
+            lbIdSucursal.Visible = false;
             cbxEstatus.Visible = false;
             lbEstatus.Visible = false;
             tabControl1.TabPages.Remove(tabPage2);
@@ -227,7 +223,7 @@ namespace Trabajo_final_Front_End
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cbxEstatus.Visible = true;
-            lbEmpleado.Visible = true;
+            lbIdSucursal.Visible = true;
             cbxEstatus.Visible = true;
             lbEstatus.Visible = true;
             cbxEstatus.Enabled = true;
@@ -252,11 +248,10 @@ namespace Trabajo_final_Front_End
 
 
             MessageBox.Show("Ya puedes Editar este campo");
-            nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
+            nudNegocio.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
+            tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
+            tbxSucursal.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
 
@@ -276,7 +271,7 @@ namespace Trabajo_final_Front_End
 
         private void btnEliminar_Click_3(object sender, EventArgs e)
         {
-            if (nudEmpleado.Value == 0) return;
+            if (nudNegocio.Value == 0) return;
 
             if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
@@ -358,6 +353,21 @@ namespace Trabajo_final_Front_End
                 
             }
 
+
+        }
+
+        private void lbEmpleado_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbSalario_Click(object sender, EventArgs e)
+        {
 
         }
     }

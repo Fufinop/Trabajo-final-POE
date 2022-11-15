@@ -1,6 +1,6 @@
 ﻿namespace Entidad
 {
-    internal class CeNegocio
+    public class CeNegocio
     {
         public int Id { get; set; }
         public string Ciudad { get; set; }

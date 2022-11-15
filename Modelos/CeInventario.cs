@@ -1,6 +1,6 @@
 ﻿namespace Entidad
 {
-    internal class CeInventario
+    public class CeInventario
     {
         public int ID { get; set; }
         public string Codigo { get; set; }
