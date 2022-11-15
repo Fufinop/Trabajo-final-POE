@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnLateral = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.ibtnNegocio = new FontAwesome.Sharp.IconButton();
             this.ibtnInventario = new FontAwesome.Sharp.IconButton();
             this.ibtnVentas = new FontAwesome.Sharp.IconButton();
@@ -56,6 +57,7 @@
             // pnLateral
             // 
             this.pnLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnLateral.Controls.Add(this.iconButton1);
             this.pnLateral.Controls.Add(this.ibtnNegocio);
             this.pnLateral.Controls.Add(this.ibtnInventario);
             this.pnLateral.Controls.Add(this.ibtnVentas);
@@ -69,6 +71,29 @@
             this.pnLateral.Size = new System.Drawing.Size(250, 941);
             this.pnLateral.TabIndex = 1;
             this.pnLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.iconButton1.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 500);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButton1.Size = new System.Drawing.Size(250, 60);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.Text = "Login";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // ibtnNegocio
             // 
@@ -365,5 +390,6 @@
         private FontAwesome.Sharp.IconPictureBox btnCerrar;
         private FontAwesome.Sharp.IconPictureBox btnMinimizar;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

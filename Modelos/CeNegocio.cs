@@ -7,5 +7,6 @@
         public string Direccion { get; set; }
         public string Sucursal { get; set; }
         public string Estatus { get; set; }
+        public string Busqueda { get; set; }
     }
 }

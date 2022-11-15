@@ -36,7 +36,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Imagen`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + cE.Foto + "', 'activo');";
+                string Query = "INSERT INTO `empresa`.`negocio` (`Ciudad`, `Direccion`, `Sucursal`, `Estatus`) VALUES ('" + cE.Ciudad + "', '" + cE.Direccion + "', '" + cE.Sucursal + "', '" + cE.Estatus + "');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -57,7 +57,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Nombres`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Imagen`='" + cE.Foto + "', `Estatus`='" + cE.Estatus + "' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`negocio` SET `Ciudad`='" + cE.Ciudad + "', `Direccion`='" + cE.Direccion + "', `Sucursal`='" + cE.Sucursal + "', `Estatus`='" + cE.Estatus + "' WHERE  `idNegocio`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -79,7 +79,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UUPDATE `empresa`.`negocio` SET `Estatus`='Inactivo' WHERE  `idNegocio`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -101,7 +101,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo';";
+                string Query = "UPDATE `empresa`.`negocio` SET `Estatus`='Inactivo';";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -116,11 +116,33 @@ namespace Datos
 
         }
 
+        public void buscarDatos(CeNegocio cE)
+        {
+            try
+            {
+                MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
+                mySqlConnection.Open();
+                string Query = "select * from negocio where ciudad like '" + cE.Busqueda + "'";
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+                mySqlConnection.Close();
+
+                //MessageBox.Show("Todos los datos han sido eliminados");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                MessageBox.Show("Hubo un error");
+
+            }
+
+        }
+
         public DataSet Listar()
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
             mySqlConnection.Open();
-            string Querry = "SELECT * FROM empleado WHERE Estatus = 'Activo' LIMIT 1000;";
+            string Querry = "SELECT * FROM negocio WHERE Estatus = 'Activo' LIMIT 1000;";
             MySqlDataAdapter adaptador;
             DataSet dataset = new DataSet();
 

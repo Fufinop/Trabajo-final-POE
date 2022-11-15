@@ -10,7 +10,7 @@ namespace Trabajo_final_Front_End
 
     public partial class NegocioVista : Form
     {
-        CnEmpleado cnEmpleado = new CnEmpleado();
+        CnNegocio cnNegocio = new CnNegocio();
         public NegocioVista()
         {   
             InitializeComponent();
@@ -20,115 +20,25 @@ namespace Trabajo_final_Front_End
         }
         private void cargarDatos()
         {
-            dgvEmpleado.DataSource = cnEmpleado.obtenerDatos().Tables["tb1"];
+            dgvEmpleado.DataSource = cnNegocio.obtenerDatos().Tables["tb1"];
         }
         private void Modulo10_Load(object sender, EventArgs e)
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            picImagen = null;
+            
+            
         }
         private void limpiarForm()
         {
             nudNegocio.Value = 0;
             tbxCiudad.Text = string.Empty;
-            tbxApellidos.Text = string.Empty;
+            tbxDireccion.Text = string.Empty;
             tbxSucursal.Text = string.Empty;
             cbxEstatus.Text = "Activo";
-            picPrueba = null;
+            
         }
 
-        
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void tbxApellido2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar >= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo puedes ingresar numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            limpiarForm();
-        }
-
-        
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            bool resultado;
-            CeEmpleado ceempleado = new CeEmpleado();
-            ceempleado.Id = (int)nudNegocio.Value;
-            ceempleado.Nombre = tbxCiudad.Text;
-            ceempleado.Apellidos = tbxApellidos.Text;
-            ceempleado.Salario = tbxSucursal.Text;
-            //ceempleado.Foto = picImagen.ImageLocation;
-
-            resultado = cnEmpleado.validarDatos(ceempleado);
-
-            if (resultado == false)
-            {
-                return;
-            }
-
-            if (ceempleado.Id == 0)
-            {
-                cnEmpleado.crearEmpleado(ceempleado);
-            }
-            else
-            {
-                cnEmpleado.editarEmpleado(ceempleado);
-            }
-
-            cnEmpleado.crearEmpleado(ceempleado);
-
-            cargarDatos();
-            limpiarForm();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (nudNegocio.Value == 0) return;
-
-            if (MessageBox.Show("¿Deseas eliminar el registro?", "Titulo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cE.Id = (int)nudNegocio.Value;
-                cnEmpleado.eliminarEmpleado(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarDatos(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-        }
-
-        private void dgvEmpleado_DoubleClick(object sender, EventArgs e)
-        {
-            nudNegocio.Value = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
-            tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
-            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSucursal.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
-        }
-
-        
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
@@ -139,27 +49,27 @@ namespace Trabajo_final_Front_End
             */
 
             bool Resultado;
-            CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Id = (int)nudNegocio.Value;
-            ceEmpleado.Nombre = tbxCiudad.Text;
-            ceEmpleado.Apellidos = tbxApellidos.Text;
-            ceEmpleado.Salario = tbxSucursal.Text;
-            ceEmpleado.Estatus = cbxEstatus.Text;
+            CeNegocio ceNegocio = new CeNegocio();
+            ceNegocio.Id = (int)nudNegocio.Value;
+            ceNegocio.Ciudad = tbxCiudad.Text;
+            ceNegocio.Direccion = tbxDireccion.Text;
+            ceNegocio.Sucursal = tbxSucursal.Text;
+            ceNegocio.Estatus = cbxEstatus.Text;
             //ceEmpleado.Foto = img;
-            Resultado = cnEmpleado.validarDatos(ceEmpleado);
+            Resultado = cnNegocio.validarDatos(ceNegocio);
 
             if (Resultado == false)
             {
                 return;
             }
 
-            if (ceEmpleado.Id == 0)
+            if (ceNegocio.Id == 0)
             {
-                cnEmpleado.crearEmpleado(ceEmpleado);
+                cnNegocio.crearNegocio(ceNegocio);
             }
             else
             {
-                cnEmpleado.editarEmpleado(ceEmpleado);
+                cnNegocio.editarNegocio(ceNegocio);
             }
 
             
@@ -168,9 +78,8 @@ namespace Trabajo_final_Front_End
             limpiarForm();
             tabControl1.TabPages.Remove(tabPage1);
             tabControl1.TabPages.Add(tabPage2);
+            btnEditar.Enabled = false;
         }
-
-        
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -178,30 +87,12 @@ namespace Trabajo_final_Front_End
             tabControl1.TabPages.Add(tabPage2);
         }
 
-        private void btnEliminar_Click_2(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que deseas eliminar el registro selecionado?", "Peligo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-
-                dgvEmpleado.Rows.RemoveAt(dgvEmpleado.CurrentRow.Index);
-                 //id = dgvEmpleado.Rows.
-                //MessageBox.Show(" " + id);
-
-                CeEmpleado cE = new CeEmpleado();
-                
-                //cE.Id = id;
-                cnEmpleado.eliminarEmpleado(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-        }
-
         private void btnLimpiar_Click_2(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarDatos(cE);
+                CeNegocio cE = new CeNegocio();
+                cnNegocio.eliminarNegocio(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -216,6 +107,7 @@ namespace Trabajo_final_Front_End
             lbIdSucursal.Visible = false;
             cbxEstatus.Visible = false;
             lbEstatus.Visible = false;
+            btnEliminar.Visible = false;
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Add(tabPage1);
         }
@@ -248,35 +140,40 @@ namespace Trabajo_final_Front_End
 
 
             MessageBox.Show("Ya puedes Editar este campo");
-            nudNegocio.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
-            tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
-            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSucursal.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
+            btnEditar.Enabled = true;
+            nudNegocio.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdNegocio"].Value;
+            tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Ciudad"].Value.ToString();
+            tbxDireccion.Text = dgvEmpleado.CurrentRow.Cells["Direccion"].Value.ToString();
+            tbxSucursal.Text = dgvEmpleado.CurrentRow.Cells["Sucursal"].Value.ToString();
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
 
-            //Reader
-            //MySqlDataReader reader = 
-
-            try
-            {
-                
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CeNegocio ceNegocio = new CeNegocio();
+            ceNegocio.Busqueda = tbxPrueba.Text;
 
+            if (tbxPrueba.Text != string.Empty)
+            {
+                CeNegocio cE = new CeNegocio();
+                cnNegocio.buscarDatos(cE);
+            }
+            else
+            {
+                MessageBox.Show("Debes ingresar alguna busquedad en el campo");
+            }
+
+            cargarDatos();
+            tbxPrueba.Text = string.Empty;
+        }
         private void btnEliminar_Click_3(object sender, EventArgs e)
         {
             if (nudNegocio.Value == 0) return;
 
             if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarEmpleado(cE);
+                CeNegocio cE = new CeNegocio();
+                cnNegocio.eliminarNegocio(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -333,26 +230,7 @@ namespace Trabajo_final_Front_End
         
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
-
-            ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
-            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            ofdSeleccionar.Title = "Seleccionar Imagen";
-
-            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    picPrueba.Image = Image.FromFile(ofdSeleccionar.FileName);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex.ToString);
-                    throw;
-                }
-                
-            }
-
+            
 
         }
 
@@ -370,5 +248,7 @@ namespace Trabajo_final_Front_End
         {
 
         }
+
+        
     }
 }

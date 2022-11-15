@@ -41,6 +41,7 @@ namespace Trabajo_final_Front_End
             public static Color color4 = Color.FromArgb(131, 56, 236);
             public static Color color5 = Color.FromArgb(58, 134, 255);
             public static Color color6 = Color.FromArgb(125, 133, 151);
+            public static Color color7 = Color.FromArgb(38, 166, 154);
         }
         //Metodos 
         private void ActivateButton(object senderBtn, Color color)
@@ -135,7 +136,11 @@ namespace Trabajo_final_Front_End
             ActivateButton(sender, RGBColors.color6);
             abriFormHijo(new NegocioVista());
         }
-
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+            abriFormHijo(new Login());
+        }
         private void btnInicio_Click(object sender, EventArgs e)
         {
             try
@@ -234,5 +239,7 @@ namespace Trabajo_final_Front_End
         {
 
         }
+
+        
     }
 }

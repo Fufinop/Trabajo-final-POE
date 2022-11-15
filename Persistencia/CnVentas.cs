@@ -30,21 +30,21 @@ namespace Negocio
             cdVentas.pruebaConexion();
         }
 
-        public void crearEmpleado(CeEmpleado cE)
+        public void crearEmpleado(CeVentas cE)
         {
             cdVentas.crear(cE);
         }
 
-        public void editarEmpleado(CeEmpleado cE)
+        public void editarEmpleado(CeVentas cE)
         {
             cdVentas.editar(cE);
         }
 
-        public void eliminarEmpleado(CeEmpleado cE)
+        public void eliminarEmpleado(CeVentas cE)
         {
             cdVentas.eliminar(cE);
         }
-        public void eliminarDatos(CeEmpleado cE)
+        public void eliminarDatos(CeVentas cE)
         {
             cdVentas.eliminarDatos(cE);
         }

@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.picPrueba = new System.Windows.Forms.PictureBox();
-            this.picImagen = new System.Windows.Forms.PictureBox();
-            this.btnExaminar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
-            this.lbImagen = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tbxCiudad = new System.Windows.Forms.TextBox();
-            this.tbxApellidos = new System.Windows.Forms.TextBox();
+            this.tbxDireccion = new System.Windows.Forms.TextBox();
             this.tbxSucursal = new System.Windows.Forms.TextBox();
             this.nudNegocio = new System.Windows.Forms.NumericUpDown();
             this.lbSucursal = new System.Windows.Forms.Label();
@@ -63,8 +59,6 @@
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNegocio)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
@@ -94,17 +88,13 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.picPrueba);
-            this.tabPage1.Controls.Add(this.picImagen);
-            this.tabPage1.Controls.Add(this.btnExaminar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.cbxEstatus);
             this.tabPage1.Controls.Add(this.lbEstatus);
-            this.tabPage1.Controls.Add(this.lbImagen);
             this.tabPage1.Controls.Add(this.btnCancelar);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.tbxCiudad);
-            this.tabPage1.Controls.Add(this.tbxApellidos);
+            this.tabPage1.Controls.Add(this.tbxDireccion);
             this.tabPage1.Controls.Add(this.tbxSucursal);
             this.tabPage1.Controls.Add(this.nudNegocio);
             this.tabPage1.Controls.Add(this.lbSucursal);
@@ -118,39 +108,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // picPrueba
-            // 
-            this.picPrueba.BackColor = System.Drawing.Color.Silver;
-            this.picPrueba.Location = new System.Drawing.Point(103, 70);
-            this.picPrueba.Name = "picPrueba";
-            this.picPrueba.Size = new System.Drawing.Size(247, 233);
-            this.picPrueba.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPrueba.TabIndex = 62;
-            this.picPrueba.TabStop = false;
-            // 
-            // picImagen
-            // 
-            this.picImagen.BackColor = System.Drawing.Color.DarkGray;
-            this.picImagen.Location = new System.Drawing.Point(103, 70);
-            this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(247, 233);
-            this.picImagen.TabIndex = 61;
-            this.picImagen.TabStop = false;
-            // 
-            // btnExaminar
-            // 
-            this.btnExaminar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExaminar.ForeColor = System.Drawing.Color.White;
-            this.btnExaminar.Location = new System.Drawing.Point(140, 339);
-            this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(165, 40);
-            this.btnExaminar.TabIndex = 60;
-            this.btnExaminar.Text = "Examinar";
-            this.btnExaminar.UseVisualStyleBackColor = false;
-            this.btnExaminar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
@@ -189,18 +146,6 @@
             this.lbEstatus.TabIndex = 57;
             this.lbEstatus.Text = "Estatus:";
             // 
-            // lbImagen
-            // 
-            this.lbImagen.AutoSize = true;
-            this.lbImagen.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbImagen.ForeColor = System.Drawing.Color.Black;
-            this.lbImagen.Location = new System.Drawing.Point(174, 311);
-            this.lbImagen.Name = "lbImagen";
-            this.lbImagen.Size = new System.Drawing.Size(90, 25);
-            this.lbImagen.TabIndex = 54;
-            this.lbImagen.Text = "Imagen";
-            this.lbImagen.Click += new System.EventHandler(this.lbImagen_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Gray;
@@ -236,12 +181,12 @@
             this.tbxCiudad.Size = new System.Drawing.Size(196, 34);
             this.tbxCiudad.TabIndex = 45;
             // 
-            // tbxApellidos
+            // tbxDireccion
             // 
-            this.tbxApellidos.Location = new System.Drawing.Point(611, 282);
-            this.tbxApellidos.Name = "tbxApellidos";
-            this.tbxApellidos.Size = new System.Drawing.Size(196, 34);
-            this.tbxApellidos.TabIndex = 44;
+            this.tbxDireccion.Location = new System.Drawing.Point(611, 282);
+            this.tbxDireccion.Name = "tbxDireccion";
+            this.tbxDireccion.Size = new System.Drawing.Size(196, 34);
+            this.tbxDireccion.TabIndex = 44;
             // 
             // tbxSucursal
             // 
@@ -296,7 +241,7 @@
             this.lbCiudad.Name = "lbCiudad";
             this.lbCiudad.Size = new System.Drawing.Size(95, 25);
             this.lbCiudad.TabIndex = 39;
-            this.lbCiudad.Text = "Cuidad:";
+            this.lbCiudad.Text = "Ciudad:";
             this.lbCiudad.Click += new System.EventHandler(this.lbNombre_Click);
             // 
             // lbDireccion
@@ -331,6 +276,7 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.Enabled = false;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
@@ -382,6 +328,7 @@
             this.btnBuscar.TabIndex = 55;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -411,49 +358,49 @@
             this.dgvEmpleado.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmpleado.ColumnHeadersHeight = 30;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmpleado.EnableHeadersVisualStyles = false;
             this.dgvEmpleado.GridColor = System.Drawing.Color.Black;
-            this.dgvEmpleado.Location = new System.Drawing.Point(57, 211);
+            this.dgvEmpleado.Location = new System.Drawing.Point(225, 195);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmpleado.RowHeadersVisible = false;
             this.dgvEmpleado.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmpleado.RowTemplate.Height = 29;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(931, 443);
+            this.dgvEmpleado.Size = new System.Drawing.Size(662, 443);
             this.dgvEmpleado.TabIndex = 52;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             // 
@@ -461,7 +408,7 @@
             // 
             this.ofdSeleccionar.FileName = "openFileDialog1";
             // 
-            // Prueba
+            // NegocioVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -470,15 +417,13 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "Prueba";
+            this.Name = "NegocioVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Negocio";
             this.Load += new System.EventHandler(this.Modulo10_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNegocio)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -494,9 +439,8 @@
         private Button btnCancelar;
         private Button btnGuardar;
         private TabPage tabPage2;
-        private Label lbImagen;
         private TextBox tbxCiudad;
-        private TextBox tbxApellidos;
+        private TextBox tbxDireccion;
         private TextBox tbxSucursal;
         private NumericUpDown nudNegocio;
         private Label lbSucursal;
@@ -513,9 +457,6 @@
         private ComboBox cbxEstatus;
         private Label lbEstatus;
         private Button btnEliminar;
-        private Button btnExaminar;
         private OpenFileDialog ofdSeleccionar;
-        private PictureBox picImagen;
-        private PictureBox picPrueba;
     }
 }
