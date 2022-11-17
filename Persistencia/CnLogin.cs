@@ -32,6 +32,9 @@ namespace Negocio
         public void ConectarUsuario(CeLogin cE)
         {
             cdLogin.ComprobarUsuario(cE);
+
+            
+
         }
     }
 }

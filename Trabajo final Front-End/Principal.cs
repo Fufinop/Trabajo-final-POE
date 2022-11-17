@@ -140,6 +140,13 @@ namespace Trabajo_final_Front_End
         {
             ActivateButton(sender, RGBColors.color7);
             abriFormHijo(new Login());
+
+            ibtnEmpleados.Enabled = true;
+            ibtnClientes.Enabled = true;
+            ibtnProveedor.Enabled = true;
+            ibtnVentas.Enabled = true;
+            ibtnInventario.Enabled = true;
+            ibtnNegocio.Enabled = true;
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
@@ -148,7 +155,7 @@ namespace Trabajo_final_Front_End
                 currentChildForm.Close();
                 Reset();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }

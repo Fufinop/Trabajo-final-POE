@@ -1,13 +1,13 @@
 ﻿using Entidad;
 using MySql.Data.MySqlClient;
 
-namespace Datos
+namespace Trabajo_final_Front_End
 {
     public class CdLogin
     {
         string cadenaConexion = "Server=localhost;User=root;Password=root;database=Empresa";
 
-        public void ComprobarUsuario(CeLogin cE)
+        public void PruebaUsuario(CeLogin cE)
         {
 
             MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;database=empresa; port=3306;password=root;");
@@ -37,7 +37,7 @@ namespace Datos
             else
             {
                 MessageBox.Show("Usuario y contraseña incorrectos");
-                
+
             }
             conectar.Close();
             /**/

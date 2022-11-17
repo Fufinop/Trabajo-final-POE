@@ -23,9 +23,11 @@ namespace Trabajo_final_Front_End
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-           
+            
+
             bool resultado;
             CeLogin ceLogin = new CeLogin();
+            
             ceLogin.LoginName = txtUsuario.Text;
             ceLogin.Password = txtPassword.Text;
 
@@ -34,7 +36,8 @@ namespace Trabajo_final_Front_End
             if (resultado == false)
             {
                 return;
-            }
+            } 
+
             cnLogin.ConectarUsuario(ceLogin);
 
             MessageBox.Show("" + ceLogin.tipoUsuario);
