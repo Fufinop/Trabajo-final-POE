@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidad;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,26 @@ namespace Trabajo_final_Front_End
 {
     public partial class Login : Form
     {
+        CnLogin cnLogin = new CnLogin();
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            CeLogin ceLogin = new CeLogin();
+            ceLogin.LoginName = txtUsuario.Text;
+            ceLogin.Password = txtPassword.Text;
+
+            resultado = cnLogin.validarDatos(ceLogin);
+
+            if (resultado == false)
+            {
+                return;
+            }
+            cnLogin.ConectarUsuario(ceLogin);
         }
     }
 }

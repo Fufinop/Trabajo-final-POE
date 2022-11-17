@@ -64,6 +64,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(537, 347);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(265, 46);
             this.txtPassword.TabIndex = 2;
             // 
@@ -86,6 +87,7 @@
             this.btnNuevo.TabIndex = 57;
             this.btnNuevo.Text = "Ingresar";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // iconPictureBox1
             // 
