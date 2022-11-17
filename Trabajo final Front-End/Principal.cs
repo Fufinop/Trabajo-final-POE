@@ -148,10 +148,9 @@ namespace Trabajo_final_Front_End
                 currentChildForm.Close();
                 Reset();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                
             }
             
         }
@@ -237,7 +236,12 @@ namespace Trabajo_final_Front_End
 
         private void Principal_Load(object sender, EventArgs e)
         {
-
+            ibtnEmpleados.Enabled = false;
+            ibtnClientes.Enabled = false;
+            ibtnProveedor.Enabled = false;
+            ibtnVentas.Enabled = false;
+            ibtnInventario.Enabled = false;
+            ibtnNegocio.Enabled = false;
         }
 
         

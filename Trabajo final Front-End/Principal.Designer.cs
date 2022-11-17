@@ -376,12 +376,6 @@
         #endregion
         private Panel pnLateral;
         private Panel panel1;
-        private FontAwesome.Sharp.IconButton ibtnEmpleados;
-        private FontAwesome.Sharp.IconButton ibtnNegocio;
-        private FontAwesome.Sharp.IconButton ibtnInventario;
-        private FontAwesome.Sharp.IconButton ibtnVentas;
-        private FontAwesome.Sharp.IconButton ibtnProveedor;
-        private FontAwesome.Sharp.IconButton ibtnClientes;
         private PictureBox btnInicio;
         private Panel BarraDeTitulo;
         private Label lbTituloFormHijo;
@@ -391,5 +385,11 @@
         private FontAwesome.Sharp.IconPictureBox btnMinimizar;
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        public FontAwesome.Sharp.IconButton ibtnEmpleados;
+        public FontAwesome.Sharp.IconButton ibtnNegocio;
+        public FontAwesome.Sharp.IconButton ibtnInventario;
+        public FontAwesome.Sharp.IconButton ibtnVentas;
+        public FontAwesome.Sharp.IconButton ibtnProveedor;
+        public FontAwesome.Sharp.IconButton ibtnClientes;
     }
 }

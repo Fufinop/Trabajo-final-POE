@@ -2,7 +2,10 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Permissions;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,22 +17,41 @@ namespace Datos
 
         public void ComprobarUsuario(CeLogin cE)
         {
-            try
-            {
-                MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
-                mySqlConnection.Open();
-                string Query = "SELECT * FROM users WHERE LoginName = '"+ cE.LoginName +"' AND PASSWORD = '"+ cE.Password +"';";
-                MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
-                mySqlCommand.ExecuteNonQuery();
-                mySqlConnection.Close();
 
-                MessageBox.Show("Usuario correcto");
-            }
-            catch (Exception ex)
+            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;database=empresa; port=3306;password=root;");
+            conectar.Open();
+            MySqlCommand codigo = new MySqlCommand();
+            MySqlConnection conectanos = new MySqlConnection();
+            codigo.Connection = conectar;
+            codigo.CommandText = ("SELECT * FROM users WHERE LoginName ='" + cE.LoginName + "' and PASSWORD='" + cE.Password + "'");
+            MySqlDataReader leer = codigo.ExecuteReader();
+            if (leer.Read())
             {
-                MessageBox.Show("El usuario o la contraseña son incorrectos");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bienvenido");
+
+                cE.tipoUsuario = leer.GetString(1);
+
+                IPrincipal principal = new IPrincipal();
+
+                if (cE.tipoUsuario == "ADMIN")
+                {
+
+                }
+                else if (cE.tipoUsuario == "EMPLEADO")
+                {
+
+                }
             }
+            else
+            {
+                MessageBox.Show("Usuario y contraseña incorrectos");
+                
+            }
+            conectar.Close();
+            /**/
+
         }
+
+
     }
 }

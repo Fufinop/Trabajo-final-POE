@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Trabajo_final_Front_End
 {
@@ -22,6 +23,7 @@ namespace Trabajo_final_Front_End
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+           
             bool resultado;
             CeLogin ceLogin = new CeLogin();
             ceLogin.LoginName = txtUsuario.Text;
@@ -34,6 +36,10 @@ namespace Trabajo_final_Front_End
                 return;
             }
             cnLogin.ConectarUsuario(ceLogin);
+
+            MessageBox.Show("" + ceLogin.tipoUsuario);
+            //this.Close();
+
         }
     }
 }
