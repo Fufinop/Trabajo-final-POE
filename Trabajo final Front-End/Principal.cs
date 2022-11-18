@@ -18,6 +18,9 @@ namespace Trabajo_final_Front_End
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+
+        public object Tipo { get; }
+
         public Principal()
         {
             InitializeComponent();
@@ -30,6 +33,11 @@ namespace Trabajo_final_Front_End
             this.ControlBox = false;
             this.DoubleBuffered= true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+
+        public Principal(object tipo)
+        {
+            Tipo = tipo;
         }
 
         //Struct
@@ -152,7 +160,11 @@ namespace Trabajo_final_Front_End
         {
             try
             {
-                currentChildForm.Close();
+                if (currentChildForm.Enabled)
+                {
+                    currentChildForm.Close();
+                }
+                
                 Reset();
             }
             catch (Exception)
@@ -243,12 +255,7 @@ namespace Trabajo_final_Front_End
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            ibtnEmpleados.Enabled = false;
-            ibtnClientes.Enabled = false;
-            ibtnProveedor.Enabled = false;
-            ibtnVentas.Enabled = false;
-            ibtnInventario.Enabled = false;
-            ibtnNegocio.Enabled = false;
+            
         }
 
         

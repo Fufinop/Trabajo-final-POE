@@ -98,6 +98,7 @@
             // ibtnNegocio
             // 
             this.ibtnNegocio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnNegocio.Enabled = false;
             this.ibtnNegocio.FlatAppearance.BorderSize = 0;
             this.ibtnNegocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnNegocio.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -121,6 +122,7 @@
             // ibtnInventario
             // 
             this.ibtnInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnInventario.Enabled = false;
             this.ibtnInventario.FlatAppearance.BorderSize = 0;
             this.ibtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnInventario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -144,6 +146,7 @@
             // ibtnVentas
             // 
             this.ibtnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnVentas.Enabled = false;
             this.ibtnVentas.FlatAppearance.BorderSize = 0;
             this.ibtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnVentas.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -167,6 +170,7 @@
             // ibtnProveedor
             // 
             this.ibtnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnProveedor.Enabled = false;
             this.ibtnProveedor.FlatAppearance.BorderSize = 0;
             this.ibtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -190,6 +194,7 @@
             // ibtnClientes
             // 
             this.ibtnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnClientes.Enabled = false;
             this.ibtnClientes.FlatAppearance.BorderSize = 0;
             this.ibtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnClientes.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -213,6 +218,7 @@
             // ibtnEmpleados
             // 
             this.ibtnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnEmpleados.Enabled = false;
             this.ibtnEmpleados.FlatAppearance.BorderSize = 0;
             this.ibtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnEmpleados.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -374,7 +380,6 @@
         }
 
         #endregion
-        private Panel pnLateral;
         private Panel panel1;
         private PictureBox btnInicio;
         private Panel BarraDeTitulo;
@@ -391,5 +396,6 @@
         public FontAwesome.Sharp.IconButton ibtnVentas;
         public FontAwesome.Sharp.IconButton ibtnProveedor;
         public FontAwesome.Sharp.IconButton ibtnClientes;
+        public Panel pnLateral;
     }
 }

@@ -16,6 +16,8 @@ namespace Trabajo_final_Front_End
     public partial class Login : Form
     {
         CnLogin cnLogin = new CnLogin();
+        private object tipo;
+
         public Login()
         {
             InitializeComponent();
@@ -39,10 +41,33 @@ namespace Trabajo_final_Front_End
             } 
 
             cnLogin.ConectarUsuario(ceLogin);
+            Principal principal = new Principal(tipo);
 
-            MessageBox.Show("" + ceLogin.tipoUsuario);
             //this.Close();
+            if (cbxTipo.Text == "Admin")
+            {
+                tipo = cbxTipo.Text;   
+                MessageBox.Show("daf");
+            }
+            else if (cbxTipo.Text == "Empleado")
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Tipo de usuario no valido");
+            }
+
+            this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }
