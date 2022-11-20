@@ -37,7 +37,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Imagen`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + cE.Foto + "', 'activo');";
+                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Imagen`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + cE.Foto + "', 'Activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();

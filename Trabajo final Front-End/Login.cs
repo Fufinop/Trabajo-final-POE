@@ -47,7 +47,7 @@ namespace Trabajo_final_Front_End
             if (cbxTipo.Text == "Admin")
             {
                 tipo = cbxTipo.Text;   
-                MessageBox.Show("daf");
+                
             }
             else if (cbxTipo.Text == "Empleado")
             {

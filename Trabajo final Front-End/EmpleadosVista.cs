@@ -39,100 +39,6 @@ namespace Trabajo_final_Front_End
             picPrueba = null;
         }
 
-        
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void tbxApellido2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar >= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo puedes ingresar numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            limpiarForm();
-        }
-
-        
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            bool resultado;
-            CeEmpleado ceempleado = new CeEmpleado();
-            ceempleado.Id = (int)nudEmpleado.Value;
-            ceempleado.Nombre = tbxNombre.Text;
-            ceempleado.Apellidos = tbxApellidos.Text;
-            ceempleado.Salario = tbxSalario.Text;
-            ceempleado.Tipo = cbxTipo.Text;
-            //ceempleado.Foto = picImagen.ImageLocation;
-
-            resultado = cnEmpleado.validarDatos(ceempleado);
-
-            if (resultado == false)
-            {
-                return;
-            }
-
-            if (ceempleado.Id == 0)
-            {
-                cnEmpleado.crearEmpleado(ceempleado);
-            }
-            else
-            {
-                cnEmpleado.editarEmpleado(ceempleado);
-            }
-
-            cnEmpleado.crearEmpleado(ceempleado);
-
-            cargarDatos();
-            limpiarForm();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (nudEmpleado.Value == 0) return;
-
-            if (MessageBox.Show("¿Deseas eliminar el registro?", "Titulo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cE.Id = (int)nudEmpleado.Value;
-                cnEmpleado.eliminarEmpleado(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarDatos(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-        }
-
-        private void dgvEmpleado_DoubleClick(object sender, EventArgs e)
-        {
-            nudEmpleado.Value = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombre"].Value.ToString();
-            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Foto"].Value.ToString());
-        }
-
-        
-
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             /*Convercion de la imagen
@@ -180,24 +86,6 @@ namespace Trabajo_final_Front_End
         {
             tabControl1.TabPages.Remove(tabPage1);
             tabControl1.TabPages.Add(tabPage2);
-        }
-
-        private void btnEliminar_Click_2(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que deseas eliminar el registro selecionado?", "Peligo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-
-                dgvEmpleado.Rows.RemoveAt(dgvEmpleado.CurrentRow.Index);
-                 //id = dgvEmpleado.Rows.
-                //MessageBox.Show(" " + id);
-
-                CeEmpleado cE = new CeEmpleado();
-                
-                //cE.Id = id;
-                cnEmpleado.eliminarEmpleado(cE);
-                cargarDatos();
-                limpiarForm();
-            }
         }
 
         private void btnLimpiar_Click_2(object sender, EventArgs e)
