@@ -8,7 +8,7 @@ namespace Controladores
 {
     public class CdCliente
     {
-        string cadenaConexion = "Server=localhost;User=root;Password=root;database=pasteleria";
+        string cadenaConexion = "Server=localhost;User=root;Password=root;database=empresa";
 
         public void pruebaConexion()
         {
@@ -33,8 +33,9 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "INSERT INTO `pasteleria`.`cliente` (`idCliente`, `nombre`, `apellidos`, `direccion`, `cedula`, `telefono`, `Email`, `estatus`, `foto`) VALUES ('" + cE.Id + "', '" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Direccion + "', '" + cE.Cedula + "', '" + cE.Telefono + "', '" + cE.Email + "', '" + cE.Estatus + "', '" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "');";
+                string Query = "INSERT INTO `empresa`.`cliente` (`Nombre`, `Apellido`, `Direccion`, `Cedula`, `Telefono`, `E-mail`, `Foto`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Direccion + "', '" + cE.Cedula + "', '" + cE.Telefono + "', '" + cE.Email + "', @Imagen, 'Activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -54,8 +55,9 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `pasteleria`.`cliente` SET `idCliente`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `direccion`='" + cE.Direccion + "', `cedula`='" + cE.Cedula + "', `telefono`='" + cE.Telefono + "', `Email`='" + cE.Email + "', `estatus`='" + cE.Estatus + "', `foto`='" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(cE.Foto) + "' WHERE  `idCliente`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`cliente` SET `idCliente`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `direccion`='" + cE.Direccion + "', `cedula`='" + cE.Cedula + "', `telefono`='" + cE.Telefono + "', `Email`='" + cE.Email + "', `estatus`='" + cE.Estatus + "', `foto`=@Imagen WHERE  `idCliente`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -75,7 +77,7 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `cliente` WHERE  `idCliente`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -96,7 +98,7 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "DELETE FROM `cliente` ;";
+                string Query = "DEUPDATE `empresa`.`cliente` SET `Estatus`='Inactivo';";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();

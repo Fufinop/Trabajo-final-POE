@@ -9,7 +9,7 @@
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string Estatus { get; set; }
-        public string Foto { get; set; }
+        public byte [] Imagen { get; set; }
         public string Direccion { get; set; }
     }
 }

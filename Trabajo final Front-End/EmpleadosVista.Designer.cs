@@ -418,9 +418,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.Size = new System.Drawing.Size(204, 25);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Buscar Enpleado:";
+            this.label1.Text = "Buscar Empleado:";
             // 
             // tbxPrueba
             // 

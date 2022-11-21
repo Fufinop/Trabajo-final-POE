@@ -1,110 +1,101 @@
-﻿using Modelos;
+﻿using Controladores;
+using Entidad;
+using Modelos;
+using MySql.Data.MySqlClient;
 using Negocio;
+using System.Drawing.Imaging;
 
 namespace Trabajo_final_Front_End
 {
+
     public partial class ClientesVista : Form
     {
         CnCliente cnCliente = new CnCliente();
         public ClientesVista()
         {
             InitializeComponent();
-        }
 
-        private void Modulo11_Load(object sender, EventArgs e)
-        {
-            cargarDatos();
+            cbxEstatus.Text = "Activo";
+            
         }
-
         private void cargarDatos()
         {
-            dgvReceta.DataSource = cnCliente.obtenerDatos().Tables["tb1"];
+            dgvCliente.DataSource = cnCliente.obtenerDatos().Tables["tb1"];
+            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvCliente.Columns[7];
+            column.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void Modulo10_Load(object sender, EventArgs e)
         {
-            limpiarForm();
+            cargarDatos();
+            tabControl1.TabPages.Remove(tabPage1);
+            pictureBox1 = null;
         }
-
         private void limpiarForm()
         {
             nudCliente.Value = 0;
-            tbxNombre.Text = string.Empty;
-            tbxApellidos.Text = string.Empty;
-            tbxDireccion.Text = string.Empty;
-            tbxCedula.Text = string.Empty;
-            tbxTelefono.Text = string.Empty;
-            tbxEmail.Text = string.Empty;
-            cbxEstatus.Text = string.Empty;
-            picFoto = null;
+            tbxNombre.Text = "";
+            tbxApellidos.Text = "";
+            tbxDireccion.Text = "";
+            cbxCedula.Text = "";
+            cbxTelefono.Text = "";
+            tbxEmail.Text = "";
+            cbxEstatus.Text = "Activo";
         }
 
-
-        private void lnkFoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            ofdFoto.FileName = string.Empty;
 
-            if (ofdFoto.ShowDialog() == DialogResult.OK)
+            bool Resultado;
+            CeCliente ceCliente = new CeCliente();
+            ceCliente.Id = (int)nudCliente.Value;
+            ceCliente.Nombre = tbxNombre.Text;
+            ceCliente.Apellidos = tbxApellidos.Text;
+            ceCliente.Direccion = tbxDireccion.Text;
+            ceCliente.Cedula = cbxCedula.Text;
+            ceCliente.Telefono = cbxTelefono.Text;
+            ceCliente.Email = tbxEmail.Text;
+            ceCliente.Estatus = cbxEstatus.Text;
+            if (pictureBox2.Image != null)
             {
-                picFoto.Load(ofdFoto.FileName);
+                ceCliente.Imagen = Imagen.imgToByte(pictureBox2.Image);
             }
 
-            ofdFoto.FileName = string.Empty;
-        }
 
-        private void BtnActualizar_Click(object sender, EventArgs e)
-        {
-            bool Resultado;
-            CeCliente cecliente = new CeCliente();
-            cecliente.Id = (int)nudCliente.Value;
-            cecliente.Nombre = tbxNombre.Text;
-            cecliente.Apellidos = tbxApellidos.Text;
-            cecliente.Direccion = tbxDireccion.Text;
-            cecliente.Cedula = tbxTelefono.Text;
-            cecliente.Telefono = tbxTelefono.Text;
-            cecliente.Email = tbxEmail.Text;
-            cecliente.Estatus = cbxEstatus.Text;
-            cecliente.Foto = picFoto.ImageLocation;
-
-            Resultado = cnCliente.validarDatos(cecliente);
+            Resultado = cnCliente.validarDatos(ceCliente);
 
             if (Resultado == false)
             {
                 return;
             }
 
-            if (cecliente.Id == 0)
+            if (ceCliente.Id == 0)
             {
-                cnCliente.crearCliente(cecliente);
+                cnCliente.crearCliente(ceCliente);
             }
             else
             {
-                cnCliente.editarCliente(cecliente);
+                cnCliente.editarCliente(ceCliente);
             }
 
-            cnCliente.crearCliente(cecliente);
+            
 
             cargarDatos();
             limpiarForm();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (nudCliente.Value == 0) return;
+        
 
-            if (MessageBox.Show("¿Deseas eliminar el registro?","Titulo",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                CeCliente cE = new CeCliente();
-                cE.Id = (int)nudCliente.Value;
-                cnCliente.eliminarCliente(cE);
-                cargarDatos();
-                limpiarForm();
-            }
-            
-        }
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?","Atencion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
+        }
+
+        private void btnLimpiar_Click_2(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 CeCliente cE = new CeCliente();
                 cnCliente.eliminarDatos(cE);
@@ -112,45 +103,118 @@ namespace Trabajo_final_Front_End
                 limpiarForm();
             }
         }
-        private void dgvReceta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        
+
+        private void btnNuevo_Click_2(object sender, EventArgs e)
         {
-            nudCliente.Value = (int)dgvReceta.CurrentRow.Cells["id"].Value;
-            tbxNombre.Text = dgvReceta.CurrentRow.Cells["Nombre"].Value.ToString();
-            tbxApellidos.Text = dgvReceta.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxDireccion.Text = dgvReceta.CurrentRow.Cells["Direccion"].Value.ToString();
-            tbxCedula.Text = dgvReceta.CurrentRow.Cells["Cedula"].Value.ToString();
-            tbxTelefono.Text = dgvReceta.CurrentRow.Cells["Telefono"].Value.ToString();
-            tbxEmail.Text = dgvReceta.CurrentRow.Cells["Email"].Value.ToString();
-            cbxEstatus.Text = dgvReceta.CurrentRow.Cells["Estatus"].Value.ToString();
-            picFoto.Load(dgvReceta.CurrentRow.Cells["Foto"].Value.ToString());
+            limpiarForm();
+            nudCliente.Visible = false;
+            lbEmpleado.Visible = false;
+            cbxEstatus.Visible = false;
+            lbEstatus.Visible = false;
+            btnEliminar.Visible = false;
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage1);
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            cbxEstatus.Visible = true;
+            lbEmpleado.Visible = true;
+            cbxEstatus.Visible = true;
+            lbEstatus.Visible = true;
+            cbxEstatus.Enabled = true;
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Add(tabPage1);
         }
-        private void tbxTelefono_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar >= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+
+            MessageBox.Show("Ya puedes Editar este campo");
+            lbEmpleado.Visible = false;
+            btnNuevo.Enabled = false;
+            nudCliente.Value = (uint)dgvCliente.CurrentRow.Cells["IdEmpleado"].Value;
+            tbxNombre.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
+            tbxApellidos.Text = dgvCliente.CurrentRow.Cells["Apellidos"].Value.ToString();
+            tbxDireccion.Text = dgvCliente.CurrentRow.Cells["Salario"].Value.ToString();
+            cbxCedula.Text = dgvCliente.CurrentRow.Cells["Cedula"].Value.ToString();
+            cbxTelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
+            tbxEmail.Text = dgvCliente.CurrentRow.Cells["email"].Value.ToString();
+            cbxEstatus.Text = dgvCliente.CurrentRow.Cells["Estatus"].Value.ToString();
+            pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvCliente.CurrentRow.Cells["Foto"].Value as byte[]));
+            
+            
+            
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void btnEliminar_Click_3(object sender, EventArgs e)
+        {
+            if (nudCliente.Value == 0) return;
+
+            if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MessageBox.Show("Solo puedes ingresar numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
+                CeCliente cE = new CeCliente();
+                cnCliente.eliminarCliente(cE);
+                cargarDatos();
+                limpiarForm();
             }
+
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Add(tabPage2);
         }
 
-        //Eventos sin usar
-
-        private void picFoto_Click(object sender, EventArgs e)
+        //Metodos sin usar
+        
+        
+        private void lbImagen_Click(object sender, EventArgs e)
         {
 
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        
+        
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        }
+        
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
+
+            ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            ofdSeleccionar.Title = "Seleccionar Imagen";
+
+            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox2.Image = Image.FromFile(ofdSeleccionar.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex.ToString);
+                    throw;
+                }
+                
+            }
+
+
+        }
+
+        
+
+        private void EmpleadosVista_Load(object sender, EventArgs e)
         {
 
         }
@@ -160,11 +224,42 @@ namespace Trabajo_final_Front_End
 
         }
 
-        private void lbApellido2_Click(object sender, EventArgs e)
+        private void nudEmpleado_ValueChanged(object sender, EventArgs e)
         {
 
         }
-        private void label4_Click(object sender, EventArgs e)
+
+        private void tbxApellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxSalario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbSalario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbApellidos_Click(object sender, EventArgs e)
         {
 
         }
@@ -173,22 +268,5 @@ namespace Trabajo_final_Front_End
         {
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvReceta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -37,7 +37,7 @@ namespace Negocio
             {
                 Resultado = false;
                 MessageBox.Show("El estatus es obligatorio");
-            } if (cliente.Foto == null)
+            } if (cliente.Imagen == null)
             {
                 Resultado = false;
                 MessageBox.Show("La foto es obligatoria");

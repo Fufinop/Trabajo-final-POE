@@ -137,7 +137,6 @@ namespace Trabajo_final_Front_End
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
             tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
             pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvEmpleado.CurrentRow.Cells["Foto"].Value as byte[]));
             
