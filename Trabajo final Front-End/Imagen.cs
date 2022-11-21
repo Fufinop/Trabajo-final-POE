@@ -23,5 +23,7 @@ namespace Trabajo_final_Front_End
             img.Save(memoryStream, ImageFormat.Jpeg);
             return memoryStream.ToArray();
         }
+
+        //Prueba
     }
 }
