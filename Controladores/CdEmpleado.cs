@@ -37,15 +37,40 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Imagen`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', '" + cE.Foto + "', 'Activo');";
+                string Query = "INSERT INTO `empresa`.`empleado` (`Nombres`, `Apellidos`, `Salario`, `Tipo`, `Foto`, `Estatus`) VALUES ('" + cE.Nombre + "', '" + cE.Apellidos + "', '" + cE.Salario + "', '" + cE.Tipo + "', @Imagen, 'Activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
                 MessageBox.Show("Registro creado");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("" + ex);
+                MessageBox.Show("Hubo un error o repetiste el id");
+
+            }
+
+        }
+        public void buscar(CeEmpleado cE)
+        {
+            try
+            {
+                MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
+                mySqlConnection.Open();
+                string Query = "SELECT * FROM empleado WHERE Nombres LIKE '%" + cE.Busqueda +"%' OR Apellidos LIKE '%" + cE.Busqueda +"%' LIMIT 100;";
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+                mySqlConnection.Close();
+
+                MessageBox.Show("Busqueda realizada");
+                MessageBox.Show("" + cE.Busqueda);
+                MessageBox.Show(Query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
@@ -58,8 +83,9 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Nombres`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Imagen`='" + cE.Foto + "', `Estatus`='" + cE.Estatus + "' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`empleado` SET `Nombres`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `Salario`='" + cE.Salario + "', `Tipo`='" + cE.Tipo + "', `Foto`=@Imagen, `Estatus`='" + cE.Estatus + "' WHERE  `idEmpleado`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -67,7 +93,7 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("" + ex);
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }

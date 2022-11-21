@@ -21,10 +21,8 @@ namespace Trabajo_final_Front_End
         private void cargarDatos()
         {
             dgvEmpleado.DataSource = cnEmpleado.obtenerDatos().Tables["tb1"];
-
-            //Prueba llenar imagen
-            
-            
+            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvEmpleado.Columns[5];
+            column.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
         private void Modulo10_Load(object sender, EventArgs e)
         {
@@ -54,18 +52,11 @@ namespace Trabajo_final_Front_End
             ceEmpleado.Salario = tbxSalario.Text;
             ceEmpleado.Tipo = cbxTipo.Text;
             ceEmpleado.Estatus = cbxEstatus.Text;
-            //ceEmpleado.Foto = img;
-
-            //Prueba imagen
-            byte[] file = null;
-            Stream mystream = ofdSeleccionar.OpenFile();
-            using (MemoryStream ms = new MemoryStream())
+            if (pictureBox2.Image != null)
             {
-                mystream.CopyTo(ms);
-                file = ms.ToArray();
+                ceEmpleado.Imagen = Imagen.imgToByte(pictureBox2.Image);
             }
 
-           
 
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
 
@@ -119,6 +110,7 @@ namespace Trabajo_final_Front_End
             lbEmpleado.Visible = false;
             cbxEstatus.Visible = false;
             lbEstatus.Visible = false;
+            btnEliminar.Visible = false;
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Add(tabPage1);
         }
@@ -138,6 +130,8 @@ namespace Trabajo_final_Front_End
         {
 
             MessageBox.Show("Ya puedes Editar este campo");
+            lbEmpleado.Visible = false;
+            btnNuevo.Enabled = false;
             nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
             tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
@@ -145,12 +139,24 @@ namespace Trabajo_final_Front_End
             cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
             //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
-
-            //prueba para imagen
-            pictureBox1 = null;
+            pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvEmpleado.CurrentRow.Cells["Foto"].Value as byte[]));
+            
+            
             
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (tbxPrueba.Text != "")
+            {
+                CeEmpleado cE = new CeEmpleado();
+                cnEmpleado.buscarEm(cE);
+                cargarDatos();
+            }
+            CeEmpleado ceEmpleado = new CeEmpleado();
+            ceEmpleado.Busqueda = tbxPrueba.Text;
 
+            MessageBox.Show("" + ceEmpleado.Busqueda);
+        }
         private void btnEliminar_Click_3(object sender, EventArgs e)
         {
             if (nudEmpleado.Value == 0) return;
@@ -168,14 +174,8 @@ namespace Trabajo_final_Front_End
         }
 
         //Metodos sin usar
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void BtnActualizar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
+        
         private void lbImagen_Click(object sender, EventArgs e)
         {
 
@@ -216,5 +216,7 @@ namespace Trabajo_final_Front_End
 
 
         }
+
+        
     }
 }

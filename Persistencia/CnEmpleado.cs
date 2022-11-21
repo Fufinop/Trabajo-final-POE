@@ -38,7 +38,11 @@ namespace Negocio
                 Resultado = false;
                 MessageBox.Show("El tipo es obligatorio");
             }
-            
+            if (empleado.Imagen == null)
+            {
+                Resultado = false;
+                MessageBox.Show("La imagen es obligatoria");
+            }
             
 
             return Resultado;
@@ -71,6 +75,11 @@ namespace Negocio
         public DataSet obtenerDatos()
         {
             return cdEmpleado.Listar();
+        }
+
+        public void buscarEm(CeEmpleado cE)
+        {
+            cdEmpleado.buscar(cE);
         }
     }
 }

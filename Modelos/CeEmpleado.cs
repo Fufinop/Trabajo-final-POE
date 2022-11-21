@@ -7,7 +7,8 @@
         public string Apellidos { get; set; }
         public string Salario { get; set; }
         public string Tipo { get; set; }
-        public byte[] Foto { get; set; }
+        public byte [] Imagen { get; set; }
         public string Estatus { get; set; }
+        public string Busqueda { get; set; }
     }
 }
