@@ -35,8 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.picPrueba = new System.Windows.Forms.PictureBox();
-            this.picImagen = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExaminar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
@@ -65,8 +65,8 @@
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
@@ -96,8 +96,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.picPrueba);
-            this.tabPage1.Controls.Add(this.picImagen);
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.btnExaminar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.cbxEstatus);
@@ -123,24 +123,25 @@
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // picPrueba
+            // pictureBox2
             // 
-            this.picPrueba.BackColor = System.Drawing.Color.Silver;
-            this.picPrueba.Location = new System.Drawing.Point(103, 70);
-            this.picPrueba.Name = "picPrueba";
-            this.picPrueba.Size = new System.Drawing.Size(247, 233);
-            this.picPrueba.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPrueba.TabIndex = 62;
-            this.picPrueba.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox2.Location = new System.Drawing.Point(102, 58);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(247, 233);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 64;
+            this.pictureBox2.TabStop = false;
             // 
-            // picImagen
+            // pictureBox1
             // 
-            this.picImagen.BackColor = System.Drawing.Color.DarkGray;
-            this.picImagen.Location = new System.Drawing.Point(103, 70);
-            this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(247, 233);
-            this.picImagen.TabIndex = 61;
-            this.picImagen.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox1.Location = new System.Drawing.Point(102, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(247, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
             // 
             // btnExaminar
             // 
@@ -502,8 +503,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPrueba)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -542,7 +543,7 @@
         private Button btnEliminar;
         private Button btnExaminar;
         private OpenFileDialog ofdSeleccionar;
-        private PictureBox picImagen;
-        private PictureBox picPrueba;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

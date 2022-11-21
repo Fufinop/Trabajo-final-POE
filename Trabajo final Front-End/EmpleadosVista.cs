@@ -21,12 +21,16 @@ namespace Trabajo_final_Front_End
         private void cargarDatos()
         {
             dgvEmpleado.DataSource = cnEmpleado.obtenerDatos().Tables["tb1"];
+
+            //Prueba llenar imagen
+            
+            
         }
         private void Modulo10_Load(object sender, EventArgs e)
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            picImagen = null;
+            pictureBox1 = null;
         }
         private void limpiarForm()
         {
@@ -36,16 +40,11 @@ namespace Trabajo_final_Front_End
             tbxSalario.Text = string.Empty;
             cbxTipo.Text = string.Empty;
             cbxEstatus.Text = "Activo";
-            picPrueba = null;
+            //pictureBox1 = null;
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            /*Convercion de la imagen
-            MemoryStream ms = new MemoryStream();
-            picPrueba.Image.Save(ms, ImageFormat.Jpeg);
-            byte[] img = ms.ToArray();
-            */
 
             bool Resultado;
             CeEmpleado ceEmpleado = new CeEmpleado();
@@ -56,6 +55,18 @@ namespace Trabajo_final_Front_End
             ceEmpleado.Tipo = cbxTipo.Text;
             ceEmpleado.Estatus = cbxEstatus.Text;
             //ceEmpleado.Foto = img;
+
+            //Prueba imagen
+            byte[] file = null;
+            Stream mystream = ofdSeleccionar.OpenFile();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                mystream.CopyTo(ms);
+                file = ms.ToArray();
+            }
+
+           
+
             Resultado = cnEmpleado.validarDatos(ceEmpleado);
 
             if (Resultado == false)
@@ -125,19 +136,6 @@ namespace Trabajo_final_Front_End
 
         private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            try
-            {
-                id = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-            
-            MessageBox.Show(" " + id);
-            */
-
 
             MessageBox.Show("Ya puedes Editar este campo");
             nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
@@ -148,18 +146,9 @@ namespace Trabajo_final_Front_End
             //picFoto.Load(dgvEmpleado.CurrentRow.Cells["Imagen"].Value.ToString());
             cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
 
-            //Reader
-            //MySqlDataReader reader = 
-
-            try
-            {
-                
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            //prueba para imagen
+            pictureBox1 = null;
+            
         }
 
         private void btnEliminar_Click_3(object sender, EventArgs e)
@@ -195,34 +184,13 @@ namespace Trabajo_final_Front_End
         {
 
         }
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void lbEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
+        
         private void tabPage2_Click_1(object sender, EventArgs e)
         {
 
         }
-        private void btnNuevo_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void cbxEstatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -236,7 +204,7 @@ namespace Trabajo_final_Front_End
             {
                 try
                 {
-                    picPrueba.Image = Image.FromFile(ofdSeleccionar.FileName);
+                    pictureBox2.Image = Image.FromFile(ofdSeleccionar.FileName);
                 }
                 catch (Exception ex)
                 {
