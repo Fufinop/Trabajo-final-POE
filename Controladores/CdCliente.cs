@@ -3,6 +3,8 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Modelos;
 using System.Data;
+using Microsoft.VisualBasic;
+using MySqlX.XDevAPI;
 
 namespace Controladores
 {
@@ -41,8 +43,9 @@ namespace Controladores
 
                 MessageBox.Show("Registro creado");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("" + ex);
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
@@ -77,15 +80,16 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`cliente` SET `Estatus`='Inactivo' WHERE  `idCliente`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
                 MessageBox.Show("Registro Eliminado");
             }
-            catch (Exception)
+            catch (Exception ex )
             {
+                MessageBox.Show("" + ex);
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }
@@ -117,7 +121,7 @@ namespace Controladores
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
             mySqlConnection.Open();
-            string Querry = "SELECT * FROM cliente LIMIT 1000;";
+            string Querry = "SELECT * FROM cliente WHERE Estatus = 'Activo' LIMIT 1000;";
             MySqlDataAdapter adaptador;
             DataSet dataset = new DataSet();
 

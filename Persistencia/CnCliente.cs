@@ -45,11 +45,7 @@ namespace Negocio
             {
                 Resultado = false;
                 MessageBox.Show("La direccion es obligatoria");
-            } if (cliente.Id == 0)
-            {
-                Resultado = false;
-                MessageBox.Show("El id debe de ser diferente de cero");
-            }
+            } 
 
 
             return Resultado;

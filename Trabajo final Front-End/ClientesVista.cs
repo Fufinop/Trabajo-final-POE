@@ -1,4 +1,5 @@
 ﻿using Controladores;
+using Datos;
 using Entidad;
 using Modelos;
 using MySql.Data.MySqlClient;
@@ -20,9 +21,19 @@ namespace Trabajo_final_Front_End
         }
         private void cargarDatos()
         {
-            dgvCliente.DataSource = cnCliente.obtenerDatos().Tables["tb1"];
-            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvCliente.Columns[7];
-            column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            try
+            {
+                dgvCliente.DataSource = cnCliente.obtenerDatos().Tables["tb1"];
+                DataGridViewImageColumn column = (DataGridViewImageColumn)dgvCliente.Columns[7];
+                column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            }
+            catch (Exception)
+            {
+
+            }
+            
+
+            
         }
         private void Modulo10_Load(object sender, EventArgs e)
         {
@@ -135,15 +146,16 @@ namespace Trabajo_final_Front_End
             MessageBox.Show("Ya puedes Editar este campo");
             lbEmpleado.Visible = false;
             btnNuevo.Enabled = false;
-            nudCliente.Value = (uint)dgvCliente.CurrentRow.Cells["IdEmpleado"].Value;
-            tbxNombre.Text = dgvCliente.CurrentRow.Cells["Nombres"].Value.ToString();
-            tbxApellidos.Text = dgvCliente.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxDireccion.Text = dgvCliente.CurrentRow.Cells["Salario"].Value.ToString();
+            nudCliente.Value = (uint)dgvCliente.CurrentRow.Cells["IdCliente"].Value;
+            tbxNombre.Text = dgvCliente.CurrentRow.Cells["Nombre"].Value.ToString();
+            tbxApellidos.Text = dgvCliente.CurrentRow.Cells["Apellido"].Value.ToString();
+            tbxDireccion.Text = dgvCliente.CurrentRow.Cells["Direccion"].Value.ToString();
             cbxCedula.Text = dgvCliente.CurrentRow.Cells["Cedula"].Value.ToString();
             cbxTelefono.Text = dgvCliente.CurrentRow.Cells["Telefono"].Value.ToString();
-            tbxEmail.Text = dgvCliente.CurrentRow.Cells["email"].Value.ToString();
-            cbxEstatus.Text = dgvCliente.CurrentRow.Cells["Estatus"].Value.ToString();
+            tbxEmail.Text = dgvCliente.CurrentRow.Cells["E-mail"].Value.ToString();
             pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvCliente.CurrentRow.Cells["Foto"].Value as byte[]));
+            cbxEstatus.Text = dgvCliente.CurrentRow.Cells["Estatus"].Value.ToString();
+           
             
             
             
