@@ -26,6 +26,9 @@
     <Compile Update="ClientesVista.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="VentasVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProveedorVista.cs">
       <SubType>Form</SubType>
     </Compile>
