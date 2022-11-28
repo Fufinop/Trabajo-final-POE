@@ -26,7 +26,7 @@ namespace Trabajo_final_Front_End
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            
+            btnEditar.Enabled = false;
             
         }
         private void limpiarForm()
@@ -42,11 +42,7 @@ namespace Trabajo_final_Front_End
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            /*Convercion de la imagen
-            MemoryStream ms = new MemoryStream();
-            picPrueba.Image.Save(ms, ImageFormat.Jpeg);
-            byte[] img = ms.ToArray();
-            */
+            
 
             bool Resultado;
             CeNegocio ceNegocio = new CeNegocio();
@@ -55,7 +51,6 @@ namespace Trabajo_final_Front_End
             ceNegocio.Direccion = tbxDireccion.Text;
             ceNegocio.Sucursal = tbxSucursal.Text;
             ceNegocio.Estatus = cbxEstatus.Text;
-            //ceEmpleado.Foto = img;
             Resultado = cnNegocio.validarDatos(ceNegocio);
 
             if (Resultado == false)
@@ -72,8 +67,9 @@ namespace Trabajo_final_Front_End
                 cnNegocio.editarNegocio(ceNegocio);
             }
 
-            
 
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = false;
             cargarDatos();
             limpiarForm();
             tabControl1.TabPages.Remove(tabPage1);
@@ -125,22 +121,11 @@ namespace Trabajo_final_Front_End
 
         private void dgvEmpleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            try
-            {
-                id = (int)dgvEmpleado.CurrentRow.Cells["id"].Value;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-            
-            MessageBox.Show(" " + id);
-            */
-
 
             MessageBox.Show("Ya puedes Editar este campo");
             btnEditar.Enabled = true;
+            btnNuevo.Enabled = false;
+
             nudNegocio.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdNegocio"].Value;
             tbxCiudad.Text = dgvEmpleado.CurrentRow.Cells["Ciudad"].Value.ToString();
             tbxDireccion.Text = dgvEmpleado.CurrentRow.Cells["Direccion"].Value.ToString();
