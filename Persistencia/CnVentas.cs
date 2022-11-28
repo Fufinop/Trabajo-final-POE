@@ -12,14 +12,24 @@ namespace Negocio
     public class CnVentas
     {
         CdVentas cdVentas = new CdVentas();
-        public bool validarDatos(CeVentas empleado)
+        public bool validarDatos(CeVentas venta)
         {
             bool Resultado = true;
 
-            if (empleado.Cliente == String.Empty)
+            if (venta.Cliente == String.Empty)
             {
                 Resultado = false;
-                MessageBox.Show("El Cliente");
+                MessageBox.Show("El nombre del cliente no puede estar vacio");
+            }
+            if (venta.PrecioVenta == String.Empty)
+            {
+                Resultado = false;
+                MessageBox.Show("El precio de venta no puede estar vacio");
+            }
+            if (venta.Producto == String.Empty)
+            {
+                Resultado = false;
+                MessageBox.Show("El espacio del producto no puede estar vacio");
             }
 
             return Resultado;

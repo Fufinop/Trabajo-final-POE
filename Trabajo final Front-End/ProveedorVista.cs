@@ -42,8 +42,8 @@ namespace Trabajo_final_Front_End
             tbxEmail.Text= string.Empty;
             tbxProducto.Text= string.Empty;
             //pictureBox2= null;
+            cbxEstatus.Text = "Activo";
 
-            
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)

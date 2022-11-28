@@ -80,7 +80,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`proveedor` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.ID + ";";
+                string Query = "UPDATE `empresa`.`proveedor` SET `Estatus`='Inactivo' WHERE  `idProveedor`=" + cE.ID + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();

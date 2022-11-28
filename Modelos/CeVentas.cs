@@ -8,9 +8,10 @@ namespace Entidad
 {
     public class CeVentas
     {
-        public int IDCliente { get; set; }
+        public int Id { get; set; }
         public string Cliente { get; set; }
-        public string IDEmpleado { get; set;}
+        public string PrecioVenta { get; set;}
+        public string Producto { get; set; }
         public string Estatus { get; set; }
     }
 }

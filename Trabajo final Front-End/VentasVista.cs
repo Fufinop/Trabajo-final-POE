@@ -10,7 +10,7 @@ namespace Trabajo_final_Front_End
 
     public partial class VentasVista : Form
     {
-        CnEmpleado cnEmpleado = new CnEmpleado();
+        CnVentas cnVentas = new CnVentas();
         public VentasVista()
         {
             InitializeComponent();
@@ -20,59 +20,49 @@ namespace Trabajo_final_Front_End
         }
         private void cargarDatos()
         {
-            dgvEmpleado.DataSource = cnEmpleado.obtenerDatos().Tables["tb1"];
-            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvEmpleado.Columns[5];
-            column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dgvVentas.DataSource = cnVentas.obtenerDatos().Tables["tb1"];
         }
         private void Modulo10_Load(object sender, EventArgs e)
         {
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
-            pictureBox1 = null;
             btnEditar.Enabled = false;
         }
         private void limpiarForm()
         {
-            nudEmpleado.Value = 0;
+            nudVenta.Value = 0;
             tbxNombre.Text = string.Empty;
-            tbxApellidos.Text = string.Empty;
-            tbxSalario.Text = string.Empty;
-            cbxTipo.Text = string.Empty;
+            tbxPrecio.Text = string.Empty;
+            tbxProducto.Text = string.Empty;
             cbxEstatus.Text = "Activo";
-            //pictureBox1 = null;
+            
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
             bool Resultado;
-            CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Id = (int)nudEmpleado.Value;
-            ceEmpleado.Nombre = tbxNombre.Text;
-            ceEmpleado.Apellidos = tbxApellidos.Text;
-            ceEmpleado.Salario = tbxSalario.Text;
-            ceEmpleado.Tipo = cbxTipo.Text;
-            ceEmpleado.Estatus = cbxEstatus.Text;
-            if (pictureBox2.Image != null)
-            {
-                ceEmpleado.Imagen = Imagen.imgToByte(pictureBox2.Image);
-            }
+            CeVentas ceVentas = new CeVentas();
+            ceVentas.Id = (int)nudVenta.Value;
+            ceVentas.Cliente = tbxNombre.Text;
+            ceVentas.PrecioVenta = tbxPrecio.Text;
+            ceVentas.Producto = tbxProducto.Text;
+            ceVentas.Estatus = cbxEstatus.Text;
 
-
-            Resultado = cnEmpleado.validarDatos(ceEmpleado);
+            Resultado = cnVentas.validarDatos(ceVentas);
 
             if (Resultado == false)
             {
                 return;
             }
 
-            if (ceEmpleado.Id == 0)
+            if (ceVentas.Id == 0)
             {
-                cnEmpleado.crearEmpleado(ceEmpleado);
+                cnVentas.crearEmpleado(ceVentas);
             }
             else
             {
-                cnEmpleado.editarEmpleado(ceEmpleado);
+                cnVentas.editarEmpleado(ceVentas);
             }
 
 
@@ -96,8 +86,8 @@ namespace Trabajo_final_Front_End
         {
             if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarDatos(cE);
+                CeVentas cE = new CeVentas();
+                cnVentas.eliminarDatos(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -108,8 +98,8 @@ namespace Trabajo_final_Front_End
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
             limpiarForm();
-            nudEmpleado.Visible = false;
-            lbEmpleado.Visible = false;
+            nudVenta.Visible = false;
+            lbVenta.Visible = false;
             cbxEstatus.Visible = false;
             lbEstatus.Visible = false;
             btnEliminar.Visible = false;
@@ -120,8 +110,8 @@ namespace Trabajo_final_Front_End
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cbxEstatus.Visible = true;
-            lbEmpleado.Visible = true;
-            cbxEstatus.Visible = true;
+            lbVenta.Visible = true;
+            nudVenta.Visible = true;
             lbEstatus.Visible = true;
             cbxEstatus.Enabled = true;
             tabControl1.TabPages.Remove(tabPage2);
@@ -132,42 +122,30 @@ namespace Trabajo_final_Front_End
         {
 
             MessageBox.Show("Ya puedes Editar este campo");
-            lbEmpleado.Visible = false;
+            lbVenta.Visible = false;
             btnNuevo.Enabled = false;
             btnEditar.Enabled = true;
 
-            nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
-            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
-            pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvEmpleado.CurrentRow.Cells["Foto"].Value as byte[]));
-            
+            nudVenta.Value = (uint)dgvVentas.CurrentRow.Cells["IdVenta"].Value;
+            tbxNombre.Text = dgvVentas.CurrentRow.Cells["cliente"].Value.ToString();
+            tbxPrecio.Text = dgvVentas.CurrentRow.Cells["PrecioVenta"].Value.ToString();
+            tbxProducto.Text = dgvVentas.CurrentRow.Cells["Producto"].Value.ToString();
+            cbxEstatus.Text = dgvVentas.CurrentRow.Cells["Estatus"].Value.ToString();
             
             
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (tbxPrueba.Text != "")
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.buscarEm(cE);
-                cargarDatos();
-            }
-            CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Busqueda = tbxPrueba.Text;
-
-            MessageBox.Show("" + ceEmpleado.Busqueda);
+            
         }
         private void btnEliminar_Click_3(object sender, EventArgs e)
         {
-            if (nudEmpleado.Value == 0) return;
+            if (nudVenta.Value == 0) return;
 
             if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarEmpleado(cE);
+                CeVentas cE = new CeVentas();
+                cnVentas.eliminarEmpleado(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -195,32 +173,14 @@ namespace Trabajo_final_Front_End
         }
         
         
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void EmpleadosVista_Load(object sender, EventArgs e)
         {
-            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
-
-            ofdSeleccionar.Filter = "Imagenes | jpg; *.png;";
-            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            ofdSeleccionar.Title = "Seleccionar Imagen";
-
-            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    pictureBox2.Image = Image.FromFile(ofdSeleccionar.FileName);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex.ToString);
-                    throw;
-                }
-                
-            }
-
 
         }
 
-        private void EmpleadosVista_Load(object sender, EventArgs e)
+        private void lbSalario_Click(object sender, EventArgs e)
         {
 
         }
