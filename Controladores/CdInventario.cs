@@ -36,8 +36,9 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "INSERT INTO `empresa`.`inventario` (`Codigo Producto`, `Nombre`, `Descripcion`, `Stock`, `Foto`, `Estatus`) VALUES ('" + cE.Codigo + "', '" + cE.Nombre + "', '" + cE.Descripcion + "', '" + cE.Stock + "', @Imagen, 'Activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -57,8 +58,9 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "UPDATE `empresa`.`inventario` SET `Codigo Producto`='" + cE.Codigo + "', `Nombre`='" + cE.Nombre + "', `Descripcion`='" + cE.Descripcion + "', `Stock`='" + cE.Stock + "',`Foto`=@Imagen, `Estatus`='" + cE.Estatus + "' WHERE  `idProducto`=" + cE.ID + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -79,7 +81,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "UPDATE `empresa`.`inventario` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.ID + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -101,7 +103,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo';";
+                string Query = "UPDATE `empresa`.`inventario` SET `Estatus`='Inactivo';";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -120,7 +122,7 @@ namespace Datos
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
             mySqlConnection.Open();
-            string Querry = "SELECT * FROM empleado WHERE Estatus = 'Activo' LIMIT 1000;";
+            string Querry = "SELECT * FROM inventario WHERE Estatus = 'Activo' LIMIT 1000;";
             MySqlDataAdapter adaptador;
             DataSet dataset = new DataSet();
 

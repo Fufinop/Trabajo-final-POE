@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbxStock = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExaminar = new System.Windows.Forms.Button();
@@ -42,13 +43,12 @@
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
             this.lbImagen = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lbTipo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.tbxCodigo = new System.Windows.Forms.TextBox();
             this.tbxNombre = new System.Windows.Forms.TextBox();
-            this.tbxApellidos = new System.Windows.Forms.TextBox();
-            this.tbxSalario = new System.Windows.Forms.TextBox();
+            this.tbxDescripcion = new System.Windows.Forms.TextBox();
             this.nudEmpleado = new System.Windows.Forms.NumericUpDown();
             this.lbSalario = new System.Windows.Forms.Label();
             this.lbEmpleado = new System.Windows.Forms.Label();
@@ -96,6 +96,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tbxStock);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.btnExaminar);
@@ -103,13 +104,12 @@
             this.tabPage1.Controls.Add(this.cbxEstatus);
             this.tabPage1.Controls.Add(this.lbEstatus);
             this.tabPage1.Controls.Add(this.lbImagen);
-            this.tabPage1.Controls.Add(this.cbxTipo);
             this.tabPage1.Controls.Add(this.lbTipo);
             this.tabPage1.Controls.Add(this.btnCancelar);
             this.tabPage1.Controls.Add(this.btnGuardar);
+            this.tabPage1.Controls.Add(this.tbxCodigo);
             this.tabPage1.Controls.Add(this.tbxNombre);
-            this.tabPage1.Controls.Add(this.tbxApellidos);
-            this.tabPage1.Controls.Add(this.tbxSalario);
+            this.tabPage1.Controls.Add(this.tbxDescripcion);
             this.tabPage1.Controls.Add(this.nudEmpleado);
             this.tabPage1.Controls.Add(this.lbSalario);
             this.tabPage1.Controls.Add(this.lbEmpleado);
@@ -122,6 +122,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // tbxStock
+            // 
+            this.tbxStock.Location = new System.Drawing.Point(611, 380);
+            this.tbxStock.Name = "tbxStock";
+            this.tbxStock.Size = new System.Drawing.Size(196, 34);
+            this.tbxStock.TabIndex = 65;
             // 
             // pictureBox2
             // 
@@ -188,7 +196,7 @@
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbEstatus.ForeColor = System.Drawing.Color.Black;
-            this.lbEstatus.Location = new System.Drawing.Point(502, 431);
+            this.lbEstatus.Location = new System.Drawing.Point(495, 431);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(97, 25);
             this.lbEstatus.TabIndex = 57;
@@ -206,29 +214,16 @@
             this.lbImagen.Text = "Imagen";
             this.lbImagen.Click += new System.EventHandler(this.lbImagen_Click);
             // 
-            // cbxTipo
-            // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Repostero ",
-            "Cajero ",
-            "Repartidor",
-            "Panadero"});
-            this.cbxTipo.Location = new System.Drawing.Point(611, 380);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(196, 32);
-            this.cbxTipo.TabIndex = 53;
-            // 
             // lbTipo
             // 
             this.lbTipo.AutoSize = true;
             this.lbTipo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTipo.ForeColor = System.Drawing.Color.Black;
-            this.lbTipo.Location = new System.Drawing.Point(530, 380);
+            this.lbTipo.Location = new System.Drawing.Point(512, 383);
             this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(69, 25);
+            this.lbTipo.Size = new System.Drawing.Size(80, 25);
             this.lbTipo.TabIndex = 52;
-            this.lbTipo.Text = "Tipo:";
+            this.lbTipo.Text = "Stock:";
             // 
             // btnCancelar
             // 
@@ -258,26 +253,26 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
+            // tbxCodigo
+            // 
+            this.tbxCodigo.Location = new System.Drawing.Point(611, 228);
+            this.tbxCodigo.Name = "tbxCodigo";
+            this.tbxCodigo.Size = new System.Drawing.Size(196, 34);
+            this.tbxCodigo.TabIndex = 45;
+            // 
             // tbxNombre
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(611, 228);
+            this.tbxNombre.Location = new System.Drawing.Point(611, 282);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(196, 34);
-            this.tbxNombre.TabIndex = 45;
+            this.tbxNombre.TabIndex = 44;
             // 
-            // tbxApellidos
+            // tbxDescripcion
             // 
-            this.tbxApellidos.Location = new System.Drawing.Point(611, 282);
-            this.tbxApellidos.Name = "tbxApellidos";
-            this.tbxApellidos.Size = new System.Drawing.Size(196, 34);
-            this.tbxApellidos.TabIndex = 44;
-            // 
-            // tbxSalario
-            // 
-            this.tbxSalario.Location = new System.Drawing.Point(611, 328);
-            this.tbxSalario.Name = "tbxSalario";
-            this.tbxSalario.Size = new System.Drawing.Size(196, 34);
-            this.tbxSalario.TabIndex = 43;
+            this.tbxDescripcion.Location = new System.Drawing.Point(611, 328);
+            this.tbxDescripcion.Name = "tbxDescripcion";
+            this.tbxDescripcion.Size = new System.Drawing.Size(196, 34);
+            this.tbxDescripcion.TabIndex = 43;
             // 
             // nudEmpleado
             // 
@@ -297,11 +292,11 @@
             this.lbSalario.AutoSize = true;
             this.lbSalario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbSalario.ForeColor = System.Drawing.Color.Black;
-            this.lbSalario.Location = new System.Drawing.Point(509, 324);
+            this.lbSalario.Location = new System.Drawing.Point(446, 331);
             this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(94, 25);
+            this.lbSalario.Size = new System.Drawing.Size(146, 25);
             this.lbSalario.TabIndex = 41;
-            this.lbSalario.Text = "Salario:";
+            this.lbSalario.Text = "Descripción:";
             // 
             // lbEmpleado
             // 
@@ -310,31 +305,31 @@
             this.lbEmpleado.ForeColor = System.Drawing.Color.Black;
             this.lbEmpleado.Location = new System.Drawing.Point(410, 177);
             this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(189, 25);
+            this.lbEmpleado.Size = new System.Drawing.Size(182, 25);
             this.lbEmpleado.TabIndex = 40;
-            this.lbEmpleado.Text = "Id del empleado:";
+            this.lbEmpleado.Text = "Id del producto:";
             // 
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbNombre.ForeColor = System.Drawing.Color.Black;
-            this.lbNombre.Location = new System.Drawing.Point(488, 227);
+            this.lbNombre.Location = new System.Drawing.Point(395, 231);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(114, 25);
+            this.lbNombre.Size = new System.Drawing.Size(197, 25);
             this.lbNombre.TabIndex = 39;
-            this.lbNombre.Text = "Nombres:";
+            this.lbNombre.Text = "Codigo producto:";
             // 
             // lbApellidos
             // 
             this.lbApellidos.AutoSize = true;
             this.lbApellidos.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbApellidos.ForeColor = System.Drawing.Color.Black;
-            this.lbApellidos.Location = new System.Drawing.Point(487, 278);
+            this.lbApellidos.Location = new System.Drawing.Point(488, 282);
             this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(120, 25);
+            this.lbApellidos.Size = new System.Drawing.Size(104, 25);
             this.lbApellidos.TabIndex = 38;
-            this.lbApellidos.Text = "Apellidos:";
+            this.lbApellidos.Text = "Nombre:";
             // 
             // tabPage2
             // 
@@ -480,7 +475,7 @@
             this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmpleado.RowTemplate.Height = 29;
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(931, 443);
+            this.dgvEmpleado.Size = new System.Drawing.Size(950, 443);
             this.dgvEmpleado.TabIndex = 52;
             this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             // 
@@ -522,11 +517,10 @@
         private Button btnGuardar;
         private TabPage tabPage2;
         private Label lbImagen;
-        private ComboBox cbxTipo;
         private Label lbTipo;
+        private TextBox tbxCodigo;
         private TextBox tbxNombre;
-        private TextBox tbxApellidos;
-        private TextBox tbxSalario;
+        private TextBox tbxDescripcion;
         private NumericUpDown nudEmpleado;
         private Label lbSalario;
         private Label lbEmpleado;
@@ -546,5 +540,6 @@
         private OpenFileDialog ofdSeleccionar;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private TextBox tbxStock;
     }
 }
