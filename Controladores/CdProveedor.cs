@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    internal class CdProveedor
+    public class CdProveedor
     {
         string cadenaConexion = "Server=localhost;User=root;Password=root;database=Empresa";
 
@@ -36,8 +36,9 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "INSERT INTO `empresa`.`proveedor` (`CodigoProvedor`, `CodigoCiudad`, `Nombre`, `Direccion`, `Telefono`, `E-mail`, `Producto`, `Foto`, `Estatus`) VALUES ('" + cE.CodigoProveedor + "', '" + cE.CodigoCiudad + "', '" + cE.Nombre + "', '" + cE.Direccion + "', '" + cE.Telefono + "', '" + cE.EMail + "', '" + cE.Producto + "', @Imagen, 'Activo');";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Foto);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
 
@@ -57,7 +58,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "UPDATE `empresa`.`proveedor` SET `CodigoProvedor`='" + cE.CodigoProveedor + "', `CodigoCiudad`='" + cE.CodigoCiudad + "', `Nombre`='" + cE.Nombre + "', `Direccion`='" + cE.Direccion + "', `Telefono`='" + cE.Telefono + "', `E-mail`='" + cE.EMail + "', `Producto`='" + cE.Producto + "', `Foto`=@Imagen, `Estatus`='" + cE.Estatus + "' WHERE  `idProveedor`=" + cE.ID + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -79,7 +80,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "";
+                string Query = "UPDATE `empresa`.`proveedor` SET `Estatus`='Inactivo' WHERE  `idEmpleado`=" + cE.ID + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -101,7 +102,7 @@ namespace Datos
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`empleado` SET `Estatus`='Inactivo';";
+                string Query = "UPDATE `empresa`.`proveedor` SET `Estatus`='Inactivo';";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
@@ -120,7 +121,7 @@ namespace Datos
         {
             MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
             mySqlConnection.Open();
-            string Querry = "SELECT * FROM empleado WHERE Estatus = 'Activo' LIMIT 1000;";
+            string Querry = "SELECT * FROM proveedor WHERE Estatus = 'Activo' LIMIT 1000;";
             MySqlDataAdapter adaptador;
             DataSet dataset = new DataSet();
 

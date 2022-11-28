@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.tbxProducto = new System.Windows.Forms.TextBox();
+            this.tbxCodigoProveedor = new System.Windows.Forms.TextBox();
+            this.tbxCodigoCiudad = new System.Windows.Forms.TextBox();
+            this.lbCodigoProveedor = new System.Windows.Forms.Label();
+            this.lbCodigoCiudad = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExaminar = new System.Windows.Forms.Button();
@@ -42,18 +49,17 @@
             this.cbxEstatus = new System.Windows.Forms.ComboBox();
             this.lbEstatus = new System.Windows.Forms.Label();
             this.lbImagen = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.lbTipo = new System.Windows.Forms.Label();
+            this.lbProducto = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tbxNombre = new System.Windows.Forms.TextBox();
-            this.tbxApellidos = new System.Windows.Forms.TextBox();
-            this.tbxSalario = new System.Windows.Forms.TextBox();
-            this.nudEmpleado = new System.Windows.Forms.NumericUpDown();
-            this.lbSalario = new System.Windows.Forms.Label();
-            this.lbEmpleado = new System.Windows.Forms.Label();
+            this.tbxDireccion = new System.Windows.Forms.TextBox();
+            this.tbxtelefono = new System.Windows.Forms.TextBox();
+            this.nudProveedor = new System.Windows.Forms.NumericUpDown();
+            this.lbTelefono = new System.Windows.Forms.Label();
+            this.lbProveedor = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
-            this.lbApellidos = new System.Windows.Forms.Label();
+            this.lbDireccion = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -61,15 +67,15 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxPrueba = new System.Windows.Forms.TextBox();
-            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProveedor)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,6 +102,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tbxEmail);
+            this.tabPage1.Controls.Add(this.lbEmail);
+            this.tabPage1.Controls.Add(this.tbxProducto);
+            this.tabPage1.Controls.Add(this.tbxCodigoProveedor);
+            this.tabPage1.Controls.Add(this.tbxCodigoCiudad);
+            this.tabPage1.Controls.Add(this.lbCodigoProveedor);
+            this.tabPage1.Controls.Add(this.lbCodigoCiudad);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.btnExaminar);
@@ -103,18 +116,17 @@
             this.tabPage1.Controls.Add(this.cbxEstatus);
             this.tabPage1.Controls.Add(this.lbEstatus);
             this.tabPage1.Controls.Add(this.lbImagen);
-            this.tabPage1.Controls.Add(this.cbxTipo);
-            this.tabPage1.Controls.Add(this.lbTipo);
+            this.tabPage1.Controls.Add(this.lbProducto);
             this.tabPage1.Controls.Add(this.btnCancelar);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.tbxNombre);
-            this.tabPage1.Controls.Add(this.tbxApellidos);
-            this.tabPage1.Controls.Add(this.tbxSalario);
-            this.tabPage1.Controls.Add(this.nudEmpleado);
-            this.tabPage1.Controls.Add(this.lbSalario);
-            this.tabPage1.Controls.Add(this.lbEmpleado);
+            this.tabPage1.Controls.Add(this.tbxDireccion);
+            this.tabPage1.Controls.Add(this.tbxtelefono);
+            this.tabPage1.Controls.Add(this.nudProveedor);
+            this.tabPage1.Controls.Add(this.lbTelefono);
+            this.tabPage1.Controls.Add(this.lbProveedor);
             this.tabPage1.Controls.Add(this.lbNombre);
-            this.tabPage1.Controls.Add(this.lbApellidos);
+            this.tabPage1.Controls.Add(this.lbDireccion);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -122,6 +134,69 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // tbxEmail
+            // 
+            this.tbxEmail.Location = new System.Drawing.Point(607, 382);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(196, 34);
+            this.tbxEmail.TabIndex = 71;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbEmail.ForeColor = System.Drawing.Color.Black;
+            this.lbEmail.Location = new System.Drawing.Point(501, 382);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(90, 25);
+            this.lbEmail.TabIndex = 70;
+            this.lbEmail.Text = "E-mail:";
+            this.lbEmail.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // tbxProducto
+            // 
+            this.tbxProducto.Location = new System.Drawing.Point(611, 434);
+            this.tbxProducto.Name = "tbxProducto";
+            this.tbxProducto.Size = new System.Drawing.Size(196, 34);
+            this.tbxProducto.TabIndex = 69;
+            // 
+            // tbxCodigoProveedor
+            // 
+            this.tbxCodigoProveedor.Location = new System.Drawing.Point(607, 112);
+            this.tbxCodigoProveedor.Name = "tbxCodigoProveedor";
+            this.tbxCodigoProveedor.Size = new System.Drawing.Size(196, 34);
+            this.tbxCodigoProveedor.TabIndex = 68;
+            // 
+            // tbxCodigoCiudad
+            // 
+            this.tbxCodigoCiudad.Location = new System.Drawing.Point(607, 166);
+            this.tbxCodigoCiudad.Name = "tbxCodigoCiudad";
+            this.tbxCodigoCiudad.Size = new System.Drawing.Size(196, 34);
+            this.tbxCodigoCiudad.TabIndex = 67;
+            // 
+            // lbCodigoProveedor
+            // 
+            this.lbCodigoProveedor.AutoSize = true;
+            this.lbCodigoProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbCodigoProveedor.ForeColor = System.Drawing.Color.Black;
+            this.lbCodigoProveedor.Location = new System.Drawing.Point(395, 112);
+            this.lbCodigoProveedor.Name = "lbCodigoProveedor";
+            this.lbCodigoProveedor.Size = new System.Drawing.Size(204, 25);
+            this.lbCodigoProveedor.TabIndex = 66;
+            this.lbCodigoProveedor.Text = "CodigoProveedor:";
+            // 
+            // lbCodigoCiudad
+            // 
+            this.lbCodigoCiudad.AutoSize = true;
+            this.lbCodigoCiudad.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbCodigoCiudad.ForeColor = System.Drawing.Color.Black;
+            this.lbCodigoCiudad.Location = new System.Drawing.Point(428, 169);
+            this.lbCodigoCiudad.Name = "lbCodigoCiudad";
+            this.lbCodigoCiudad.Size = new System.Drawing.Size(171, 25);
+            this.lbCodigoCiudad.TabIndex = 65;
+            this.lbCodigoCiudad.Text = "CodigoCiudad:";
             // 
             // pictureBox2
             // 
@@ -163,7 +238,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(607, 510);
+            this.btnEliminar.Location = new System.Drawing.Point(607, 564);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(154, 62);
             this.btnEliminar.TabIndex = 59;
@@ -178,7 +253,7 @@
             this.cbxEstatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbxEstatus.Location = new System.Drawing.Point(611, 431);
+            this.cbxEstatus.Location = new System.Drawing.Point(611, 485);
             this.cbxEstatus.Name = "cbxEstatus";
             this.cbxEstatus.Size = new System.Drawing.Size(196, 32);
             this.cbxEstatus.TabIndex = 58;
@@ -188,7 +263,7 @@
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbEstatus.ForeColor = System.Drawing.Color.Black;
-            this.lbEstatus.Location = new System.Drawing.Point(502, 431);
+            this.lbEstatus.Location = new System.Drawing.Point(502, 485);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(97, 25);
             this.lbEstatus.TabIndex = 57;
@@ -206,29 +281,16 @@
             this.lbImagen.Text = "Imagen";
             this.lbImagen.Click += new System.EventHandler(this.lbImagen_Click);
             // 
-            // cbxTipo
+            // lbProducto
             // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Repostero ",
-            "Cajero ",
-            "Repartidor",
-            "Panadero"});
-            this.cbxTipo.Location = new System.Drawing.Point(611, 380);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(196, 32);
-            this.cbxTipo.TabIndex = 53;
-            // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTipo.ForeColor = System.Drawing.Color.Black;
-            this.lbTipo.Location = new System.Drawing.Point(530, 380);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(69, 25);
-            this.lbTipo.TabIndex = 52;
-            this.lbTipo.Text = "Tipo:";
+            this.lbProducto.AutoSize = true;
+            this.lbProducto.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbProducto.ForeColor = System.Drawing.Color.Black;
+            this.lbProducto.Location = new System.Drawing.Point(484, 434);
+            this.lbProducto.Name = "lbProducto";
+            this.lbProducto.Size = new System.Drawing.Size(115, 25);
+            this.lbProducto.TabIndex = 52;
+            this.lbProducto.Text = "Producto:";
             // 
             // btnCancelar
             // 
@@ -236,7 +298,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(789, 510);
+            this.btnCancelar.Location = new System.Drawing.Point(789, 564);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(165, 40);
             this.btnCancelar.TabIndex = 49;
@@ -250,7 +312,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(395, 510);
+            this.btnGuardar.Location = new System.Drawing.Point(395, 564);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(165, 40);
             this.btnGuardar.TabIndex = 46;
@@ -265,76 +327,76 @@
             this.tbxNombre.Size = new System.Drawing.Size(196, 34);
             this.tbxNombre.TabIndex = 45;
             // 
-            // tbxApellidos
+            // tbxDireccion
             // 
-            this.tbxApellidos.Location = new System.Drawing.Point(611, 282);
-            this.tbxApellidos.Name = "tbxApellidos";
-            this.tbxApellidos.Size = new System.Drawing.Size(196, 34);
-            this.tbxApellidos.TabIndex = 44;
+            this.tbxDireccion.Location = new System.Drawing.Point(611, 282);
+            this.tbxDireccion.Name = "tbxDireccion";
+            this.tbxDireccion.Size = new System.Drawing.Size(196, 34);
+            this.tbxDireccion.TabIndex = 44;
             // 
-            // tbxSalario
+            // tbxtelefono
             // 
-            this.tbxSalario.Location = new System.Drawing.Point(611, 328);
-            this.tbxSalario.Name = "tbxSalario";
-            this.tbxSalario.Size = new System.Drawing.Size(196, 34);
-            this.tbxSalario.TabIndex = 43;
+            this.tbxtelefono.Location = new System.Drawing.Point(611, 328);
+            this.tbxtelefono.Name = "tbxtelefono";
+            this.tbxtelefono.Size = new System.Drawing.Size(196, 34);
+            this.tbxtelefono.TabIndex = 43;
             // 
-            // nudEmpleado
+            // nudProveedor
             // 
-            this.nudEmpleado.Enabled = false;
-            this.nudEmpleado.Location = new System.Drawing.Point(611, 180);
-            this.nudEmpleado.Maximum = new decimal(new int[] {
+            this.nudProveedor.Enabled = false;
+            this.nudProveedor.Location = new System.Drawing.Point(611, 58);
+            this.nudProveedor.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.nudEmpleado.Name = "nudEmpleado";
-            this.nudEmpleado.Size = new System.Drawing.Size(150, 34);
-            this.nudEmpleado.TabIndex = 42;
+            this.nudProveedor.Name = "nudProveedor";
+            this.nudProveedor.Size = new System.Drawing.Size(150, 34);
+            this.nudProveedor.TabIndex = 42;
             // 
-            // lbSalario
+            // lbTelefono
             // 
-            this.lbSalario.AutoSize = true;
-            this.lbSalario.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSalario.ForeColor = System.Drawing.Color.Black;
-            this.lbSalario.Location = new System.Drawing.Point(509, 324);
-            this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(94, 25);
-            this.lbSalario.TabIndex = 41;
-            this.lbSalario.Text = "Salario:";
+            this.lbTelefono.AutoSize = true;
+            this.lbTelefono.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTelefono.ForeColor = System.Drawing.Color.Black;
+            this.lbTelefono.Location = new System.Drawing.Point(476, 328);
+            this.lbTelefono.Name = "lbTelefono";
+            this.lbTelefono.Size = new System.Drawing.Size(115, 25);
+            this.lbTelefono.TabIndex = 41;
+            this.lbTelefono.Text = "Teléfono:";
             // 
-            // lbEmpleado
+            // lbProveedor
             // 
-            this.lbEmpleado.AutoSize = true;
-            this.lbEmpleado.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbEmpleado.ForeColor = System.Drawing.Color.Black;
-            this.lbEmpleado.Location = new System.Drawing.Point(410, 177);
-            this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(189, 25);
-            this.lbEmpleado.TabIndex = 40;
-            this.lbEmpleado.Text = "Id del empleado:";
+            this.lbProveedor.AutoSize = true;
+            this.lbProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbProveedor.ForeColor = System.Drawing.Color.Black;
+            this.lbProveedor.Location = new System.Drawing.Point(404, 60);
+            this.lbProveedor.Name = "lbProveedor";
+            this.lbProveedor.Size = new System.Drawing.Size(195, 25);
+            this.lbProveedor.TabIndex = 40;
+            this.lbProveedor.Text = "Id del proveedor:";
             // 
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbNombre.ForeColor = System.Drawing.Color.Black;
-            this.lbNombre.Location = new System.Drawing.Point(488, 227);
+            this.lbNombre.Location = new System.Drawing.Point(495, 228);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(114, 25);
+            this.lbNombre.Size = new System.Drawing.Size(104, 25);
             this.lbNombre.TabIndex = 39;
-            this.lbNombre.Text = "Nombres:";
+            this.lbNombre.Text = "Nombre:";
             // 
-            // lbApellidos
+            // lbDireccion
             // 
-            this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbApellidos.ForeColor = System.Drawing.Color.Black;
-            this.lbApellidos.Location = new System.Drawing.Point(487, 278);
-            this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(120, 25);
-            this.lbApellidos.TabIndex = 38;
-            this.lbApellidos.Text = "Apellidos:";
+            this.lbDireccion.AutoSize = true;
+            this.lbDireccion.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbDireccion.ForeColor = System.Drawing.Color.Black;
+            this.lbDireccion.Location = new System.Drawing.Point(476, 282);
+            this.lbDireccion.Name = "lbDireccion";
+            this.lbDireccion.Size = new System.Drawing.Size(123, 25);
+            this.lbDireccion.TabIndex = 38;
+            this.lbDireccion.Text = "Dirección:";
             // 
             // tabPage2
             // 
@@ -344,7 +406,7 @@
             this.tabPage2.Controls.Add(this.btnBuscar);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.tbxPrueba);
-            this.tabPage2.Controls.Add(this.dgvEmpleado);
+            this.tabPage2.Controls.Add(this.dgvProveedor);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -360,7 +422,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(1063, 226);
+            this.btnEditar.Location = new System.Drawing.Point(1147, 230);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(154, 42);
             this.btnEditar.TabIndex = 59;
@@ -374,7 +436,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.Location = new System.Drawing.Point(1063, 274);
+            this.btnLimpiar.Location = new System.Drawing.Point(1147, 278);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(154, 47);
             this.btnLimpiar.TabIndex = 58;
@@ -388,7 +450,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(1063, 176);
+            this.btnNuevo.Location = new System.Drawing.Point(1147, 180);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(154, 44);
             this.btnNuevo.TabIndex = 56;
@@ -430,59 +492,59 @@
             this.tbxPrueba.Size = new System.Drawing.Size(1024, 34);
             this.tbxPrueba.TabIndex = 53;
             // 
-            // dgvEmpleado
+            // dgvProveedor
             // 
-            this.dgvEmpleado.AllowUserToDeleteRows = false;
-            this.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvEmpleado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEmpleado.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEmpleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEmpleado.ColumnHeadersHeight = 30;
-            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEmpleado.EnableHeadersVisualStyles = false;
-            this.dgvEmpleado.GridColor = System.Drawing.Color.Black;
-            this.dgvEmpleado.Location = new System.Drawing.Point(57, 211);
-            this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvEmpleado.RowHeadersVisible = false;
-            this.dgvEmpleado.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvEmpleado.RowTemplate.Height = 29;
-            this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(931, 443);
-            this.dgvEmpleado.TabIndex = 52;
-            this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
+            this.dgvProveedor.AllowUserToDeleteRows = false;
+            this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvProveedor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProveedor.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProveedor.ColumnHeadersHeight = 30;
+            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProveedor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProveedor.EnableHeadersVisualStyles = false;
+            this.dgvProveedor.GridColor = System.Drawing.Color.Black;
+            this.dgvProveedor.Location = new System.Drawing.Point(8, 211);
+            this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProveedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProveedor.RowHeadersVisible = false;
+            this.dgvProveedor.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProveedor.RowTemplate.Height = 29;
+            this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedor.Size = new System.Drawing.Size(1116, 443);
+            this.dgvProveedor.TabIndex = 52;
+            this.dgvProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             // 
             // ofdSeleccionar
             // 
@@ -506,10 +568,10 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProveedor)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -522,17 +584,16 @@
         private Button btnGuardar;
         private TabPage tabPage2;
         private Label lbImagen;
-        private ComboBox cbxTipo;
-        private Label lbTipo;
+        private Label lbProducto;
         private TextBox tbxNombre;
-        private TextBox tbxApellidos;
-        private TextBox tbxSalario;
-        private NumericUpDown nudEmpleado;
-        private Label lbSalario;
-        private Label lbEmpleado;
+        private TextBox tbxDireccion;
+        private TextBox tbxtelefono;
+        private NumericUpDown nudProveedor;
+        private Label lbTelefono;
+        private Label lbProveedor;
         private Label lbNombre;
-        private Label lbApellidos;
-        private DataGridView dgvEmpleado;
+        private Label lbDireccion;
+        private DataGridView dgvProveedor;
         private Button btnBuscar;
         private Label label1;
         private TextBox tbxPrueba;
@@ -546,5 +607,12 @@
         private OpenFileDialog ofdSeleccionar;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private TextBox tbxCodigoProveedor;
+        private TextBox tbxCodigoCiudad;
+        private Label lbCodigoProveedor;
+        private Label lbCodigoCiudad;
+        private TextBox tbxEmail;
+        private Label lbEmail;
+        private TextBox tbxProducto;
     }
 }

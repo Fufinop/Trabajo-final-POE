@@ -9,10 +9,9 @@ namespace Entidad
     public class CeProveedor
     {
         public int ID { get; set; }
-        public int IDProveedor { get; set; }
+        public string CodigoProveedor { get; set; }
         public string CodigoCiudad { get; set; }
         public string Nombre { get; set; }
-        public string Ruc { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string EMail { get; set; }

@@ -10,7 +10,7 @@ namespace Trabajo_final_Front_End
 
     public partial class ProveedorVista : Form
     {
-        CnEmpleado cnEmpleado = new CnEmpleado();
+        CnProveedor cnProveedor = new CnProveedor();
         public ProveedorVista()
         {
             InitializeComponent();
@@ -20,8 +20,8 @@ namespace Trabajo_final_Front_End
         }
         private void cargarDatos()
         {
-            dgvEmpleado.DataSource = cnEmpleado.obtenerDatos().Tables["tb1"];
-            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvEmpleado.Columns[5];
+            dgvProveedor.DataSource = cnProveedor.obtenerDatos().Tables["tb1"];
+            DataGridViewImageColumn column = (DataGridViewImageColumn)dgvProveedor.Columns[8];
             column.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
         private void Modulo10_Load(object sender, EventArgs e)
@@ -33,46 +33,54 @@ namespace Trabajo_final_Front_End
         }
         private void limpiarForm()
         {
-            nudEmpleado.Value = 0;
-            tbxNombre.Text = string.Empty;
-            tbxApellidos.Text = string.Empty;
-            tbxSalario.Text = string.Empty;
-            cbxTipo.Text = string.Empty;
-            cbxEstatus.Text = "Activo";
-            //pictureBox1 = null;
+            nudProveedor.Value = 0;
+            tbxCodigoProveedor.Text = string.Empty;
+            tbxCodigoCiudad.Text= string.Empty;
+            tbxNombre.Text= string.Empty;
+            tbxDireccion.Text= string.Empty;
+            tbxtelefono.Text= string.Empty;
+            tbxEmail.Text= string.Empty;
+            tbxProducto.Text= string.Empty;
+            //pictureBox2= null;
+
+            
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
             bool Resultado;
-            CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Id = (int)nudEmpleado.Value;
-            ceEmpleado.Nombre = tbxNombre.Text;
-            ceEmpleado.Apellidos = tbxApellidos.Text;
-            ceEmpleado.Salario = tbxSalario.Text;
-            ceEmpleado.Tipo = cbxTipo.Text;
-            ceEmpleado.Estatus = cbxEstatus.Text;
+            CeProveedor ceProveedor = new CeProveedor();
+            ceProveedor.ID = (int)nudProveedor.Value;
+            ceProveedor.CodigoProveedor = tbxCodigoProveedor.Text;
+            ceProveedor.CodigoCiudad = tbxCodigoCiudad.Text;
+            ceProveedor.Nombre = tbxNombre.Text;    
+            ceProveedor.Direccion= tbxDireccion.Text;
+            ceProveedor.Telefono = tbxtelefono.Text;
+            ceProveedor.EMail = tbxEmail.Text;
+            ceProveedor.Producto = tbxProducto.Text;
+            ceProveedor.Estatus = cbxEstatus.Text;
+
             if (pictureBox2.Image != null)
             {
-                ceEmpleado.Imagen = Imagen.imgToByte(pictureBox2.Image);
+                ceProveedor.Foto = Imagen.imgToByte(pictureBox2.Image);
             }
 
 
-            Resultado = cnEmpleado.validarDatos(ceEmpleado);
+            Resultado = cnProveedor.validarDatos(ceProveedor);
 
             if (Resultado == false)
             {
                 return;
             }
 
-            if (ceEmpleado.Id == 0)
+            if (ceProveedor.ID == 0)
             {
-                cnEmpleado.crearEmpleado(ceEmpleado);
+                cnProveedor.crearEmpleado(ceProveedor);
             }
             else
             {
-                cnEmpleado.editarEmpleado(ceEmpleado);
+                cnProveedor.editarEmpleado(ceProveedor);
             }
 
 
@@ -96,8 +104,8 @@ namespace Trabajo_final_Front_End
         {
             if (MessageBox.Show("¿Seguro que desea eliminar todos los datos?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarDatos(cE);
+                CeProveedor cE = new CeProveedor();
+                cnProveedor.eliminarDatos(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -108,8 +116,8 @@ namespace Trabajo_final_Front_End
         private void btnNuevo_Click_2(object sender, EventArgs e)
         {
             limpiarForm();
-            nudEmpleado.Visible = false;
-            lbEmpleado.Visible = false;
+            nudProveedor.Visible = false;
+            lbProveedor.Visible = false;
             cbxEstatus.Visible = false;
             lbEstatus.Visible = false;
             btnEliminar.Visible = false;
@@ -120,7 +128,7 @@ namespace Trabajo_final_Front_End
         private void btnEditar_Click(object sender, EventArgs e)
         {
             cbxEstatus.Visible = true;
-            lbEmpleado.Visible = true;
+            lbProveedor.Visible = true;
             cbxEstatus.Visible = true;
             lbEstatus.Visible = true;
             cbxEstatus.Enabled = true;
@@ -132,42 +140,36 @@ namespace Trabajo_final_Front_End
         {
 
             MessageBox.Show("Ya puedes Editar este campo");
-            lbEmpleado.Visible = false;
+            lbProveedor.Visible = false;
             btnNuevo.Enabled = false;
             btnEditar.Enabled = true;
 
-            nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
-            tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
-            tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
-            tbxSalario.Text = dgvEmpleado.CurrentRow.Cells["Salario"].Value.ToString();
-            cbxTipo.Text = dgvEmpleado.CurrentRow.Cells["Tipo"].Value.ToString();
-            cbxEstatus.Text = dgvEmpleado.CurrentRow.Cells["Estatus"].Value.ToString();
-            pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvEmpleado.CurrentRow.Cells["Foto"].Value as byte[]));
+            nudProveedor.Value = (uint)dgvProveedor.CurrentRow.Cells["IdProveedor"].Value;
+            tbxCodigoProveedor.Text = dgvProveedor.CurrentRow.Cells["CodigoProvedor"].Value.ToString();
+            tbxCodigoCiudad.Text = dgvProveedor.CurrentRow.Cells["CodigoCiudad"].Value.ToString();
+            tbxNombre.Text = dgvProveedor.CurrentRow.Cells["Nombre"].Value.ToString();
+            tbxDireccion.Text = dgvProveedor.CurrentRow.Cells["Direccion"].Value.ToString();
+            tbxtelefono.Text = dgvProveedor.CurrentRow.Cells["Telefono"].Value.ToString();
+            tbxEmail.Text = dgvProveedor.CurrentRow.Cells["E-mail"].Value.ToString();
+            tbxProducto.Text = dgvProveedor.CurrentRow.Cells["Producto"].Value.ToString();
+            cbxEstatus.Text = dgvProveedor.CurrentRow.Cells["Estatus"].Value.ToString();
+            pictureBox2.Image = Image.FromStream(Imagen.byteToImg(dgvProveedor.CurrentRow.Cells["Foto"].Value as byte[]));
             
             
             
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (tbxPrueba.Text != "")
-            {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.buscarEm(cE);
-                cargarDatos();
-            }
-            CeEmpleado ceEmpleado = new CeEmpleado();
-            ceEmpleado.Busqueda = tbxPrueba.Text;
-
-            MessageBox.Show("" + ceEmpleado.Busqueda);
+            
         }
         private void btnEliminar_Click_3(object sender, EventArgs e)
         {
-            if (nudEmpleado.Value == 0) return;
+            if (nudProveedor.Value == 0) return;
 
             if (MessageBox.Show("¿Seguro que deseas eliminar el registro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                CeEmpleado cE = new CeEmpleado();
-                cnEmpleado.eliminarEmpleado(cE);
+                CeProveedor cE = new CeProveedor();
+                cnProveedor.eliminarEmpleado(cE);
                 cargarDatos();
                 limpiarForm();
             }
@@ -220,6 +222,14 @@ namespace Trabajo_final_Front_End
 
         }
 
-        
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
