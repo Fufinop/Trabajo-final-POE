@@ -58,7 +58,7 @@ namespace Controladores
             {
                 MySqlConnection mySqlConnection = new MySqlConnection(cadenaConexion);
                 mySqlConnection.Open();
-                string Query = "UPDATE `empresa`.`cliente` SET `idCliente`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellidos`='" + cE.Apellidos + "', `direccion`='" + cE.Direccion + "', `cedula`='" + cE.Cedula + "', `telefono`='" + cE.Telefono + "', `Email`='" + cE.Email + "', `estatus`='" + cE.Estatus + "', `foto`=@Imagen WHERE  `idCliente`=" + cE.Id + ";";
+                string Query = "UPDATE `empresa`.`cliente` SET `idCliente`='" + cE.Id + "', `Nombre`='" + cE.Nombre + "', `Apellido`='" + cE.Apellidos + "', `direccion`='" + cE.Direccion + "', `cedula`='" + cE.Cedula + "', `telefono`='" + cE.Telefono + "', `E-mail`='" + cE.Email + "', `estatus`='" + cE.Estatus + "', `foto`=@Imagen WHERE  `idCliente`=" + cE.Id + ";";
                 MySqlCommand mySqlCommand = new MySqlCommand(Query, mySqlConnection);
                 mySqlCommand.Parameters.AddWithValue("@Imagen", cE.Imagen);
                 mySqlCommand.ExecuteNonQuery();
@@ -66,8 +66,9 @@ namespace Controladores
 
                 MessageBox.Show("Registro actualizado");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("" + ex);
                 MessageBox.Show("Hubo un error o repetiste el id");
 
             }

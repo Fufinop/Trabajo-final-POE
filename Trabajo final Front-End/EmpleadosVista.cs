@@ -29,6 +29,7 @@ namespace Trabajo_final_Front_End
             cargarDatos();
             tabControl1.TabPages.Remove(tabPage1);
             pictureBox1 = null;
+            btnEditar.Enabled = false;
         }
         private void limpiarForm()
         {
@@ -74,8 +75,9 @@ namespace Trabajo_final_Front_End
                 cnEmpleado.editarEmpleado(ceEmpleado);
             }
 
-            
 
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = false;
             cargarDatos();
             limpiarForm();
             tabControl1.TabPages.Remove(tabPage1);
@@ -132,6 +134,8 @@ namespace Trabajo_final_Front_End
             MessageBox.Show("Ya puedes Editar este campo");
             lbEmpleado.Visible = false;
             btnNuevo.Enabled = false;
+            btnEditar.Enabled = true;
+
             nudEmpleado.Value = (uint)dgvEmpleado.CurrentRow.Cells["IdEmpleado"].Value;
             tbxNombre.Text = dgvEmpleado.CurrentRow.Cells["Nombres"].Value.ToString();
             tbxApellidos.Text = dgvEmpleado.CurrentRow.Cells["Apellidos"].Value.ToString();
